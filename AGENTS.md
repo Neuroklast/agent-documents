@@ -6,9 +6,9 @@ This file is a **router**, not an encyclopedia. Read only the files the current 
 ## Session start
 
 1. Read this file.
-2. Read [MANIFEST.md](MANIFEST.md) — full index with "read when".
-3. Read exactly the topic file(s) matching the task (routing table below).
-4. Read [README.md](README.md) only when adopting this collection into a project.
+2. Read exactly the topic file(s) matching the task (routing table below).
+3. Read [README.md](README.md) only when adopting this collection into a project.
+4. Read [MANIFEST.md](MANIFEST.md) only when adding, renaming, or auditing files.
 
 ## Hard rules (always apply)
 
@@ -18,6 +18,7 @@ This file is a **router**, not an encyclopedia. Read only the files the current 
 - NEVER commit, log, or expose secrets (`.env*`, keys, tokens, connection strings, frontend bundles).
 - NEVER `as any`, `@ts-ignore`, or blanket `eslint-disable` to silence errors.
 - NEVER production deploy, destructive DB migration, `rm -rf`, force-push to `main`, or secret rotation without explicit human approval.
+- NEVER grant an agent broader tools or permissions than the task needs (least privilege).
 - ALWAYS run the project's check pipeline before claiming done. NEVER report done on failing checks.
 - ALWAYS update documentation at session end — docs are part of the deliverable.
 
@@ -52,18 +53,10 @@ This file is a **router**, not an encyclopedia. Read only the files the current 
 | TypeScript | [stack/typescript.md](stack/typescript.md) |
 | Lessons by area | [lessons/](lessons/README.md) |
 
-## Core rules (short form)
-
-- Plan first: for multi-file changes, name files, acceptance criteria, and risks before coding.
-- One purpose per commit. Fix ≠ feature. Refactor separate from behavior change.
-- New feature → new test. Changed feature → update test assertions to the new intended behavior. NEVER weaken or skip a test to go green.
-- One rule lives in exactly one file. Other files link, never duplicate.
-- Docs update is mandatory at session end or explicitly "unchanged because …".
-
 ## Session closeout (short)
 
 1. Implement → 2. run checks → 3. update docs → 4. commit/PR/report.
-Full version: [checklists/session.md](checklists/session.md).
+Checklist: [checklists/session.md](checklists/session.md). Definition of Done: [core/quality.md](core/quality.md).
 
 ## Multi-agent
 
@@ -73,10 +66,3 @@ Full version: [core/workflow.md](core/workflow.md).
 ## Roles
 
 Roles live in [roles/](roles/README.md). Reviewer, security-auditor and compliance-officer NEVER write production code.
-
-## Definition of Done
-
-- Checks green (lint, types, tests, build).
-- No secrets. No unrequested refactors. Minimal diff.
-- Docs updated or explicit "unchanged because …".
-- New/changed behavior covered by tests (or a documented reason why not).

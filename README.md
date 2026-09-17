@@ -37,16 +37,19 @@ Then point the target repo's root `AGENTS.md` at `docs/agent-docs/AGENTS.md` and
 1. Copy the cloned folder into the target repo (e.g. as `docs/agent-docs/`).
 2. Keep `AGENTS.md` at the repo root (or link to it from an existing root `AGENTS.md`).
 3. In `AGENTS.md`, replace the generic check commands with the project's real scripts (from `package.json` / `Makefile` / CI).
-4. Delete unused stack adapters and skills. Less is more — the router must only point at files that exist.
+4. Delete unused stack adapters and skills — the router must only point at files that exist.
 5. Optionally copy `opencode.json` and adjust permissions; copy `CLAUDE.md` / `GEMINI.md` / `.github/copilot-instructions.md` for tool compatibility.
 6. Add a short **Project facts** block to `AGENTS.md`: stack, package manager, check commands, deploy target. Never invent these — read the manifests.
+7. Install skills where your tools discover them: `node scripts/install-skills.mjs <target-repo>` (copies into `.agents/skills/` and `.claude/skills/`). opencode and Codex read `.agents/skills/`; Claude Code reads `.claude/skills/`.
+8. Optional: copy `examples/hooks/` and wire them into `.claude/settings.json` for deterministic gates.
 
 ## Structure
 
 ```text
 AGENTS.md            Router: hard rules, routing table, DoD
-MANIFEST.md          Full index with "read when"
 README.md            This file
+MANIFEST.md          Maintainer index (not read at session start)
+CHANGELOG.md         Release history of the collection
 CLAUDE.md / GEMINI.md / .github/copilot-instructions.md   Pointers
 opencode.json        Tool permissions (OpenCode)
 core/                Workflow, context budget, git, clean code, quality, architecture, regression, docs
@@ -58,17 +61,47 @@ testing/             Strategy, unit, e2e, contracts/CI
 checklists/          Session, PR, release, launch
 lessons/             Distilled hard-won lessons by area
 roles/               Subagent role contracts (architect, reviewer, tester, …)
-skills/              Task-specific skills (SKILL.md per folder)
+skills/              Task-specific skills (SKILL.md per folder, Agent Skills spec)
 templates/           PRD, ADR, feature spec, deviation record
 stack/               Next.js, Supabase, R2, TypeScript, C++/JUCE
+scripts/             check-docs.mjs, install-skills.mjs
+examples/hooks/      Deterministic gate hook examples
 ```
 
 ## Principles
 
 - **MUST / NEVER / ALWAYS** phrasing. Bullets, not prose.
-- Every topic file ≤ 150 lines. If it grows, split by concern and register it in `MANIFEST.md`.
+- Every topic file ≤ 150 lines, every skill ≤ 100 lines. If a topic grows, split by concern and register it in `MANIFEST.md`.
+- `MANIFEST.md` is a maintainer index; sessions read the `AGENTS.md` routing table only.
 - Facts over templates: no invented operator data, no invented APIs, no invented version numbers.
 - Structural gates (CI scripts, contract tests, hooks) beat prose bans. Markdown is the contract; enforcement lives in tooling.
+
+## Validate the collection
+
+```bash
+node scripts/check-docs.mjs
+```
+
+Checks line budgets (AGENTS.md ≤ 120, topic ≤ 150, skill ≤ 100), skill frontmatter
+(name/description per the Agent Skills spec), relative links, MANIFEST coverage,
+and prints a token estimate per file. CI runs it on every push and PR
+([.github/workflows/docs-check.yml](.github/workflows/docs-check.yml)).
+
+## Why these rules (evidence)
+
+- Context files help with non-obvious, project-specific rules; repository overviews and generic advice add cost without improving task success (Gloaguen et al., ETH Zürich, arXiv 2602.11988).
+- A concise AGENTS.md correlates with ~29 % lower runtime and ~17 % fewer output tokens (Lulla et al., arXiv 2601.20404).
+- Model performance degrades non-uniformly as context grows ("context rot"), so files stay small and load on demand (Chroma, 2025).
+- Agents fail on implementation discipline, not missing repository knowledge — hence skills and checklists instead of more rules (Khatri, arXiv 2607.27250).
+- Skill frontmatter and three-level progressive disclosure follow the Agent Skills spec (agentskills.io).
+
+## Anti-patterns we avoid
+
+- `llms.txt` for this repo — near-zero agent fetch rates in server-log studies (Ahrefs, 2026).
+- Auto-generated context files — they reduce task success rates (ETH study above).
+- Repository overviews and architecture tours inside context files — pure cost.
+- Aggressive compression of rule text — saves input tokens but raises reasoning tokens (arXiv 2604.07502).
+- Growing `AGENTS.md` into an encyclopedia.
 
 ## Customization points
 

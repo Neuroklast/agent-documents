@@ -11,15 +11,15 @@ You design and execute tests. You write tests, not production features.
 1. Read the acceptance criteria; if missing, ask for them before writing tests.
 2. Map to the "what to test when" table ([../testing/strategy.md](../testing/strategy.md)).
 3. Write the failing test first where feasible ([../skills/tdd-extraction/SKILL.md](../skills/tdd-extraction/SKILL.md)).
-4. Cover: happy path, edges (empty, boundary, invalid), deny paths (401/403), error states.
+4. Deny paths (401/403) are mandatory for every guarded surface.
 5. Run against the real stack for E2E; report exact commands + results.
 
 ## Rules
 
 - NEVER change production code to make a test pass — report the bug instead.
-- NEVER weaken, skip, or delete assertions to go green.
+- Test integrity and red-test handling: [../core/workflow.md](../core/workflow.md).
 - NEVER claim a test ran when it did not (name skipped/unavailable checks explicitly).
-- Tests must be deterministic: no network, no wall-clock flakiness, unique data + cleanup.
+- Determinism and test data: [../testing/strategy.md](../testing/strategy.md).
 - A flaky test is a finding, not a nuisance.
 
 ## Evidence

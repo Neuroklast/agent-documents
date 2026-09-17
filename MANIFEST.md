@@ -1,7 +1,7 @@
-# MANIFEST — Full Index
+# MANIFEST — Maintainer Index
 
 Every file in this collection: purpose and when to read it.
-Read [AGENTS.md](AGENTS.md) first. Read only what the task needs.
+Maintainer index — read when adding, renaming, or auditing files, **not** at session start. Task routing lives in AGENTS.md.
 
 ## Root
 
@@ -9,11 +9,21 @@ Read [AGENTS.md](AGENTS.md) first. Read only what the task needs.
 | --- | --- | --- |
 | [AGENTS.md](AGENTS.md) | Router, hard rules, routing table | Always, first |
 | [README.md](README.md) | Human onboarding, adoption, customization, limits | Adopting the collection |
-| [MANIFEST.md](MANIFEST.md) | This index | Session start |
+| [MANIFEST.md](MANIFEST.md) | This index | Adding, renaming, auditing files |
+| [CHANGELOG.md](CHANGELOG.md) | Release history of the collection | Updating the collection |
 | [CLAUDE.md](CLAUDE.md) | Pointer `@AGENTS.md` for Claude Code | Tool reads it automatically |
 | [GEMINI.md](GEMINI.md) | Pointer `@AGENTS.md` for Gemini CLI | Tool reads it automatically |
 | [.github/copilot-instructions.md](.github/copilot-instructions.md) | Pointer for GitHub Copilot | Tool reads it automatically |
 | [opencode.json](opencode.json) | Tool permissions (allow/deny/ask), subagent roles | OpenCode setup |
+
+## tooling
+
+| Path | Purpose | Read when |
+| --- | --- | --- |
+| [scripts/check-docs.mjs](scripts/check-docs.mjs) | Validates budgets, skill frontmatter, links, MANIFEST coverage | Docs/CI changes |
+| [scripts/install-skills.mjs](scripts/install-skills.mjs) | Copies `skills/` into `.agents/skills/` and `.claude/skills/` | Adopting skills into a project |
+| [examples/hooks/README.md](examples/hooks/README.md) | Deterministic gate hook examples (Claude Code) | Setting up enforcement |
+| [.github/workflows/docs-check.yml](.github/workflows/docs-check.yml) | CI job running the docs check on push/PR | CI changes |
 
 ## core/ — process & engineering
 
@@ -54,7 +64,7 @@ Read [AGENTS.md](AGENTS.md) first. Read only what the task needs.
 
 | Path | Purpose | Read when |
 | --- | --- | --- |
-| [security/security.md](security/security.md) | Secrets, least privilege, hardening, residual risk | Every session (baseline) |
+| [security/security.md](security/security.md) | Secrets, least privilege, hardening, residual risk | Auth, mutations, inputs, integrations |
 | [security/web-api.md](security/web-api.md) | XSS, CSRF, SSRF, headers, uploads, rate limits | Web/API security |
 | [security/owasp-llm.md](security/owasp-llm.md) | OWASP LLM Top 10 agent rules | AI/LLM features |
 

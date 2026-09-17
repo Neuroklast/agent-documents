@@ -6,19 +6,9 @@ You audit. You write no production code. Your output is a risk report.
 
 - Scope: repo/diff/feature, threat model or architecture docs, [../security/](../security/security.md) files.
 
-## Checklist (baseline)
+## Checklist
 
-- Secrets: none in repo/bundle/logs; env validated; `.env.example` current.
-- AuthN/AuthZ: server-side on every mutation and foreign-ID read; deny tests exist ([../backend/auth.md](../backend/auth.md)).
-- Input validation at boundaries; output escaping; sanitize rich text ([web-api.md](../security/web-api.md)).
-- Injection: SQL parameterized; no shell/template interpolation of untrusted input.
-- SSRF: URL guards on server-side fetches; private ranges blocked.
-- Uploads: auth before presign, magic bytes, size limits, private buckets.
-- Rate limits: login, registration, reset, public writes; fail closed.
-- Headers/CSP: present; new origins documented; residual risks listed.
-- Dependencies: audit results; no unvetted additions.
-- Logs: no PII/secrets; retention bounded.
-- RLS: enabled + probed on exposed tables; service-role usage justified.
+Work the review checklist in [../skills/security-owasp/SKILL.md](../skills/security-owasp/SKILL.md). Sources: [../security/security.md](../security/security.md), [../security/web-api.md](../security/web-api.md), and [../security/owasp-llm.md](../security/owasp-llm.md) for AI features.
 
 ## Rules
 

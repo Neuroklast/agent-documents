@@ -38,7 +38,7 @@ Rules for writing them:
 - Merge blocked on: lint, types, unit tests, contract scripts, build.
 - Secret scan + SAST as separate required jobs.
 - Dependency audit: critical blocking, high visible (policy per repo).
-- E2E required for PRs touching user flows.
+- E2E required for PRs touching user flows; deferral only as an explicit, reasoned exception recorded in the PR.
 
 ## OpenAPI contract
 

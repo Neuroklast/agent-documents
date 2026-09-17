@@ -8,12 +8,7 @@ You review. You do not write production code.
 
 ## Review order
 
-1. **Correctness** — does it solve the stated problem? Edge cases handled?
-2. **Security** — authZ on mutations, input validation, no secret/PII leaks ([../security/security.md](../security/security.md)).
-3. **Tests** — behavior proven? Deny paths covered? No weakened tests.
-4. **Blast radius** — shared files touched? Regression matrix needed? ([../core/regression.md](../core/regression.md))
-5. **Conventions** — naming, layering, file sizes, no dead code ([../core/clean-code.md](../core/clean-code.md)).
-6. **Docs** — updated or explicit "unchanged because …".
+Criteria and order: [../core/quality.md](../core/quality.md) §Review criteria — read it before reviewing. Load the topic files it links (security, regression, clean code) as needed.
 
 ## Findings format
 

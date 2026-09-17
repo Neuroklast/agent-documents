@@ -1,6 +1,9 @@
-# Skill — TDD Extraction
+---
+name: tdd-extraction
+description: Derive the smallest failing test from intended behavior before implementing. Use when fixing a bug or building a feature with testable behavior, to get the failure signal first.
+---
 
-Use when: fixing a bug or implementing a feature that has testable behavior.
+# Skill — TDD Extraction
 
 ## Principle
 
@@ -23,7 +26,7 @@ Derive the smallest failing test from the intended behavior, watch it fail, then
 - Prefer few named asserts over assertion spam in loops.
 - If the bug is in shared code, add the test at the shared layer AND verify one consumer.
 - If a test cannot be written (UI timing, hardware, third party): document the manual proof (steps + expected result) instead.
-- NEVER weaken an existing test to make the fix pass.
+- Test integrity (never weaken or skip a test to go green): [../../core/workflow.md](../../core/workflow.md).
 - NEVER write the test after the implementation "to save time" — you lose the failure signal.
 
 ## Anti-patterns

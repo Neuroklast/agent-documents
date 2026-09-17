@@ -31,7 +31,7 @@ Load for: planning tests, deciding what to test.
 - Tests must be deterministic: no network, no wall-clock dependencies, no order dependence.
 - Every new service: cover dev/mock mode and empty-data mode where the repo has those.
 - Prefer contract tests (few, named asserts) over assertion spam in loops.
-- NEVER lower/disable an assertion to make a change pass ([../core/regression.md](../core/regression.md)).
+- Test integrity — never weaken, skip, or delete a test to go green: [../core/workflow.md](../core/workflow.md).
 
 ## Test data
 

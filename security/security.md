@@ -1,6 +1,6 @@
 # Security — Baseline
 
-Load for: every session (baseline). Web/API specifics: [web-api.md](web-api.md). LLM specifics: [owasp-llm.md](owasp-llm.md).
+Load for: auth, mutations, user input, integrations, dependency changes. Web/API specifics: [web-api.md](web-api.md). LLM specifics: [owasp-llm.md](owasp-llm.md).
 
 ## Secrets
 

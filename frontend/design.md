@@ -41,7 +41,7 @@ Load for: tokens, color, typography, spacing, themes, motion policy.
 ## Motion policy
 
 - Three levels: `full` | `reduced` | `off`. `reduced` keeps only essential feedback animations; `off` disables all.
-- OS `prefers-reduced-motion` maps to at least `reduced`; explicit user choice may override OS in either direction only if documented.
+- OS `prefers-reduced-motion` maps to at least `reduced`; an explicit user setting may override the OS, but `off` always wins.
 - Motion must be interruptible; no animation blocks input.
 - One motion system per repo; do not stack two animation runtimes on the same element.
 

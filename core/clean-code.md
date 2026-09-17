@@ -14,7 +14,7 @@ Load for: writing or reviewing any code.
 
 | Unit | Soft limit | Hard signal |
 | --- | --- | --- |
-| File | ~400 lines | God object → split by responsibility |
+| File | ~400 lines | Review for split by responsibility |
 | Function | ~40 lines | Multiple purposes → extract |
 | Params | ~4 | Parameter object |
 | Nesting | ~3 levels | Early returns / guard clauses |

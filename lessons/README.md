@@ -32,6 +32,8 @@ Rules:
 2. Lesson repeats (2+ occurrences) → promote into the matching topic file as a MUST/NEVER rule.
 3. Lesson becomes a structural gate → add/update a contract script ([../testing/contracts-ci.md](../testing/contracts-ci.md)).
 
+Promotion does not delete the row (history stays append-only). After promotion, the topic file is the canonical rule; the lesson row remains as its origin.
+
 ## Rules for agents
 
 - After any incident, regression, or "that surprised me" moment: add the lesson in the same session.

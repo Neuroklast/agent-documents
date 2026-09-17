@@ -1,6 +1,9 @@
-# Skill — Video Scrubbing
+---
+name: video-scrubbing
+description: Scroll-bound video scrubbing implementation and safeguards. Use ONLY when the task explicitly asks for scroll-bound video — frame-sequence or WebCodecs canvas, reduced-motion fallback, mobile memory budget. Otherwise use static imagery.
+---
 
-Use ONLY when: the task explicitly asks for scroll-bound video.
+# Skill — Video Scrubbing
 
 ## Default answer
 

@@ -13,7 +13,7 @@ AGENTS.md (router, ≤120 lines)
 
 - ALWAYS read only the files the routing table names for the current task.
 - NEVER read whole docs trees "to be safe". That burns context and hides the relevant rule.
-- When a task spans areas, read at most 2–3 topic files plus their direct links.
+- When a task spans areas, read at most 2–3 topic files plus the files those topics or the invoked skill name directly.
 - Load skills only when their description matches the task.
 
 ## File size budgets
@@ -24,6 +24,8 @@ AGENTS.md (router, ≤120 lines)
 | Topic file | ≤ 150 lines | Split by concern, register both in `MANIFEST.md` |
 | Skill | ≤ 100 lines | Move detail into the linked topic file |
 | Lesson entry | 1 table row | Promote recurring lessons into topic files |
+
+Budgets are enforced by [../scripts/check-docs.mjs](../scripts/check-docs.mjs) (CI: [../.github/workflows/docs-check.yml](../.github/workflows/docs-check.yml)).
 
 ## Single source of truth per rule
 
@@ -44,9 +46,7 @@ AGENTS.md (router, ≤120 lines)
 
 ## Archive policy
 
-- Superseded docs move to `docs/archive/` (project-side) with a banner: "Superseded by X on YYYY-MM-DD. Do not use for current development."
-- NEVER delete historical decision records silently; mark them superseded.
-- Lessons are append-only; promote, don't rewrite.
+- See [docs-system.md](docs-system.md) — archive policy lives there, once.
 
 ## Anti-patterns
 

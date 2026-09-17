@@ -15,10 +15,8 @@ Load for: delegating work to subagents, defining review boundaries.
 ## Universal rules
 
 - Reviewer, security-auditor, compliance-officer NEVER write production code. They report.
-- Every role reports findings with: severity, location (file:line), evidence, recommended action.
-- Findings are actionable, not vague ("validate input" → "route X accepts unbounded `q`, cap at 200 chars").
 - A role NEVER approves its own work.
-- Roles never weaken tests, rules, or legal texts to make a finding disappear.
+- Every role reports findings with severity, location (`file:line`), evidence, and recommended action; findings are actionable, not vague ("validate input" → "route X accepts unbounded `q`, cap at 200 chars").
 
 ## Wiring (OpenCode)
 

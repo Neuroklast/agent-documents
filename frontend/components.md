@@ -28,7 +28,7 @@ Load for: creating or changing components.
 
 - `PascalCase.tsx` components, `useCamelCase.ts` hooks, co-located tests (`Button.test.tsx`).
 - One component per file; small internal helpers may live beside it until reused.
-- File soft limit ~400 lines ([../core/clean-code.md](../core/clean-code.md)). Split by responsibility, not by line count alone.
+- File soft limit ~400 lines; exceeding it is a review signal, not an automatic split ([../core/clean-code.md](../core/clean-code.md)). Split by responsibility, not by line count.
 
 ## Styling
 

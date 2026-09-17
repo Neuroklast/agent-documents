@@ -1,6 +1,9 @@
-# Skill — Security (OWASP)
+---
+name: security-owasp
+description: OWASP-based security review workflow and checklist. Use when reviewing security, adding auth surfaces, handling user input, uploads, or third-party integrations — verifies with deny tests and records residual risks.
+---
 
-Use when: security review, new auth surface, user input handling, uploads, third-party integration.
+# Skill — Security (OWASP)
 
 ## Workflow
 

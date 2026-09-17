@@ -1,6 +1,9 @@
-# Skill — Frontend UI
+---
+name: frontend-ui
+description: UI implementation workflow for user-facing frontend work. Use when building or changing components, pages, forms, dialogs, lists, or any UI state — covers tokens, primitives, the four states, and the accessibility pass.
+---
 
-Use when: implementing or changing user-facing UI.
+# Skill — Frontend UI
 
 ## Workflow
 

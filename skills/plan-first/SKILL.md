@@ -1,6 +1,9 @@
-# Skill — Plan First
+---
+name: plan-first
+description: Plan before coding for any non-trivial task. Use when a task spans multiple files, adds a feature, refactors, or has unclear requirements — names files, steps, acceptance criteria, and risks before implementation.
+---
 
-Use when: any non-trivial task (multi-file, new feature, refactor, unclear requirements).
+# Skill — Plan First
 
 ## Steps
 

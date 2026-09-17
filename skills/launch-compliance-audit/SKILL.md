@@ -1,6 +1,9 @@
-# Skill — Launch Compliance Audit (DE/EU)
+---
+name: launch-compliance-audit
+description: German/EU launch compliance gate before production go-live. Use when preparing a public DE/EU surface for launch — audits Impressum, privacy and consent, forms and analytics, BFSG accessibility, and technical hardening with PASS/FAIL evidence.
+---
 
-Use when: before production launch of any public DE/EU surface.
+# Skill — Launch Compliance Audit (DE/EU)
 
 ## Gate 1 — Forbidden old norms
 

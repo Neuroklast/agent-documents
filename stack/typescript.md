@@ -9,7 +9,7 @@ Load for: `.ts`/`.tsx`/`.js`/`.jsx`. Repo formatter/linter rules win over this f
 
 ## Rules
 
-- `strict` mode respected. NEVER `@ts-ignore` without justification in the same hunk; prefer fixing types.
+- `strict` mode respected. NEVER `@ts-ignore`. If a library bug blocks the fix, use `@ts-expect-error` with a comment linking the issue.
 - NEVER introduce `any`. Use `unknown` + narrowing; validate external payloads with the repo's schema library (Zod/Valibot/ArkType) — never add a second one.
 - Explicit return types on public functions and package exports.
 - Named exports for app code; default exports only where the framework requires them.

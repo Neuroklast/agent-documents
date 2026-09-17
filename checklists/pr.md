@@ -27,7 +27,7 @@
 ## Quality section
 
 - [ ] Tests added/updated for the change.
-- [ ] No test weakened/skipped to pass.
+- [ ] No test weakened/skipped ([../core/workflow.md](../core/workflow.md)).
 - [ ] Deny tests for new guarded surfaces (401/403).
 - [ ] Accessibility check for public UI changes.
 - [ ] Performance note for heavy changes (before/after).

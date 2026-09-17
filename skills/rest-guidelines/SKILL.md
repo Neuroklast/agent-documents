@@ -1,6 +1,10 @@
+---
+name: rest-guidelines
+description: REST API design rules (Zalando-style subset) for any endpoint. Use when designing, changing, or reviewing APIs — resource naming, JSON shapes, methods, status codes, problem+json errors, pagination, versioning, and OpenAPI duty.
+---
+
 # Skill — REST Guidelines
 
-Use when: designing, changing, or reviewing any API endpoint.
 Self-contained subset of the Zalando RESTful API Guidelines. Authoritative for this collection.
 
 ## Resource naming

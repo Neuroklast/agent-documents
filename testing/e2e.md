@@ -51,7 +51,7 @@ Behavioural tests on top for real interaction (happy path).
 
 - Keep a coverage file per repo: specs, flows covered, known failures, open questions.
 - New feature/route → spec in the same change. Changed feature → update assertions to the new intended behavior.
-- NEVER weaken/skip E2E tests to go green ([../core/regression.md](../core/regression.md)).
+- Test integrity (never weaken or skip to go green): [../core/workflow.md](../core/workflow.md).
 
 ## CI
 

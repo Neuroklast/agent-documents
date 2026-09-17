@@ -1,12 +1,11 @@
 # Checklist — Session Closeout
 
 Copy into the session report. Order is fixed: implement → checks → docs → commit/PR/report.
+Definition of Done: [../core/quality.md](../core/quality.md).
 
 ## 1. Code
 
 - [ ] Change matches the task/issue; acceptance criteria met.
-- [ ] Minimal diff; no unrequested refactors or reformatting.
-- [ ] No secrets, no debug logs, no dead code, no commented-out code.
 - [ ] Conventions followed ([../core/clean-code.md](../core/clean-code.md)).
 
 ## 2. Checks
@@ -16,7 +15,7 @@ Copy into the session report. Order is fixed: implement → checks → docs → 
 - [ ] Unit/integration tests green (with new/updated tests for the change).
 - [ ] Build green.
 - [ ] Contract scripts green (scroll/overlay/i18n/RLS/API — as applicable).
-- [ ] E2E for changed user flows green (or explicitly deferred with reason).
+- [ ] E2E for changed user flows green (or explicitly deferred with a recorded reason).
 - [ ] Unavailable checks explicitly named as "not run" — never claimed green.
 
 ## 3. Docs

@@ -55,7 +55,7 @@ High-risk shared surfaces (typical):
 
 ## NEVER
 
-- Weaken, skip, or delete a test to make a change green.
+- Test integrity and red-test handling: [workflow.md](workflow.md).
 - Mix refactor + behavior change in one commit.
 - Bundle a fix with a feature ("while I was here").
 - Reintroduce a removed pattern because "it worked before" — check the lesson first.

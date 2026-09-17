@@ -1,7 +1,9 @@
-# Skill — C / C++ / Realtime
+---
+name: c-realtime
+description: Realtime and safety-critical C/C++ rules for audio DSP, embedded, firmware, and plugin code. Use when a task touches .c/.h/.cpp realtime callbacks, DSP, MISRA C invariants, plugin state, or native build/CI. Not for host tools, build helpers, or scripts in a web repo.
+---
 
-Use when: `.c`/`.h`/`.cpp`, embedded, firmware, hard realtime, audio DSP, plugin code.
-Not for: host tools, build helpers, or scripts in a web repo.
+# Skill — C / C++ / Realtime
 
 ## Scope gate
 
