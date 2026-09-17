@@ -43,6 +43,13 @@ Then point the target repo's root `AGENTS.md` at `docs/agent-docs/AGENTS.md` and
 7. Install skills where your tools discover them: `node scripts/install-skills.mjs <target-repo>` (copies into `.agents/skills/` and `.claude/skills/`). opencode and Codex read `.agents/skills/`; Claude Code reads `.claude/skills/`.
 8. Optional: copy `examples/hooks/` and wire them into `.claude/settings.json` for deterministic gates.
 
+## Monorepos
+
+Place another `AGENTS.md` inside each package with package-specific commands and rules.
+Agents read the nearest file first — the closest one wins. Keep cross-cutting rules in the
+root file and point package files at it instead of copying them. Nested files stay short:
+commands, package layout, and what differs from the root.
+
 ## Structure
 
 ```text

@@ -46,6 +46,7 @@ Budgets are enforced by [../scripts/check-docs.mjs](../scripts/check-docs.mjs) (
 | Content | Location |
 | --- | --- |
 | Routing, hard rules, DoD | `AGENTS.md` |
+| Package-specific rules (monorepo) | nested `AGENTS.md` in that package (nearest wins) |
 | Process, gates, multi-agent | `core/*` |
 | Technology behavior | `frontend/`, `backend/`, `stack/*` |
 | Hard-won incident knowledge | `lessons/*` |
