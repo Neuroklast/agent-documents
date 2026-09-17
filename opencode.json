@@ -18,7 +18,7 @@
       "pnpm lint*": "allow",
       "pnpm typecheck*": "allow",
       "rm -rf*": "deny",
-      "git push*": "deny",
+      "git push*": "ask",
       "git push --force*": "deny",
       "git commit*": "ask"
     }
