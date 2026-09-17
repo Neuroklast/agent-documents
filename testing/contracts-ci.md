@@ -55,5 +55,5 @@ Rules for writing them:
 ## Agent rules
 
 - Run the same gates locally that CI runs, before pushing.
-- If a gate cannot run locally, say so explicitly — never claim green.
+- Unavailable checks are named explicitly ([../core/workflow.md](../core/workflow.md)).
 - Fixing CI by disabling a check is forbidden; fix the cause or change the rule deliberately with human approval.

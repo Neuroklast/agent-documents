@@ -42,7 +42,7 @@ Load for: any UI work (pages, chrome, lists, forms).
 ## Responsive
 
 - Mobile-first base classes; desktop overrides via breakpoints. NEVER rewrite base classes for desktop fixes.
-- Touch targets ≥ 44×44 px on public UI.
+- Touch targets ≥ 44×44 px on public UI ([accessibility.md](accessibility.md)).
 - Long labels wrap or truncate deliberately; test the longest real translation.
 - Builders/multi-column editors: mount resizable panels only on large viewports ([scroll-motion.md](scroll-motion.md)).
 

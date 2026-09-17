@@ -16,7 +16,7 @@ Definition of Done: [../core/quality.md](../core/quality.md).
 - [ ] Build green.
 - [ ] Contract scripts green (scroll/overlay/i18n/RLS/API — as applicable).
 - [ ] E2E for changed user flows green (or explicitly deferred with a recorded reason).
-- [ ] Unavailable checks explicitly named as "not run" — never claimed green.
+- [ ] Unavailable checks explicitly named as "not run" ([../core/workflow.md](../core/workflow.md)).
 
 ## 3. Docs
 

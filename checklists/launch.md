@@ -19,16 +19,8 @@ Two tracks: **technical** and **operator/legal**. Both must be complete.
 
 ## Operator / legal (human duties)
 
-- [ ] Real operator data provided (name, address, email, register, VAT) — no placeholders.
-- [ ] Impressum reachable without consent, in ≤ 2 clicks, as HTML text.
-- [ ] Privacy policy matches actual processing (tools, cookies, TTLs, processors, regions).
-- [ ] Consent: opt-in, reject as easy as accept, no pre-checked marketing, trackers blocked until consent.
-- [ ] Processor list complete (hosting, DB, storage, email, payments) with DPA/SCC status.
-- [ ] MStV responsible person named if journalistic-editorial content exists.
-- [ ] BFSG scope assessed; accessibility statement published if applicable.
-- [ ] Cookie/storage inventory documented; analytics behind consent.
-- [ ] Contact form: purpose + legal basis stated; server-side validation; spam protection first-party.
-- [ ] Retention/backup lifecycle documented.
+- [ ] Run the compliance gate: [../skills/launch-compliance-audit/SKILL.md](../skills/launch-compliance-audit/SKILL.md).
+- [ ] Operator data and all legal texts verified against [../legal/compliance-de.md](../legal/compliance-de.md) — no placeholders.
 
 ## Verification evidence
 
@@ -39,5 +31,4 @@ Two tracks: **technical** and **operator/legal**. Both must be complete.
 
 ## Gate
 
-Run [../skills/launch-compliance-audit/SKILL.md](../skills/launch-compliance-audit/SKILL.md).
 Open legal questions are blockers — list them, never "later".

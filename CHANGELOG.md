@@ -22,6 +22,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
 - `AGENTS.md`: added the least-privilege hard rule.
 - Deduplicated rule ownership: `AGENTS.md` drops the "Core rules short form" and DoD restatements; roles link to canonical criteria instead of mirroring them; the test-integrity rule now lives only in `core/workflow.md`; the archive policy only in `core/docs-system.md`; lessons promotion clarified in `lessons/README.md`.
 - Rule hygiene pass: removed vague or redundant instructions (clean-code deletion bullet, debounce without a value, architect tradeoff wording, workflow wrong-assumption note); commit-scope rule now only in `core/git.md`; added "Rule lifecycle (evaluation)" to `core/context-budget.md` and a rule-ownership map to `MANIFEST.md`.
+- Stack/checklist dedup: `checklists/launch.md` operator track now links the compliance gate instead of restating legal rules; "unavailable checks" rule now lives only in `core/workflow.md` (contracts-ci, session, tester link); UI touch-target item links `frontend/accessibility.md`.
 
 ### Removed
 
