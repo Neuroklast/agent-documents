@@ -50,5 +50,5 @@ Load for: reviews, Definition of Done, coverage decisions, debt tracking.
 
 - Coverage theater (tests that assert nothing meaningful).
 - "Temporary" bypasses without an owner and a removal trigger.
-- Green CI as the only quality signal — reviews check intent, not just status.
+- Green CI as the only quality signal — reviewers verify the diff against the issue's intent, not just the status checks.
 - Big-bang refactors bundled with behavior changes.

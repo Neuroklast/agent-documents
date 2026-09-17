@@ -20,7 +20,6 @@ Load for: writing or reviewing any code.
 | Nesting | ~3 levels | Early returns / guard clauses |
 
 - One responsibility per file. One exported concern per module.
-- Prefer deleting code over adding a helper.
 - No dead code, no unused exports, no unreachable branches.
 - No commented-out code — git history is the archive.
 

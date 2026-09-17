@@ -12,6 +12,7 @@ const errors = [];
 const warnings = [];
 
 const AGENTS_BUDGET = 120;
+const MANIFEST_BUDGET = 200;
 const TOPIC_BUDGET = 150;
 const SKILL_BUDGET = 100;
 const NAME_RE = /^[a-z0-9]+(-[a-z0-9]+)*$/;
@@ -36,7 +37,14 @@ for (const file of mdFiles) {
   const text = readFileSync(file, "utf8");
   const lines = lineCount(text);
   const r = rel(file);
-  const budget = r === "AGENTS.md" ? AGENTS_BUDGET : r.endsWith("SKILL.md") ? SKILL_BUDGET : TOPIC_BUDGET;
+  const budget =
+    r === "AGENTS.md"
+      ? AGENTS_BUDGET
+      : r === "MANIFEST.md"
+        ? MANIFEST_BUDGET
+        : r.endsWith("SKILL.md")
+          ? SKILL_BUDGET
+          : TOPIC_BUDGET;
   if (lines > budget) {
     errors.push(`budget: ${r} has ${lines} lines (max ${budget})`);
   }

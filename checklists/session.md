@@ -29,7 +29,7 @@ Definition of Done: [../core/quality.md](../core/quality.md).
 
 ## 4. Git
 
-- [ ] One purpose per commit; conventional message.
+- [ ] One purpose per commit; conventional message ([../core/git.md](../core/git.md)).
 - [ ] Only intended files staged.
 - [ ] No secrets/large artifacts in the diff.
 - [ ] PR description: what, why, how to verify, risk, do-not-touch list.

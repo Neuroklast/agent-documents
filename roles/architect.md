@@ -18,7 +18,7 @@ You plan. You do not write production code.
 1. Read the repo manifests and the relevant topic files. No guessing about the stack.
 2. Identify the smallest structure that solves the task; prefer existing patterns.
 3. Name the blast radius ([../core/regression.md](../core/regression.md)).
-4. State tradeoffs honestly; recommend one option.
+4. List each option's cost and risk; recommend one. No recommendation without the tradeoff it accepts.
 5. If a decision is product-shaped, escalate to the human instead of deciding silently.
 
 ## Rules

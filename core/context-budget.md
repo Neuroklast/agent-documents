@@ -21,6 +21,7 @@ AGENTS.md (router, ≤120 lines)
 | File | Budget | If exceeded |
 | --- | --- | --- |
 | `AGENTS.md` | ≤ 120 lines | Move rules into topic files, keep only routing |
+| `MANIFEST.md` | ≤ 200 lines | Index; keep rows one line, link instead of explaining |
 | Topic file | ≤ 150 lines | Split by concern, register both in `MANIFEST.md` |
 | Skill | ≤ 100 lines | Move detail into the linked topic file |
 | Lesson entry | 1 table row | Promote recurring lessons into topic files |
@@ -32,6 +33,13 @@ Budgets are enforced by [../scripts/check-docs.mjs](../scripts/check-docs.mjs) (
 - Every rule exists in exactly one file. Other files link to it.
 - Before writing a rule, search for an existing one: `rg "rule phrase"`.
 - When moving a rule, update all inbound links in the same change.
+
+## Rule lifecycle (evaluation)
+
+- Every rule needs an observed failure it prevents (incident, review finding, repeated mistake). No failure mode → no rule.
+- Litmus test before adding or keeping a rule: would removing it cause a mistake the agent would not otherwise make?
+- Rules that never fired are deletion candidates. Delete with the same care as adding: say why in the commit.
+- NEVER add rules speculatively. Repeating what the model already knows costs tokens and can lower task success (see [../README.md](../README.md) §Why these rules).
 
 ## What belongs where
 

@@ -3,7 +3,7 @@
 ## Before opening
 
 - [ ] Branch from current `main`; rebased/merged if stale.
-- [ ] One purpose; fix ≠ feature; refactor separate from behavior.
+- [ ] One purpose; fix ≠ feature; refactor separate ([../core/git.md](../core/git.md)).
 - [ ] Local gates run: lint, types, tests, build (+ E2E for flows).
 - [ ] Diff reviewed by yourself line by line.
 - [ ] No secrets, no debug code, no unrelated files.

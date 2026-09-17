@@ -51,7 +51,7 @@ Load for: interaction states, feedback, errors, confirmations.
 
 - Skeletons match final layout to avoid layout shift.
 - Instant feedback on click (pressed state) even when the network is slow.
-- Debounce inputs that trigger server calls; show pending state.
+- Debounce inputs that trigger server calls (~300 ms); show pending state.
 - NEVER make the user wait for non-essential data before showing primary content.
 
 ## NEVER

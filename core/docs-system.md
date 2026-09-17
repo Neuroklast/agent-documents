@@ -31,7 +31,7 @@ Load for: every session end, when behavior or conventions change.
 - Docs update is part of the deliverable, same as code. Skipping docs because "the task was only code" is a process failure.
 - If nothing changed, state it explicitly: `Docs: unchanged because <reason>`.
 - Docs MUST match code facts (TTLs, cookie names, processor names, limits, versions). Wrong docs are worse than no docs.
-- Prefer small accurate edits over big rewrites.
+- Edit the smallest accurate section; don't rewrite a file to change one rule.
 - Prefer structural gates over prose bans: if a rule matters, add a CI contract script ([../testing/contracts-ci.md](../testing/contracts-ci.md)).
 
 ## Decision log

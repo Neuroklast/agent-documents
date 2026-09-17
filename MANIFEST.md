@@ -25,6 +25,24 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | [examples/hooks/README.md](examples/hooks/README.md) | Deterministic gate hook examples (Claude Code) | Setting up enforcement |
 | [.github/workflows/docs-check.yml](.github/workflows/docs-check.yml) | CI job running the docs check on push/PR | CI changes |
 
+## Rule ownership — canonical file per topic
+
+| Rule / topic | Canonical file |
+| --- | --- |
+| Test integrity, red-test handling | `core/workflow.md` |
+| Commit/PR scope, worktrees, branches | `core/git.md` |
+| Definition of Done, review criteria, coverage | `core/quality.md` |
+| Archive policy, docs maintenance | `core/docs-system.md` |
+| Secrets, least privilege, hardening | `security/security.md` |
+| Cache layers and invalidation | `backend/caching.md` |
+| Schema SSOT, RLS | `backend/data-and-schema.md` |
+| Consent, Impressum, BFSG | `legal/compliance-de.md` |
+| Overlays, scroll ownership | `frontend/scroll-motion.md` |
+| Accessibility baseline | `frontend/accessibility.md` |
+| API contracts | `backend/api.md` (+ `skills/rest-guidelines/`) |
+| Release ritual | `checklists/release.md` |
+| Rule lifecycle (add/delete) | `core/context-budget.md` |
+
 ## core/ — process & engineering
 
 | Path | Purpose | Read when |

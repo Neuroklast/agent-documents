@@ -4,7 +4,7 @@ Load for: bugfixes, refactors, shared-file changes.
 
 ## Scope rules
 
-- One purpose per commit/PR. Fix ≠ feature. Refactor separate from behavior change.
+- Commit/PR scope, fix vs. feature vs. refactor: [git.md](git.md).
 - NEVER change UX/view defaults unless the task explicitly asks (calendar default view, nav order, sort order).
 - A version bump is a release, not a commit side effect ([../checklists/release.md](../checklists/release.md)).
 - Name a **do-not-touch list** in the PR for risky changes.
@@ -56,6 +56,5 @@ High-risk shared surfaces (typical):
 ## NEVER
 
 - Test integrity and red-test handling: [workflow.md](workflow.md).
-- Mix refactor + behavior change in one commit.
-- Bundle a fix with a feature ("while I was here").
+- Mix refactor, fix, and feature in one commit/PR ([git.md](git.md)).
 - Reintroduce a removed pattern because "it worked before" — check the lesson first.

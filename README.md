@@ -82,7 +82,7 @@ examples/hooks/      Deterministic gate hook examples
 node scripts/check-docs.mjs
 ```
 
-Checks line budgets (AGENTS.md ≤ 120, topic ≤ 150, skill ≤ 100), skill frontmatter
+Checks line budgets (AGENTS.md ≤ 120, MANIFEST ≤ 200, topic ≤ 150, skill ≤ 100), skill frontmatter
 (name/description per the Agent Skills spec), relative links, MANIFEST coverage,
 and prints a token estimate per file. CI runs it on every push and PR
 ([.github/workflows/docs-check.yml](.github/workflows/docs-check.yml)).
