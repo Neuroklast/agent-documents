@@ -29,7 +29,7 @@ This file is a **router**, not an encyclopedia. Read only the files the current 
 | Any session | [core/workflow.md](core/workflow.md), [core/context-budget.md](core/context-budget.md) |
 | New feature / route | [core/architecture.md](core/architecture.md), [templates/feature-spec.md](templates/feature-spec.md), [testing/strategy.md](testing/strategy.md) |
 | Refactor / bugfix | [core/regression.md](core/regression.md), [core/clean-code.md](core/clean-code.md) |
-| UI implementation | [frontend/ui.md](frontend/ui.md), [frontend/ux.md](frontend/ux.md), [frontend/components.md](frontend/components.md) |
+| UI implementation | [skills/frontend-ui/SKILL.md](skills/frontend-ui/SKILL.md), [frontend/ui.md](frontend/ui.md), [frontend/ux.md](frontend/ux.md), [frontend/components.md](frontend/components.md) |
 | Design tokens / themes | [frontend/design.md](frontend/design.md) |
 | Accessibility | [frontend/accessibility.md](frontend/accessibility.md) |
 | Scroll / motion / overlays | [frontend/scroll-motion.md](frontend/scroll-motion.md) |

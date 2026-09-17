@@ -51,7 +51,7 @@ Behavioural tests on top for real interaction (happy path).
 
 - Keep a coverage file per repo: specs, flows covered, known failures, open questions.
 - New feature/route → spec in the same change. Changed feature → update assertions to the new intended behavior.
-- Test integrity (never weaken or skip to go green): [../core/workflow.md](../core/workflow.md).
+- Test integrity: [../core/workflow.md](../core/workflow.md).
 
 ## CI
 

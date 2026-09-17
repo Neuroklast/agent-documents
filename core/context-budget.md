@@ -6,10 +6,11 @@ Load for: every session. This file explains how to read this collection.
 
 ```text
 AGENTS.md (router, ≤120 lines)
-  └─ MANIFEST.md (index: path | purpose | read when)
-       └─ one topic file (≤150 lines)
-            └─ linked detail files only when referenced
+  └─ one topic file (≤150 lines)
+       └─ linked detail files only when referenced
 ```
+
+MANIFEST.md is a maintainer index and is not part of the session read chain.
 
 - ALWAYS read only the files the routing table names for the current task.
 - NEVER read whole docs trees "to be safe". That burns context and hides the relevant rule.
@@ -45,7 +46,8 @@ Budgets are enforced by [../scripts/check-docs.mjs](../scripts/check-docs.mjs) (
 
 | Content | Location |
 | --- | --- |
-| Routing, hard rules, DoD | `AGENTS.md` |
+| Routing, hard rules | `AGENTS.md` |
+| Definition of Done | `core/quality.md` |
 | Package-specific rules (monorepo) | nested `AGENTS.md` in that package (nearest wins) |
 | Process, gates, multi-agent | `core/*` |
 | Technology behavior | `frontend/`, `backend/`, `stack/*` |

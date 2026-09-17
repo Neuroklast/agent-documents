@@ -29,7 +29,7 @@ Load for: interaction states, feedback, errors, confirmations.
 
 ## Navigation & state
 
-- Deep-linkable state: filters, tabs, selected records in the URL where reasonable.
+- Deep-linkable state: filters, tabs, and selected records in the URL when users share or reload that state.
 - Browser back must not lose unsaved work silently; warn or autosave.
 - Modals/drawers: Escape closes, focus returns to the trigger ([accessibility.md](accessibility.md)).
 - One overlay at a time; opening a new one closes the previous ([scroll-motion.md](scroll-motion.md)).

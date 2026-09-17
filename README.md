@@ -53,7 +53,7 @@ commands, package layout, and what differs from the root.
 ## Structure
 
 ```text
-AGENTS.md            Router: hard rules, routing table, DoD
+AGENTS.md            Router: hard rules, routing table
 README.md            This file
 MANIFEST.md          Maintainer index (not read at session start)
 CHANGELOG.md         Release history of the collection
@@ -140,4 +140,4 @@ Git             protected main, required checks, no force-push
 
 - Update the matching topic file whenever a convention changes; new topic → new file + `MANIFEST.md` entry.
 - Keep `AGENTS.md` ≤ 120 lines. It is a router, not documentation.
-- Archive superseded docs with a banner instead of deleting history.
+- Archive superseded docs with a banner instead of deleting history ([core/docs-system.md](core/docs-system.md)).

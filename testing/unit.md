@@ -39,7 +39,7 @@ Load for: unit/component tests (Vitest/Jest style).
 
 ## Coverage
 
-- Thresholds per [../core/quality.md](../core/quality.md); NEVER weaken to pass.
+- Thresholds per [../core/quality.md](../core/quality.md).
 - Excluded orchestration still gets targeted tests for risky branches.
 - Coverage output must be deterministic (no snapshot drift).
 

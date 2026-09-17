@@ -34,7 +34,7 @@ Load for: performance work, heavy widgets, images, bundles.
 
 ## Network & caching
 
-- Debounce inputs that hit the server.
+- Debounce inputs that hit the server (~300 ms).
 - Cache headers/CDN for static assets; personalized API responses never on a public CDN ([../backend/caching.md](../backend/caching.md)).
 - Batching over chatty endpoints in render loops.
 - Streaming/pending states for slow backends ([ux.md](ux.md)).

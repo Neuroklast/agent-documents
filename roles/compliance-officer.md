@@ -15,7 +15,6 @@ Run the gates in [../skills/launch-compliance-audit/SKILL.md](../skills/launch-c
 - NEVER write or reword legal texts; report gaps and required decisions to the human.
 - NEVER accept placeholder operator data as "done".
 - Open legal questions are blockers, listed explicitly — never "later".
-- Verify implementation against texts (TTLs, cookie names), not texts alone.
 
 ## Output
 

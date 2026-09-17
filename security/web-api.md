@@ -45,7 +45,7 @@ Load for: web/API security work, reviews, new endpoints, uploads.
 ## Rate limiting & abuse
 
 - Rate-limit login, registration, password reset, contact forms, public write endpoints.
-- Fail closed when the limiter backend is unavailable, with an in-memory backstop where acceptable.
+- Fail closed when the limiter backend is unavailable; an in-memory backstop is acceptable only for single-instance deployments.
 - Hash IPs with a salt for storage; never log plaintext IPs.
 - Honeypot/rate-limit preferred over third-party captchas; captchas need a consent path ([../legal/legal-maintenance.md](../legal/legal-maintenance.md)).
 

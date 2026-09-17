@@ -20,9 +20,10 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
 - `security/security.md` loads on demand (auth, mutations, inputs, integrations) instead of every session; the least-privilege rule moved to the AGENTS.md hard rules.
 - Resolved 9 cross-file contradictions: E2E deferral wording, `@ts-ignore` policy, 400-line file signal, coverage thresholds, reduced-motion override, read budget, session-start reading, skill descriptions, MANIFEST duplicate entry.
 - `AGENTS.md`: added the least-privilege hard rule.
-- Deduplicated rule ownership: `AGENTS.md` drops the "Core rules short form" and DoD restatements; roles link to canonical criteria instead of mirroring them; the test-integrity rule now lives only in `core/workflow.md`; the archive policy only in `core/docs-system.md`; lessons promotion clarified in `lessons/README.md`.
-- Rule hygiene pass: removed vague or redundant instructions (clean-code deletion bullet, debounce without a value, architect tradeoff wording, workflow wrong-assumption note); commit-scope rule now only in `core/git.md`; added "Rule lifecycle (evaluation)" to `core/context-budget.md` and a rule-ownership map to `MANIFEST.md`.
-- Stack/checklist dedup: `checklists/launch.md` operator track now links the compliance gate instead of restating legal rules; "unavailable checks" rule now lives only in `core/workflow.md` (contracts-ci, session, tester link); UI touch-target item links `frontend/accessibility.md`.
+- Deduplicated rule ownership: `AGENTS.md` drops the "Core rules short form" and DoD restatements; roles link to canonical criteria instead of mirroring them; the test-integrity rule is canonical in `core/workflow.md` (other files link); the archive policy is canonical in `core/docs-system.md`; lessons promotion clarified in `lessons/README.md`.
+- Rule hygiene pass: sharpened vague instructions (clean-code naming, architect tradeoffs, review intent, workflow wrong-assumption wording, debounce value) and deleted a redundant clean-code bullet; the commit-scope rule is canonical in `core/git.md`; added "Rule lifecycle (evaluation)" to `core/context-budget.md` and a rule-ownership map to `MANIFEST.md`.
+- Stack/checklist dedup: `checklists/launch.md` operator track now links the compliance gate instead of restating legal rules; the unavailable-checks rule is canonical in `core/workflow.md` (contracts-ci, session, tester link); the UI touch-target item links `frontend/accessibility.md`.
+- Post-refactor audit fixes: DoD ownership corrected to `core/quality.md`; z-index wording made token-based; acceptance criteria added for deep links, in-memory rate-limit backstop, and release-note honesty; README/MANIFEST consistency.
 
 ### Removed
 

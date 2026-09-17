@@ -37,7 +37,7 @@ If a change triggers nothing: record it explicitly — `YYYY-MM-DD: checked <tri
 ## Text sources
 
 - Legal texts live as structured data/code (e.g. `lib/legal/*`), rendered by pages — not copy-pasted HTML.
-- Tests SHOULD enforce: no forbidden old norms, no retired processors, all public paths reachable, operator fields present.
+- Tests MUST enforce: no forbidden old norms, no retired processors, all public paths reachable, operator fields present.
 - NEVER invent operator data; missing data is a blocker, not a placeholder.
 
 ## Decision log

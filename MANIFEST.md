@@ -48,7 +48,7 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | Path | Purpose | Read when |
 | --- | --- | --- |
 | [core/workflow.md](core/workflow.md) | Session loop, CI gates, multi-agent, closeout order | Every session |
-| [core/context-budget.md](core/context-budget.md) | Progressive disclosure, file size budgets, archive policy | Every session |
+| [core/context-budget.md](core/context-budget.md) | Progressive disclosure, file budgets, rule lifecycle | Every session |
 | [core/git.md](core/git.md) | Branches, commits, PRs, worktrees, hooks | Git operations |
 | [core/clean-code.md](core/clean-code.md) | Naming, sizes, errors, dependencies, YAGNI | Writing any code |
 | [core/quality.md](core/quality.md) | Definition of Done, review criteria, coverage, debt register | Review, before done |

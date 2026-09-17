@@ -53,4 +53,4 @@ Load for: native audio/plugin/desktop repos. Realtime rules: [../skills/c-realti
 
 - Installer (Inno Setup or equivalent) includes exact commit + SHA-256 (`BUILD.json`).
 - Signing keys/license issuers NEVER shipped in packages.
-- Release notes state signing/notarization status honestly.
+- Release notes state the signing/notarization result per platform (signed/notarized/neither).

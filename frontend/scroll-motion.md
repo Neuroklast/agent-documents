@@ -22,9 +22,9 @@ Load for: scroll behavior, overlays, carousels, video scrubbing, z-index.
 
 ## Z-index / overlay contract
 
-- ONE z-index token system; NEVER raw z-index numbers in feature code.
+- ONE z-index token system; feature code uses tokens, NEVER raw numbers.
 - Layers (typical): base < content < sticky < overlay < system < top.
-- Modal shell below portaled pickers: dialog `z-[9998]/[9999]`, portaled pickers `z-[10000]` — after ANY z-index change, audit all portaled overlays (date pickers, selects, tooltips).
+- Token values live in the theme only (e.g. dialog 9998/9999, portaled pickers 10000) — after ANY z-index change, audit all portaled overlays (date pickers, selects, tooltips).
 - Negative z-index requires `isolation: isolate` on the section.
 - Fixed-position overlays portal to `body` — `transform`/`filter`/`backdrop-filter` ancestors create containing blocks that break them.
 - One overlay at a time; overlay state lives in a session key, not a whole object.

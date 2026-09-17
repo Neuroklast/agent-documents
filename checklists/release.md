@@ -23,7 +23,7 @@
 
 - User-visible changes first; breaking changes flagged at top.
 - Security fixes without exploit details.
-- Known issues stated honestly.
+- Known issues listed with impact and workaround; no unlisted known breakage.
 - Migration/action required for operators (env vars, DB steps) listed explicitly.
 
 ## Database / infrastructure
