@@ -1,0 +1,9 @@
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archives / snapshots (content lives in this repo as markdown)
+*.zip
+*.7z
+*.rar
