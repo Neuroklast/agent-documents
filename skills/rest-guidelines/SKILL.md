@@ -5,7 +5,7 @@ description: REST API design rules (Zalando-style subset) for any endpoint. Use 
 
 # Skill — REST Guidelines
 
-Self-contained subset of the Zalando RESTful API Guidelines. Authoritative for this collection.
+Self-contained subset of the Zalando RESTful API Guidelines. Canonical for the REST wire format (paths, JSON, methods, status codes, errors, pagination, versioning). The API topic owner (auth, validation, endpoint DoD) is [../../backend/api.md](../../backend/api.md).
 
 ## Resource naming
 

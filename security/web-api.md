@@ -62,11 +62,4 @@ Load for: web/API security work, reviews, new endpoints, uploads.
 
 ## Review checklist
 
-- [ ] Inputs validated at the boundary.
-- [ ] AuthZ server-side on every mutation/foreign-ID read.
-- [ ] Outputs escaped/sanitized.
-- [ ] URLs/redirects validated by parsing.
-- [ ] Uploads authenticated + magic-byte checked.
-- [ ] Rate limits on abuse-prone endpoints.
-- [ ] No secrets/PII in logs or responses.
-- [ ] New origins in CSP.
+The security review checklist is canonical in [../skills/security-owasp/SKILL.md](../skills/security-owasp/SKILL.md). This file remains the reference for the web/API specifics above (injection, CSRF, SSRF, CORS, CSP, uploads, rate limiting, logging, embeds).

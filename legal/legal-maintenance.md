@@ -43,7 +43,7 @@ If a change triggers nothing: record it explicitly — `YYYY-MM-DD: checked <tri
 ## Decision log
 
 - Append dated one-liners for every legal check, including "unchanged" decisions.
-- Keep the log next to the legal sources or in the project's docs.
+- In this collection the log is [../DECISIONS.md](../DECISIONS.md); in a target project keep it next to the legal sources.
 
 ## NEVER
 

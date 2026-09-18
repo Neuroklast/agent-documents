@@ -37,7 +37,7 @@ Load for: every session end, when behavior or conventions change.
 ## Decision log
 
 - When a legal/compliance/architecture check happened but nothing changed, record a dated one-liner: `YYYY-MM-DD: checked <trigger>, unchanged because <reason>`.
-- The log lives next to the affected docs (e.g. in the legal maintenance file or the ADR list).
+- For this collection the log is [../DECISIONS.md](../DECISIONS.md); in a target project keep it next to the affected docs (e.g. legal maintenance file or the ADR list).
 
 ## Archive policy
 

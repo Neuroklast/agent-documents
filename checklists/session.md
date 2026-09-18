@@ -20,12 +20,7 @@ Definition of Done: [../core/quality.md](../core/quality.md).
 
 ## 3. Docs
 
-- [ ] Matching topic/feature docs updated.
-- [ ] `CHANGELOG` entry under `[Unreleased]` (behavior/API/security changes).
-- [ ] QA checklist updated for new/changed testable flows.
-- [ ] Lessons appended if an incident/pitfall occurred.
-- [ ] Legal trigger table walked (if processing/PII/tools changed) ([../legal/legal-maintenance.md](../legal/legal-maintenance.md)).
-- [ ] Or explicit: `Docs: unchanged because <reason>`.
+Walk the maintenance matrix in [../core/docs-system.md](../core/docs-system.md) and the legal trigger table ([../legal/legal-maintenance.md](../legal/legal-maintenance.md)); update each affected doc or record `Docs: unchanged because <reason>`.
 
 ## 4. Git
 

@@ -2,39 +2,9 @@
 
 Load for: any API endpoint or spec. Mandatory skill: [../skills/rest-guidelines/SKILL.md](../skills/rest-guidelines/SKILL.md).
 
-## Resource design
+## REST wire format
 
-- Paths: kebab-case, plural nouns, no verbs: `/api/v1/invoice-line-items`.
-- IDs are opaque strings (UUIDs), never sequential integers in public APIs.
-- snake_case JSON properties; plural names for arrays; `_at` for timestamps, `_date` for dates.
-- NEVER trailing slashes. NEVER RPC-style verbs (`/getUser`) unless the action is genuinely a process (`/imports`).
-- Additive-only changes within a version; breaking changes → new version.
-
-## Methods & status codes
-
-| Method | Semantics |
-| --- | --- |
-| GET | Safe, idempotent, cacheable where appropriate |
-| POST | Create; idempotency key for retryable creates |
-| PUT | Full replace |
-| PATCH | Partial merge |
-| DELETE | Idempotent removal |
-
-- 200 OK, 201 Created + `Location`, 202 Accepted (async), 204 No Content.
-- 400 validation, 401 unauthenticated, 403 unauthorized, 404 missing, 409 conflict, 422 semantic rejection, 429 rate limited (with retry info), 500 server error.
-- NEVER 200 with an error body.
-
-## Errors
-
-- `application/problem+json`: `type`, `title`, `status`, `detail`, `instance`.
-- NEVER stack traces, SQL, or internal identifiers in responses.
-- Validation errors: field-level detail, stable machine-readable codes.
-
-## Pagination & filtering
-
-- Cursor pagination default; opaque `next_cursor`; default page size ~50, max ~200.
-- Offset pagination only where the repo already does it.
-- Filters as query params (snake_case); never unbounded result sets.
+Paths, JSON shape, methods, status codes, problem+json errors, pagination, and versioning are canonical in [../skills/rest-guidelines/SKILL.md](../skills/rest-guidelines/SKILL.md). Do not restate or fork them here.
 
 ## Auth & limits
 

@@ -16,6 +16,7 @@ MANIFEST.md is a maintainer index and is not part of the session read chain.
 - NEVER read whole docs trees "to be safe". That burns context and hides the relevant rule.
 - When a task spans areas, read at most 2–3 topic files plus the files those topics or the invoked skill name directly.
 - Load skills only when their description matches the task.
+- Subfolders get a `README.md` only when they hold a non-rule index (e.g. `lessons/`, `roles/`, `skills/`). Pure topic folders rely on `AGENTS.md` routing + `MANIFEST.md`.
 
 ## File size budgets
 

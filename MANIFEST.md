@@ -11,12 +11,14 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | [README.md](README.md) | Human onboarding, adoption, customization, limits | Adopting the collection |
 | [MANIFEST.md](MANIFEST.md) | This index | Adding, renaming, auditing files |
 | [CHANGELOG.md](CHANGELOG.md) | Release history of the collection | Updating the collection |
+| [DECISIONS.md](DECISIONS.md) | Decision log (rule/structure decisions, "unchanged" checks) | Rule lifecycle, audits |
+| [SECURITY.md](SECURITY.md) | Vulnerability reporting + scope for this collection | Reporting a security issue |
 | [CLAUDE.md](CLAUDE.md) | Pointer `@AGENTS.md` for Claude Code | Tool reads it automatically |
 | [GEMINI.md](GEMINI.md) | Pointer `@AGENTS.md` for Gemini CLI | Tool reads it automatically |
 | [.github/copilot-instructions.md](.github/copilot-instructions.md) | Pointer for GitHub Copilot | Tool reads it automatically |
 | [opencode.json](opencode.json) | Tool permissions (allow/deny/ask), subagent roles | OpenCode setup |
 
-## tooling
+## Tooling
 
 | Path | Purpose | Read when |
 | --- | --- | --- |
@@ -24,6 +26,7 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | [scripts/install-skills.mjs](scripts/install-skills.mjs) | Copies `skills/` into `.agents/skills/` and `.claude/skills/` | Adopting skills into a project |
 | [examples/hooks/README.md](examples/hooks/README.md) | Deterministic gate hook examples (Claude Code) | Setting up enforcement |
 | [.github/workflows/docs-check.yml](.github/workflows/docs-check.yml) | CI job running the docs check on push/PR | CI changes |
+| [.github/PULL_REQUEST_TEMPLATE.md](.github/PULL_REQUEST_TEMPLATE.md) | PR description + checklist | Opening a PR |
 
 ## Rule ownership — canonical file per topic
 
@@ -39,9 +42,11 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | Consent, Impressum, BFSG | `legal/compliance-de.md` |
 | Overlays, scroll ownership | `frontend/scroll-motion.md` |
 | Accessibility baseline | `frontend/accessibility.md` |
-| API contracts | `backend/api.md` (+ `skills/rest-guidelines/`) |
+| API topic (auth, validation, endpoint DoD) | `backend/api.md` |
+| REST wire format (paths, JSON, methods, status, errors, pagination) | `skills/rest-guidelines/SKILL.md` |
 | Release ritual | `checklists/release.md` |
 | Rule lifecycle (add/delete) | `core/context-budget.md` |
+| Decision log | `DECISIONS.md` |
 
 ## core/ — process & engineering
 
@@ -138,6 +143,7 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 
 | Path | Purpose | Read when |
 | --- | --- | --- |
+| [skills/README.md](skills/README.md) | Skill index | Choosing a skill |
 | [skills/plan-first/SKILL.md](skills/plan-first/SKILL.md) | Plan before code | Any non-trivial task |
 | [skills/tdd-extraction/SKILL.md](skills/tdd-extraction/SKILL.md) | Derive failing test first | Bugs, features |
 | [skills/rest-guidelines/SKILL.md](skills/rest-guidelines/SKILL.md) | REST subset, OpenAPI duty | API design |

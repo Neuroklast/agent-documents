@@ -3,6 +3,25 @@
 All notable changes to this collection are documented here.
 Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 
+## [Unreleased]
+
+### Added
+
+- `SECURITY.md` (root) — vulnerability reporting + pointer to `security/`.
+- `DECISIONS.md` (root) — canonical decision log (referenced by `core/docs-system.md`, `legal/legal-maintenance.md`).
+- `.github/PULL_REQUEST_TEMPLATE.md` — mirrors `checklists/pr.md`.
+- `skills/README.md` — skill index.
+- Subfolder-README rule in `core/context-budget.md`.
+
+### Changed
+
+- REST ownership resolved: `skills/rest-guidelines/SKILL.md` owns the wire format; `backend/api.md` owns the API topic. Duplicated tables removed from `backend/api.md`.
+- Deduplicated rule copies: security review checklist (`security/web-api.md` → skill), video scrubbing (`frontend/scroll-motion.md` → skill), session docs (`checklists/session.md` → `core/docs-system.md`), escalation gates (`core/workflow.md` → AGENTS/security).
+- Lessons date format documented as `YYYY-MM` (matches existing rows).
+- `README.md`: reuse/license note added; copy/submodule guidance softened; budget wording clarified.
+- `AGENTS.md` routing now reaches `templates/PRD.md`.
+- `MANIFEST.md` heading `tooling` → `Tooling`; ownership map split for API topic vs REST wire format.
+
 ## [1.0.0] - 2026-09-17
 
 ### Added

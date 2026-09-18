@@ -11,6 +11,8 @@ Canonical repository: https://github.com/Neuroklast/agent-documents
 git clone https://github.com/Neuroklast/agent-documents.git
 ```
 
+Reading/evaluating is unrestricted; copying or submoduling into another project requires permission — see [License / reuse](#license--reuse). Once permitted:
+
 Use in a target project (copy):
 
 ```powershell
@@ -40,7 +42,7 @@ Then point the target repo's root `AGENTS.md` at `docs/agent-docs/AGENTS.md` and
 4. Delete unused stack adapters and skills — the router must only point at files that exist.
 5. Optionally copy `opencode.json` and adjust permissions; copy `CLAUDE.md` / `GEMINI.md` / `.github/copilot-instructions.md` for tool compatibility.
 6. Add a short **Project facts** block to `AGENTS.md`: stack, package manager, check commands, deploy target. Never invent these — read the manifests.
-7. Install skills where your tools discover them: `node scripts/install-skills.mjs <target-repo>` (copies into `.agents/skills/` and `.claude/skills/`). opencode and Codex read `.agents/skills/`; Claude Code reads `.claude/skills/`.
+7. Install skills where your tools discover them: `node scripts/install-skills.mjs <target-repo>` (copies into `.agents/skills/` and `.claude/skills/`). opencode reads `.agents/skills/`; Claude Code reads `.claude/skills/` — verify the path for other tools.
 8. Optional: copy `examples/hooks/` and wire them into `.claude/settings.json` for deterministic gates.
 
 ## Monorepos
@@ -56,8 +58,8 @@ commands, package layout, and what differs from the root.
 AGENTS.md            Router: hard rules, routing table
 README.md            This file
 MANIFEST.md          Maintainer index (not read at session start)
-CHANGELOG.md         Release history of the collection
-CLAUDE.md / GEMINI.md / .github/copilot-instructions.md   Pointers
+CHANGELOG.md / DECISIONS.md / SECURITY.md   History, decision log, security policy
+CLAUDE.md / GEMINI.md / .github/*   Tool pointers + PR template
 opencode.json        Tool permissions (OpenCode)
 core/                Workflow, context budget, git, clean code, quality, architecture, regression, docs
 frontend/            UI, UX, design, components, accessibility, scroll/motion, performance
@@ -68,7 +70,7 @@ testing/             Strategy, unit, e2e, contracts/CI
 checklists/          Session, PR, release, launch
 lessons/             Distilled hard-won lessons by area
 roles/               Subagent role contracts (architect, reviewer, tester, …)
-skills/              Task-specific skills (SKILL.md per folder, Agent Skills spec)
+skills/              Task-specific skills (SKILL.md per folder; index in skills/README.md)
 templates/           PRD, ADR, feature spec, deviation record
 stack/               Next.js, Supabase, R2, TypeScript, C++/JUCE
 scripts/             check-docs.mjs, install-skills.mjs
@@ -78,7 +80,7 @@ examples/hooks/      Deterministic gate hook examples
 ## Principles
 
 - **MUST / NEVER / ALWAYS** phrasing. Bullets, not prose.
-- Every topic file ≤ 150 lines, every skill ≤ 100 lines. If a topic grows, split by concern and register it in `MANIFEST.md`.
+- Every markdown file except `AGENTS.md`/`MANIFEST.md` ≤ 150 lines; every skill ≤ 100 lines. If a topic grows, split by concern and register it in `MANIFEST.md`.
 - `MANIFEST.md` is a maintainer index; sessions read the `AGENTS.md` routing table only.
 - Facts over templates: no invented operator data, no invented APIs, no invented version numbers.
 - Structural gates (CI scripts, contract tests, hooks) beat prose bans. Markdown is the contract; enforcement lives in tooling.
@@ -89,7 +91,7 @@ examples/hooks/      Deterministic gate hook examples
 node scripts/check-docs.mjs
 ```
 
-Checks line budgets (AGENTS.md ≤ 120, MANIFEST ≤ 200, topic ≤ 150, skill ≤ 100), skill frontmatter
+Checks line budgets (AGENTS.md ≤ 120, MANIFEST ≤ 200, every other markdown file ≤ 150, skill ≤ 100), skill frontmatter
 (name/description per the Agent Skills spec), relative links, MANIFEST coverage,
 and prints a token estimate per file. CI runs it on every push and PR
 ([.github/workflows/docs-check.yml](.github/workflows/docs-check.yml)).
@@ -141,3 +143,7 @@ Git             protected main, required checks, no force-push
 - Update the matching topic file whenever a convention changes; new topic → new file + `MANIFEST.md` entry.
 - Keep `AGENTS.md` ≤ 120 lines. It is a router, not documentation.
 - Archive superseded docs with a banner instead of deleting history ([core/docs-system.md](core/docs-system.md)).
+
+## License / reuse
+
+No license is granted — all rights reserved. Copying, submoduling, or redistributing into another project requires permission from the maintainer; open an issue to ask.

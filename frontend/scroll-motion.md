@@ -46,10 +46,7 @@ Load for: scroll behavior, overlays, carousels, video scrubbing, z-index.
 
 ## Video scrubbing
 
-- NEVER drive `HTMLVideoElement.currentTime` in a scroll handler on the main thread as the default — it stalls mobile.
-- Preferred: pre-rendered frame sequence on canvas, or WebCodecs + canvas with a scroll timeline.
-- ALWAYS reduced-motion fallback: static poster/first frame.
-- See [../skills/video-scrubbing/SKILL.md](../skills/video-scrubbing/SKILL.md) before implementing.
+Scroll-bound video is implemented per [../skills/video-scrubbing/SKILL.md](../skills/video-scrubbing/SKILL.md) (frame-sequence/WebCodecs canvas, reduced-motion poster, mobile memory budget). Do not drive `HTMLVideoElement.currentTime` from a scroll handler by default.
 
 ## Multi-column builders
 
