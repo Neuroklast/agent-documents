@@ -45,8 +45,8 @@ Load for: every session.
 
 ## Escalation — stop and ask the human
 
-- Production deploy, destructive DB migration, data backfill.
-- `rm -rf`, force-push, history rewrite, secret rotation.
+Approval gates for deploys, destructive migrations, data backfills, `rm -rf`, history rewrite, force-push, and secret rotation are canonical in [AGENTS.md](../AGENTS.md) §Hard rules and [../security/security.md](../security/security.md) §Least privilege. Additionally stop and ask for:
+
 - Deviation from a safety rule (e.g. realtime/MISRA, see [../skills/c-realtime/SKILL.md](../skills/c-realtime/SKILL.md)).
 - Legal text wording, operator data, pricing/contract terms.
 

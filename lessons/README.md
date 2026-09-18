@@ -18,7 +18,7 @@ Append-only table rows:
 
 | Date | Area | Lesson | Severity |
 | --- | --- | --- | --- |
-| YYYY-MM-DD | short area | one actionable sentence (what to do, not what happened) | low/med/high |
+| YYYY-MM | short area | one actionable sentence (what to do, not what happened) | low/med/high |
 
 Rules:
 
