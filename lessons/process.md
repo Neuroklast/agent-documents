@@ -5,6 +5,7 @@ Load for: workflow, docs, CI, release, regression issues. Consolidated, anonymiz
 | Date | Area | Lesson | Severity |
 | --- | --- | --- | --- |
 | 2026-09 | Scope | Mixing bundle-fix + feature + refactor in one PR caused a chain of regressions — enforce one purpose per PR and a regression playbook. | high |
+| 2026-09 | Scope | Agents over-build (single-use factories, unrequested deps, future-proofing). Checkable YAGNI beats "keep it simple"; never strip validation/auth to cut lines. | high |
 | 2026-09 | Scope | A "fix" that changes UX defaults (view, order, navigation) is a feature — needs explicit request + tests. | med |
 | 2026-09 | Docs | Docs are part of the deliverable every session; "code only" tasks are not exempt. | med |
 | 2026-09 | Docs | Structural CI gates (`check:*`/`verify:*`) beat prose bans — encode rules as scripts. | high |

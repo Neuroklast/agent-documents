@@ -39,8 +39,10 @@ Load for: writing or reviewing any code.
 
 ## Dependencies & abstraction
 
-- YAGNI: no abstraction without a second concrete use case.
+- YAGNI: no abstraction without a second concrete use case. Filter: [../skills/anti-overengineering/SKILL.md](../skills/anti-overengineering/SKILL.md).
 - Rule of three before extracting a shared helper.
+- NEVER speculative features, single-use factories/registries/strategies, or config for one known value.
+- NEVER strip validation, auth, or security checks to "simplify".
 - Dependency direction: UI → domain → data. NEVER reverse, no cycles.
 - NEVER introduce a library the task does not require. Check the repo for an existing solution first.
 - Wrap third-party primitives; never edit vendor files directly (see [../frontend/components.md](../frontend/components.md)).

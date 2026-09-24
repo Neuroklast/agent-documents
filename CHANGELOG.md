@@ -7,6 +7,8 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
 
 ### Added
 
+- `skills/anti-overengineering/SKILL.md` — YAGNI/reuse/KISS/abstraction filter; routed from new-feature and refactor/bugfix.
+- Session token hygiene in `core/context-budget.md`.
 - `SECURITY.md` (root) — vulnerability reporting + pointer to `security/`.
 - `DECISIONS.md` (root) — canonical decision log (referenced by `core/docs-system.md`, `legal/legal-maintenance.md`).
 - `.github/PULL_REQUEST_TEMPLATE.md` — mirrors `checklists/pr.md`.
@@ -15,6 +17,8 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
 
 ### Changed
 
+- `AGENTS.md` hard rule: no speculative features, single-use abstractions, or unrequested deps; keep validation/auth/security.
+- `core/clean-code.md`, `core/quality.md`, `core/workflow.md`: anti-overengineering anchors (scope down, never strip safety).
 - REST ownership resolved: `skills/rest-guidelines/SKILL.md` owns the wire format; `backend/api.md` owns the API topic. Duplicated tables removed from `backend/api.md`.
 - Deduplicated rule copies: security review checklist (`security/web-api.md` → skill), video scrubbing (`frontend/scroll-motion.md` → skill), session docs (`checklists/session.md` → `core/docs-system.md`), escalation gates (`core/workflow.md` → AGENTS/security).
 - Lessons date format documented as `YYYY-MM` (matches existing rows).

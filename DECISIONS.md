@@ -5,6 +5,11 @@ Dated one-liners for rule and structure decisions of this collection, including
 
 Format: `YYYY-MM-DD: <decision or check> — <reason>`.
 
+## 2026-09-24
+
+- Anti-overengineering is a skill (load on implement/review), not an always-on encyclopedia. Always-on stays one hard-rule bullet + session token hygiene in `core/context-budget.md`. Reason: checkable YAGNI beats "keep it simple"; extra always-on tokens cause context rot (Anthropic, Chroma; SkillReducer arXiv 2603.29919).
+- Minimize scope, never correctness: never strip validation/auth/security to cut lines. Reason: one-liner-only prompts dropped path/auth guards in community benchmarks.
+
 ## 2026-09-18
 
 - REST wire format is canonical in `skills/rest-guidelines/SKILL.md`; `backend/api.md` owns the API topic (auth, validation, endpoint DoD). Reason: remove dual ownership flagged in the audit.

@@ -99,9 +99,9 @@ and prints a token estimate per file. CI runs it on every push and PR
 ## Why these rules (evidence)
 
 - Context files help with non-obvious, project-specific rules; repository overviews and generic advice add cost without improving task success (Gloaguen et al., ETH Zürich, arXiv 2602.11988).
-- A concise AGENTS.md correlates with ~29 % lower runtime and ~17 % fewer output tokens (Lulla et al., arXiv 2601.20404).
-- Model performance degrades non-uniformly as context grows ("context rot"), so files stay small and load on demand (Chroma, 2025).
-- Agents fail on implementation discipline, not missing repository knowledge — hence skills and checklists instead of more rules (Khatri, arXiv 2607.27250).
+- A concise AGENTS.md correlates with ~29 % lower runtime and ~17 % fewer output tokens; recency+summary of tool results beats full history (Lulla et al., arXiv 2601.20404; arXiv 2606.10209).
+- Model performance degrades non-uniformly as context grows ("context rot"); keep the smallest high-signal set (Chroma, 2025; Anthropic, 2025).
+- Agents fail on implementation discipline, not missing repository knowledge — hence skills, checklists, and checkable YAGNI instead of more rules (Khatri, arXiv 2607.27250).
 - Skill frontmatter and three-level progressive disclosure follow the Agent Skills spec (agentskills.io).
 
 ## Anti-patterns we avoid

@@ -13,7 +13,7 @@ This file is a **router**, not an encyclopedia. Read only the files the current 
 ## Hard rules (always apply)
 
 - ALWAYS read the project's manifests before install/test/build: `package.json`, lockfiles, `Cargo.toml`, `go.mod`, `pyproject.toml`, `CMakeLists.txt`.
-- ALWAYS the smallest change that fully solves the task. NEVER drive-by refactors, reformatting, or unrequested UX changes.
+- ALWAYS the smallest change that fully solves the task. NEVER drive-by refactors, reformatting, unrequested UX, speculative features, single-use abstractions, or unrequested deps/config. Keep validation, auth, and security checks.
 - NEVER invent a package manager. Use the lockfile present in the repo.
 - NEVER commit, log, or expose secrets (`.env*`, keys, tokens, connection strings, frontend bundles).
 - NEVER `as any`, `@ts-ignore`, or blanket `eslint-disable` to silence errors.
@@ -27,9 +27,9 @@ This file is a **router**, not an encyclopedia. Read only the files the current 
 | Task | Files |
 | --- | --- |
 | Any session | [core/workflow.md](core/workflow.md), [core/context-budget.md](core/context-budget.md) |
-| New feature / route | [core/architecture.md](core/architecture.md), [templates/feature-spec.md](templates/feature-spec.md), [testing/strategy.md](testing/strategy.md) |
+| New feature / route | [core/architecture.md](core/architecture.md), [templates/feature-spec.md](templates/feature-spec.md), [testing/strategy.md](testing/strategy.md), [skills/anti-overengineering/SKILL.md](skills/anti-overengineering/SKILL.md) |
 | Product definition / PRD | [templates/PRD.md](templates/PRD.md) |
-| Refactor / bugfix | [core/regression.md](core/regression.md), [core/clean-code.md](core/clean-code.md) |
+| Refactor / bugfix | [core/regression.md](core/regression.md), [core/clean-code.md](core/clean-code.md), [skills/anti-overengineering/SKILL.md](skills/anti-overengineering/SKILL.md) |
 | UI implementation | [skills/frontend-ui/SKILL.md](skills/frontend-ui/SKILL.md), [frontend/ui.md](frontend/ui.md), [frontend/ux.md](frontend/ux.md), [frontend/components.md](frontend/components.md) |
 | Design tokens / themes | [frontend/design.md](frontend/design.md) |
 | Accessibility | [frontend/accessibility.md](frontend/accessibility.md) |

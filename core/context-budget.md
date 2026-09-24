@@ -60,6 +60,18 @@ Budgets are enforced by [../scripts/check-docs.mjs](../scripts/check-docs.mjs) (
 
 - See [docs-system.md](docs-system.md) — archive policy lives there, once.
 
+## Session token hygiene
+
+Find the smallest high-signal set. Extra tokens dilute attention (context rot).
+
+- ALWAYS grep/glob before a full-file read. NEVER dump a tree or log "to be safe".
+- Delegate exploration to a subagent; keep only the summary in the main session.
+- Filter large command output (`head`, `grep`). Drop stale tool results.
+- Load a skill only when its description matches. NEVER load extra topic files.
+- Scope the task (files, done-check) before coding. Vague asks cause extra reads.
+- Reply with the solution first. No preamble, no narration of which check fired.
+- NEVER compress rule text to save tokens — that raises reasoning cost ([../README.md](../README.md) §Why these rules).
+
 ## Anti-patterns
 
 - Copy-pasting rules between files → drift. Link instead.

@@ -46,6 +46,8 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | REST wire format (paths, JSON, methods, status, errors, pagination) | `skills/rest-guidelines/SKILL.md` |
 | Release ritual | `checklists/release.md` |
 | Rule lifecycle (add/delete) | `core/context-budget.md` |
+| Session token hygiene | `core/context-budget.md` |
+| Overengineering / YAGNI filter | `skills/anti-overengineering/SKILL.md` |
 | Decision log | `DECISIONS.md` |
 
 ## core/ — process & engineering
@@ -53,7 +55,7 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | Path | Purpose | Read when |
 | --- | --- | --- |
 | [core/workflow.md](core/workflow.md) | Session loop, CI gates, multi-agent, closeout order | Every session |
-| [core/context-budget.md](core/context-budget.md) | Progressive disclosure, file budgets, rule lifecycle | Every session |
+| [core/context-budget.md](core/context-budget.md) | Progressive disclosure, file budgets, rule lifecycle, session token hygiene | Every session |
 | [core/git.md](core/git.md) | Branches, commits, PRs, worktrees, hooks | Git operations |
 | [core/clean-code.md](core/clean-code.md) | Naming, sizes, errors, dependencies, YAGNI | Writing any code |
 | [core/quality.md](core/quality.md) | Definition of Done, review criteria, coverage, debt register | Review, before done |
@@ -145,6 +147,7 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | --- | --- | --- |
 | [skills/README.md](skills/README.md) | Skill index | Choosing a skill |
 | [skills/plan-first/SKILL.md](skills/plan-first/SKILL.md) | Plan before code | Any non-trivial task |
+| [skills/anti-overengineering/SKILL.md](skills/anti-overengineering/SKILL.md) | YAGNI/KISS/reuse filter | Implement, refactor, review |
 | [skills/tdd-extraction/SKILL.md](skills/tdd-extraction/SKILL.md) | Derive failing test first | Bugs, features |
 | [skills/rest-guidelines/SKILL.md](skills/rest-guidelines/SKILL.md) | REST subset, OpenAPI duty | API design |
 | [skills/frontend-ui/SKILL.md](skills/frontend-ui/SKILL.md) | UI implementation workflow | UI features |

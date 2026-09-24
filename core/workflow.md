@@ -5,7 +5,7 @@ Load for: every session.
 ## Session loop
 
 1. **PLAN** — restate the task; name files, acceptance criteria, risks. For multi-file work, plan before coding (see [../skills/plan-first/SKILL.md](../skills/plan-first/SKILL.md)).
-2. **IMPLEMENT** — smallest change that fully solves the task. One purpose per commit ([git.md](git.md)).
+2. **IMPLEMENT** — smallest change that fully solves the task ([../skills/anti-overengineering/SKILL.md](../skills/anti-overengineering/SKILL.md)). One purpose per commit ([git.md](git.md)).
 3. **TEST** — run the project's check pipeline; add/adjust tests with the change.
 4. **VALIDATE** — re-read the diff against the acceptance criteria; check blast radius ([regression.md](regression.md)).
 5. **DOCUMENT** — update docs or state explicitly "unchanged because …" ([docs-system.md](docs-system.md)).

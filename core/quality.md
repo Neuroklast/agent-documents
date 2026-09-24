@@ -6,7 +6,7 @@ Load for: reviews, Definition of Done, coverage decisions, debt tracking.
 
 - [ ] Checks green: lint, types, tests, build (project scripts).
 - [ ] Change matches the acceptance criteria / issue.
-- [ ] Minimal diff; no unrequested refactors or reformatting.
+- [ ] Minimal diff; no unrequested scope. Keep validation, auth, and security checks.
 - [ ] No secrets, no debug logs, no dead code.
 - [ ] Tests added/updated for new or changed behavior.
 - [ ] Docs updated or explicit "unchanged because …" ([docs-system.md](docs-system.md)).
