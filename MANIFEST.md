@@ -27,6 +27,11 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | [examples/hooks/README.md](examples/hooks/README.md) | Deterministic gate hook examples (Claude Code) | Setting up enforcement |
 | [.github/workflows/docs-check.yml](.github/workflows/docs-check.yml) | CI job running the docs check on push/PR | CI changes |
 | [.github/PULL_REQUEST_TEMPLATE.md](.github/PULL_REQUEST_TEMPLATE.md) | PR description + checklist | Opening a PR |
+| [.github/ISSUE_TEMPLATE/config.yml](.github/ISSUE_TEMPLATE/config.yml) | Issue chooser + security contact link | Opening issues |
+| [.github/ISSUE_TEMPLATE/bug.md](.github/ISSUE_TEMPLATE/bug.md) | Bug report template | Opening a bug |
+| [.github/ISSUE_TEMPLATE/feature.md](.github/ISSUE_TEMPLATE/feature.md) | Feature request template | Opening a feature |
+| [.github/ISSUE_TEMPLATE/task.md](.github/ISSUE_TEMPLATE/task.md) | Task/chore template | Opening a task |
+| [.github/ISSUE_TEMPLATE/docs.md](.github/ISSUE_TEMPLATE/docs.md) | Docs-change template | Opening a docs issue |
 
 ## Rule ownership — canonical file per topic
 
@@ -146,6 +151,7 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | Path | Purpose | Read when |
 | --- | --- | --- |
 | [skills/README.md](skills/README.md) | Skill index | Choosing a skill |
+| [skills/adopt-into-project/SKILL.md](skills/adopt-into-project/SKILL.md) | Interview + prune + optional GitHub templates | Adopting into a project |
 | [skills/plan-first/SKILL.md](skills/plan-first/SKILL.md) | Plan before code | Any non-trivial task |
 | [skills/anti-overengineering/SKILL.md](skills/anti-overengineering/SKILL.md) | YAGNI/KISS/reuse filter | Implement, refactor, review |
 | [skills/tdd-extraction/SKILL.md](skills/tdd-extraction/SKILL.md) | Derive failing test first | Bugs, features |

@@ -7,6 +7,8 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
 
 ### Added
 
+- `.github/ISSUE_TEMPLATE/` — optional bug, feature, task, and docs templates plus `config.yml` (security stays private).
+- `skills/adopt-into-project/SKILL.md` — interview, prune unused adapters, copy optional GitHub templates when adopting the collection.
 - `skills/anti-overengineering/SKILL.md` — YAGNI/reuse/KISS/abstraction filter; routed from new-feature and refactor/bugfix.
 - Session token hygiene in `core/context-budget.md`.
 - `SECURITY.md` (root) — vulnerability reporting + pointer to `security/`.
@@ -17,6 +19,8 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
 
 ### Changed
 
+- `AGENTS.md` routes adopt-into-project; session start loads the skill with README when adopting.
+- `core/git.md` documents optional GitHub issue templates; `README.md` points adopt at the skill.
 - `AGENTS.md` hard rule: no speculative features, single-use abstractions, or unrequested deps; keep validation/auth/security.
 - `core/clean-code.md`, `core/quality.md`, `core/workflow.md`: anti-overengineering anchors (scope down, never strip safety).
 - REST ownership resolved: `skills/rest-guidelines/SKILL.md` owns the wire format; `backend/api.md` owns the API topic. Duplicated tables removed from `backend/api.md`.

@@ -36,14 +36,12 @@ Then point the target repo's root `AGENTS.md` at `docs/agent-docs/AGENTS.md` and
 
 ## How to adopt (into any project)
 
-1. Copy the cloned folder into the target repo (e.g. as `docs/agent-docs/`).
-2. Keep `AGENTS.md` at the repo root (or link to it from an existing root `AGENTS.md`).
-3. In `AGENTS.md`, replace the generic check commands with the project's real scripts (from `package.json` / `Makefile` / CI).
-4. Delete unused stack adapters and skills — the router must only point at files that exist.
-5. Optionally copy `opencode.json` and adjust permissions; copy `CLAUDE.md` / `GEMINI.md` / `.github/copilot-instructions.md` for tool compatibility.
-6. Add a short **Project facts** block to `AGENTS.md`: stack, package manager, check commands, deploy target. Never invent these — read the manifests.
-7. Install skills where your tools discover them: `node scripts/install-skills.mjs <target-repo>` (copies into `.agents/skills/` and `.claude/skills/`). opencode reads `.agents/skills/`; Claude Code reads `.claude/skills/` — verify the path for other tools.
-8. Optional: copy `examples/hooks/` and wire them into `.claude/settings.json` for deterministic gates.
+Prefer [skills/adopt-into-project/SKILL.md](skills/adopt-into-project/SKILL.md): interview, prune unused files, copy optional GitHub templates. Manual:
+1. Copy or submodule into the target (e.g. `docs/agent-docs/`); point root `AGENTS.md` at it.
+2. Fill **Project facts** from manifests (stack, package manager, check commands, deploy). Never invent these.
+3. Delete unused `stack/*` / skills so the router only points at files that exist.
+4. Optional: tool pointers (`opencode.json`, `CLAUDE.md`, `GEMINI.md`, copilot), [issue templates](.github/ISSUE_TEMPLATE/), `examples/hooks/`.
+5. `node scripts/install-skills.mjs <target-repo>` (`.agents/skills/` + `.claude/skills/`).
 
 ## Monorepos
 
@@ -59,7 +57,7 @@ AGENTS.md            Router: hard rules, routing table
 README.md            This file
 MANIFEST.md          Maintainer index (not read at session start)
 CHANGELOG.md / DECISIONS.md / SECURITY.md   History, decision log, security policy
-CLAUDE.md / GEMINI.md / .github/*   Tool pointers + PR template
+CLAUDE.md / GEMINI.md / .github/*   Tool pointers + PR/issue templates
 opencode.json        Tool permissions (OpenCode)
 core/                Workflow, context budget, git, clean code, quality, architecture, regression, docs
 frontend/            UI, UX, design, components, accessibility, scroll/motion, performance
@@ -121,6 +119,7 @@ and prints a token estimate per file. CI runs it on every push and PR
 | `legal/compliance-de.md` | Operator-specific launch gate (only if DE/EU public surface) |
 | `stack/*` | Keep only the adapters your project uses |
 | `lessons/*` | Append project lessons; promote recurring ones into topic files |
+| `.github/ISSUE_TEMPLATE/` | Optional; copy bug/feature/task/docs if the project uses GitHub Issues |
 
 ## What markdown cannot do
 

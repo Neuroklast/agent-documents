@@ -5,6 +5,11 @@ Dated one-liners for rule and structure decisions of this collection, including
 
 Format: `YYYY-MM-DD: <decision or check> — <reason>`.
 
+## 2026-09-25
+
+- GitHub issue templates (bug, feature, task, docs) live in `.github/ISSUE_TEMPLATE/` and are optional on adopt. Security stays a private advisory (`config.yml` contact link), not a public template. Reason: NeuroSub-style issues without plugin-specific fields; public security issues leak.
+- Adoption is a skill (`adopt-into-project`), not a second checklist. Reason: the agent must interview, read manifests, and prune; a README list does not drive that.
+
 ## 2026-09-24
 
 - Anti-overengineering is a skill (load on implement/review), not an always-on encyclopedia. Always-on stays one hard-rule bullet + session token hygiene in `core/context-budget.md`. Reason: checkable YAGNI beats "keep it simple"; extra always-on tokens cause context rot (Anthropic, Chroma; SkillReducer arXiv 2603.29919).

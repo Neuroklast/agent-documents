@@ -6,6 +6,7 @@ skill only when its `description` matches the task
 
 | Skill | Use when |
 | --- | --- |
+| [adopt-into-project](adopt-into-project/SKILL.md) | Adopt this collection into a target repo |
 | [plan-first](plan-first/SKILL.md) | Non-trivial task: plan before coding |
 | [anti-overengineering](anti-overengineering/SKILL.md) | Implement/refactor/review: YAGNI filter, no speculative code |
 | [tdd-extraction](tdd-extraction/SKILL.md) | Bug/feature: derive the failing test first |

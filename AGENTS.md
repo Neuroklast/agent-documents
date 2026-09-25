@@ -7,7 +7,7 @@ This file is a **router**, not an encyclopedia. Read only the files the current 
 
 1. Read this file.
 2. Read exactly the topic file(s) matching the task (routing table below).
-3. Read [README.md](README.md) only when adopting this collection into a project.
+3. Read [README.md](README.md) and [skills/adopt-into-project/SKILL.md](skills/adopt-into-project/SKILL.md) only when adopting this collection into a project.
 4. Read [MANIFEST.md](MANIFEST.md) only when adding, renaming, or auditing files.
 
 ## Hard rules (always apply)
@@ -29,6 +29,7 @@ This file is a **router**, not an encyclopedia. Read only the files the current 
 | Any session | [core/workflow.md](core/workflow.md), [core/context-budget.md](core/context-budget.md) |
 | New feature / route | [core/architecture.md](core/architecture.md), [templates/feature-spec.md](templates/feature-spec.md), [testing/strategy.md](testing/strategy.md), [skills/anti-overengineering/SKILL.md](skills/anti-overengineering/SKILL.md) |
 | Product definition / PRD | [templates/PRD.md](templates/PRD.md) |
+| Adopt into a project | [skills/adopt-into-project/SKILL.md](skills/adopt-into-project/SKILL.md) |
 | Refactor / bugfix | [core/regression.md](core/regression.md), [core/clean-code.md](core/clean-code.md), [skills/anti-overengineering/SKILL.md](skills/anti-overengineering/SKILL.md) |
 | UI implementation | [skills/frontend-ui/SKILL.md](skills/frontend-ui/SKILL.md), [frontend/ui.md](frontend/ui.md), [frontend/ux.md](frontend/ux.md), [frontend/components.md](frontend/components.md) |
 | Design tokens / themes | [frontend/design.md](frontend/design.md) |
