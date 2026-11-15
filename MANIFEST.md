@@ -58,6 +58,7 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | [core/clean-code.md](core/clean-code.md) | Naming, sizes, errors, dependencies, YAGNI | Writing any code |
 | [core/quality.md](core/quality.md) | Definition of Done, review criteria, coverage, debt register | Review, before done |
 | [core/architecture.md](core/architecture.md) | Layers, IoC, CQRS matrix, module boundaries, SSOT | New modules/features |
+| [core/architecture-quality-programme.md](core/architecture-quality-programme.md) | Phased architecture remediation and acceptance evidence | Repo-wide quality programme |
 | [core/regression.md](core/regression.md) | Blast radius, fix≠feature, regression matrix | Bugfixes, refactors |
 | [core/docs-system.md](core/docs-system.md) | Living docs, maintenance matrix, decision log | Every session end |
 
@@ -107,6 +108,7 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | [testing/unit.md](testing/unit.md) | Runner conventions, mocks, coverage | Unit tests |
 | [testing/e2e.md](testing/e2e.md) | Playwright, isolation, fixtures, auth helpers | E2E tests |
 | [testing/contracts-ci.md](testing/contracts-ci.md) | check/verify scripts, CI layout, gates | CI changes |
+| [testing/living-docs-gate.md](testing/living-docs-gate.md) | Changed-path docs enforcement and semantic review | Adding docs quality gates |
 
 ## checklists/
 
@@ -160,6 +162,7 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | [templates/PRD.md](templates/PRD.md) | Product requirements document | New product/feature area |
 | [templates/ADR.md](templates/ADR.md) | Architecture decision record | Architecture decisions |
 | [templates/feature-spec.md](templates/feature-spec.md) | Feature spec with acceptance criteria | Feature kickoff |
+| [templates/quality-journal-entry.md](templates/quality-journal-entry.md) | Dated source-change evidence template | Every implementation PR |
 | [templates/deviation-record.md](templates/deviation-record.md) | Rule deviation with human approval | Safety-critical deviations |
 
 ## stack/ — adapters for concrete technologies

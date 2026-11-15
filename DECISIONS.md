@@ -12,3 +12,7 @@ Format: `YYYY-MM-DD: <decision or check> — <reason>`.
 - Added root `SECURITY.md`, `.github/PULL_REQUEST_TEMPLATE.md`, `DECISIONS.md`, `skills/README.md`. Reason: close hygiene gaps (no reporting path, no PR template, no decision-log home, no skill index).
 - Lessons keep `YYYY-MM` date granularity; `lessons/README.md` format was corrected to match the rows. Reason: docs must match the data.
 - `lessons/*` rows stay even when the rule is promoted into a topic file. Reason: lessons are the append-only origin; topic files are canonical ([lessons/README.md](lessons/README.md)).
+
+## 2026-11-15
+
+- Adopt a versioned, project-local living-documentation CI gate backed by a canonical owner map, append-only evidence journal and required branch status. Reason: repeated audits find recurring defect classes when documentation rules are advisory. CI checks presence and structure, while semantic accuracy and operational verification remain human responsibilities.
