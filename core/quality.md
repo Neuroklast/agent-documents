@@ -52,3 +52,7 @@ Load for: reviews, Definition of Done, coverage decisions, debt tracking.
 - "Temporary" bypasses without an owner and a removal trigger.
 - Green CI as the only quality signal — reviewers restate the issue's intent in one line and check the diff against it, not just the status checks.
 - Big-bang refactors bundled with behavior changes.
+
+## Architecture release standard
+
+Use [the full remediation programme](architecture-quality-programme.md) to stop recurring bug classes. A required PR documentation gate is necessary, not sufficient: verify actual security, data and recovery behavior, and do not certify architecture from source-text assertions alone.

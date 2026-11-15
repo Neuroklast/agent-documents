@@ -54,6 +54,10 @@ This file is a **router**, not an encyclopedia. Read only the files the current 
 | TypeScript | [stack/typescript.md](stack/typescript.md) |
 | Lessons by area | [lessons/](lessons/README.md) |
 
+## Architecture quality programme
+
+For cross-repository remediation and enforced living documentation use [architecture quality programme](core/architecture-quality-programme.md) and [living docs CI gate](testing/living-docs-gate.md). Follow the project-local quality journal and canonical owner map.
+
 ## Session closeout (short)
 
 1. Implement → 2. run checks → 3. update docs → 4. commit/PR/report.

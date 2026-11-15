@@ -49,3 +49,7 @@ Load for: every session end, when behavior or conventions change.
 - In-app release notes are a code artifact (e.g. `version-history.ts`) tied to the package version by a test.
 - Version bump MUST update: package version → in-app news entry → changelog heading → contract test green.
 - NEVER ship a bump without the in-app news update where the product shows release notes.
+
+## Enforced living docs for application repositories
+
+Documented intentions are insufficient when GitHub accepts code-only changes. Adopt the [architecture quality programme](architecture-quality-programme.md), its [CI gate](../testing/living-docs-gate.md), and a project-local [quality journal template](../templates/quality-journal-entry.md). The CI job must map changes to canonical owner docs and validate newly appended evidence. A human validates truth, and branch protection must require the job where supported.

@@ -7,6 +7,8 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
 
 ### Added
 
+- Architecture quality programme, reference living-documentation CI gate and factual quality-journal template. Existing application repositories must adapt the local gate to their boundaries.
+
 - `SECURITY.md` (root) — vulnerability reporting + pointer to `security/`.
 - `DECISIONS.md` (root) — canonical decision log (referenced by `core/docs-system.md`, `legal/legal-maintenance.md`).
 - `.github/PULL_REQUEST_TEMPLATE.md` — mirrors `checklists/pr.md`.
