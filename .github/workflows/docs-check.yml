@@ -15,3 +15,5 @@ jobs:
           node-version: 20
       - name: Validate docs (budgets, frontmatter, links, MANIFEST)
         run: node scripts/check-docs.mjs
+      - name: Test installer behavior
+        run: node --test scripts/*.test.mjs

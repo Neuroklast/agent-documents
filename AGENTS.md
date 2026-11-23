@@ -1,73 +1,44 @@
-# AGENTS.md — Agent Contract & Router
+# Agent Docs — Router
 
-Portable governance collection for AI coding agents (AGENTS.md standard).
-This file is a **router**, not an encyclopedia. Read only the files the current task needs.
+Load this file first. Read **only** topic files relevant to the task. [MANIFEST.md](MANIFEST.md) is for maintainers, not normal sessions.
 
-## Session start
+## Non-negotiable
 
-1. Read this file.
-2. Read exactly the topic file(s) matching the task (routing table below).
-3. Read [README.md](README.md) only when adopting this collection into a project.
-4. Read [MANIFEST.md](MANIFEST.md) only when adding, renaming, or auditing files.
+- Read project manifests and lockfiles before choosing install, build or test commands.
+- Make the smallest **complete** change. No speculative features, unrelated refactors or reformatting.
+- Do not invent project facts, package managers, APIs or test results.
+- Never expose credentials; keep least-privilege tool access.
+- No destructive migrations, production deployment, history rewrite, force-push to shared branches or secret rotation without explicit approval.
+- No disabled checks to silence failures (`as any`, `@ts-ignore`, broad lint disables, skipped tests).
+- Never claim success with failing or unexecuted checks; report what is unverified.
 
-## Hard rules (always apply)
+## Task router
 
-- ALWAYS read the project's manifests before install/test/build: `package.json`, lockfiles, `Cargo.toml`, `go.mod`, `pyproject.toml`, `CMakeLists.txt`.
-- ALWAYS the smallest change that fully solves the task. NEVER drive-by refactors, reformatting, or unrequested UX changes.
-- NEVER invent a package manager. Use the lockfile present in the repo.
-- NEVER commit, log, or expose secrets (`.env*`, keys, tokens, connection strings, frontend bundles).
-- NEVER `as any`, `@ts-ignore`, or blanket `eslint-disable` to silence errors.
-- NEVER production deploy, destructive DB migration, `rm -rf`, force-push to `main`, or secret rotation without explicit human approval.
-- NEVER grant an agent broader tools or permissions than the task needs (least privilege).
-- ALWAYS run the project's check pipeline before claiming done. NEVER report done on failing checks.
-- ALWAYS update documentation at session end — docs are part of the deliverable.
-
-## Routing table — read by task
-
-| Task | Files |
+| When | Load |
 | --- | --- |
-| Any session | [core/workflow.md](core/workflow.md), [core/context-budget.md](core/context-budget.md) |
-| New feature / route | [core/architecture.md](core/architecture.md), [templates/feature-spec.md](templates/feature-spec.md), [testing/strategy.md](testing/strategy.md) |
-| Product definition / PRD | [templates/PRD.md](templates/PRD.md) |
-| Refactor / bugfix | [core/regression.md](core/regression.md), [core/clean-code.md](core/clean-code.md) |
-| UI implementation | [skills/frontend-ui/SKILL.md](skills/frontend-ui/SKILL.md), [frontend/ui.md](frontend/ui.md), [frontend/ux.md](frontend/ux.md), [frontend/components.md](frontend/components.md) |
-| Design tokens / themes | [frontend/design.md](frontend/design.md) |
-| Accessibility | [frontend/accessibility.md](frontend/accessibility.md) |
-| Scroll / motion / overlays | [frontend/scroll-motion.md](frontend/scroll-motion.md) |
-| Performance | [frontend/performance.md](frontend/performance.md) |
-| API endpoint | [backend/api.md](backend/api.md), [skills/rest-guidelines/SKILL.md](skills/rest-guidelines/SKILL.md) |
-| DB / schema | [backend/data-and-schema.md](backend/data-and-schema.md), [backend/auth.md](backend/auth.md) |
-| Auth / login / roles | [backend/auth.md](backend/auth.md), [security/security.md](security/security.md) |
-| Caching / ISR | [backend/caching.md](backend/caching.md) |
-| Third-party services | [backend/integrations.md](backend/integrations.md) |
-| Security review | [security/security.md](security/security.md), [security/web-api.md](security/web-api.md), [skills/security-owasp/SKILL.md](skills/security-owasp/SKILL.md) |
-| LLM / AI features | [security/owasp-llm.md](security/owasp-llm.md) |
-| Legal / compliance | [legal/compliance-de.md](legal/compliance-de.md), [legal/legal-maintenance.md](legal/legal-maintenance.md) |
-| Public launch | [checklists/launch.md](checklists/launch.md), [skills/launch-compliance-audit/SKILL.md](skills/launch-compliance-audit/SKILL.md) |
-| Tests | [testing/strategy.md](testing/strategy.md) + [testing/unit.md](testing/unit.md) or [testing/e2e.md](testing/e2e.md) |
-| CI / contract scripts | [testing/contracts-ci.md](testing/contracts-ci.md) |
-| Git / PR / release | [core/git.md](core/git.md), [checklists/pr.md](checklists/pr.md), [checklists/release.md](checklists/release.md) |
-| C / C++ / realtime / audio | [stack/cpp-juce.md](stack/cpp-juce.md), [skills/c-realtime/SKILL.md](skills/c-realtime/SKILL.md) |
-| Next.js | [stack/nextjs.md](stack/nextjs.md) |
-| Supabase / Postgres | [stack/supabase.md](stack/supabase.md) |
-| Object storage (R2/S3) | [stack/cloudflare-r2.md](stack/cloudflare-r2.md) |
-| TypeScript | [stack/typescript.md](stack/typescript.md) |
-| Lessons by area | [lessons/](lessons/README.md) |
+| Every coding session | [Workflow](core/workflow.md), [Context budget](core/context-budget.md) |
+| Small feature or fix | [Plan first](skills/plan-first/SKILL.md), [Regression](core/regression.md), [TDD](skills/tdd-extraction/SKILL.md) |
+| Product discovery / ambiguous requirements | [BMAD discovery](skills/bmad-discovery/SKILL.md), [PRD](templates/PRD.md) only if needed |
+| Multi-story / cross-system delivery | [BMAD delivery](skills/bmad-delivery/SKILL.md), [Architecture](core/architecture.md) |
+| Code or specification review | [BMAD review](skills/bmad-review/SKILL.md), [Quality](core/quality.md) |
+| Lean / bloat / overengineering review | [Ponytail review](skills/ponytail-review/SKILL.md) |
+| UI / interaction | [Frontend UI skill](skills/frontend-ui/SKILL.md), [UX](frontend/ux.md); [Design](frontend/design.md), [Components](frontend/components.md) on demand |
+| Accessibility / motion / performance | [Accessibility](frontend/accessibility.md), [Scroll/motion](frontend/scroll-motion.md), [Performance](frontend/performance.md) as relevant |
+| API / data / permissions | [API](backend/api.md), [REST skill](skills/rest-guidelines/SKILL.md), [Data](backend/data-and-schema.md), [Auth](backend/auth.md) as relevant |
+| Cache / external integrations | [Caching](backend/caching.md), [Integrations](backend/integrations.md) as relevant |
+| Security / LLM | [Security](security/security.md), [Web API](security/web-api.md), [OWASP LLM](security/owasp-llm.md), [Security skill](skills/security-owasp/SKILL.md) as relevant |
+| Legal / public launch | [Compliance DE](legal/compliance-de.md), [Legal maintenance](legal/legal-maintenance.md), [Launch skill](skills/launch-compliance-audit/SKILL.md) |
+| Tests / CI | [Testing strategy](testing/strategy.md), [Contracts CI](testing/contracts-ci.md) and relevant [unit](testing/unit.md) or [E2E](testing/e2e.md) |
+| Git / PR / release | [Git](core/git.md), [PR checklist](checklists/pr.md), [Release checklist](checklists/release.md) |
+| C++ / JUCE / realtime | [C++ stack](stack/cpp-juce.md), [Realtime skill](skills/c-realtime/SKILL.md) |
+| Next.js / TypeScript | [Next.js](stack/nextjs.md), [TypeScript](stack/typescript.md) |
+| Supabase / object storage | [Supabase](stack/supabase.md), [R2/S3](stack/cloudflare-r2.md) |
+| Incidents / learned pitfalls | [Lessons index](lessons/README.md) |
+| Architecture remediation / living docs | [Quality programme](core/architecture-quality-programme.md), [CI gate](testing/living-docs-gate.md) |
 
-## Architecture quality programme
+## Finish
 
-For cross-repository remediation and enforced living documentation use [architecture quality programme](core/architecture-quality-programme.md) and [living docs CI gate](testing/living-docs-gate.md). Follow the project-local quality journal and canonical owner map.
-
-## Session closeout (short)
-
-1. Implement → 2. run checks → 3. update docs → 4. commit/PR/report.
-Checklist: [checklists/session.md](checklists/session.md). Definition of Done: [core/quality.md](core/quality.md).
-
-## Multi-agent
-
-Parallel agents only in isolated git worktrees. One writer per working tree.
-Full version: [core/workflow.md](core/workflow.md).
-
-## Roles
-
-Roles live in [roles/](roles/README.md). Reviewer, security-auditor and compliance-officer NEVER write production code.
+Implement → run real checks → review diff → update affected docs → commit/PR/report.
+Definition of Done: [core/quality.md](core/quality.md). Closeout: [checklists/session.md](checklists/session.md).
+Parallel contributors: separate worktrees and one writer per tree ([core/workflow.md](core/workflow.md)).
+Role boundaries: [roles/](roles/README.md). Review-only roles never modify production code.

@@ -1,68 +1,34 @@
-# Core — Context Budget
+# Context budget
 
-Load for: every session. This file explains how to read this collection.
+Load with [AGENTS.md](../AGENTS.md) at session start.
 
 ## Progressive disclosure
 
 ```text
-AGENTS.md (router, ≤120 lines)
-  └─ one topic file (≤150 lines)
-       └─ linked detail files only when referenced
+AGENTS.md (router) -> relevant topic or skill -> linked details only if needed
 ```
 
-MANIFEST.md is a maintainer index and is not part of the session read chain.
+- Do not read the entire documentation tree by default. Use 1–3 relevant topic files; fetch deeper detail on a real question.
+- [MANIFEST.md](../MANIFEST.md) serves maintainers, not the session prompt.
+- Prefer a single canonical rule and links to repeated blocks.
 
-- ALWAYS read only the files the routing table names for the current task.
-- NEVER read whole docs trees "to be safe". That burns context and hides the relevant rule.
-- When a task spans areas, read at most 2–3 topic files plus the files those topics or the invoked skill name directly.
-- Load skills only when their description matches the task.
-- Subfolders get a `README.md` only when they hold a non-rule index (e.g. `lessons/`, `roles/`, `skills/`). Pure topic folders rely on `AGENTS.md` routing + `MANIFEST.md`.
+## Budgets
 
-## File size budgets
+| Document | Maximum lines |
+| --- | ---: |
+| AGENTS.md | 120 |
+| MANIFEST.md | 200 |
+| Topic / template / index | 150 |
+| SKILL.md | 100 |
 
-| File | Budget | If exceeded |
-| --- | --- | --- |
-| `AGENTS.md` | ≤ 120 lines | Move rules into topic files, keep only routing |
-| `MANIFEST.md` | ≤ 200 lines | Index; keep rows one line, link instead of explaining |
-| Topic file | ≤ 150 lines | Split by concern, register both in `MANIFEST.md` |
-| Skill | ≤ 100 lines | Move detail into the linked topic file |
-| Lesson entry | 1 table row | Promote recurring lessons into topic files |
+CI: [check-docs.mjs](../scripts/check-docs.mjs). A limit is a ceiling, not a target. Do not trade away clarity to save a few tokens.
 
-Budgets are enforced by [../scripts/check-docs.mjs](../scripts/check-docs.mjs) (CI: [../.github/workflows/docs-check.yml](../.github/workflows/docs-check.yml)).
+## Rule lifecycle
 
-## Single source of truth per rule
+1. Name the observed failure a new rule prevents. If no failure mode, do not add it.
+2. Search for an existing owner; edit that rule instead of duplicating it.
+3. Delete rules that only restate common knowledge or duplicate executable checks, unless they prevent a documented recurring mistake.
+4. When moving or deleting a rule, update routing links, [MANIFEST.md](../MANIFEST.md) and affected tests.
+5. Keep task plans and one-off decisions in the application repository, not in this reusable collection.
 
-- Every rule exists in exactly one file. Other files link to it.
-- Before writing a rule, search for an existing one: `rg "rule phrase"`.
-- When moving a rule, update all inbound links in the same change.
-
-## Rule lifecycle (evaluation)
-
-- Every rule needs an observed failure it prevents (incident, review finding, repeated mistake). No failure mode → no rule.
-- Litmus test before adding or keeping a rule: would removing it cause a mistake the agent would not otherwise make?
-- Rules that never fired are deletion candidates. Delete with the same care as adding: say why in the commit.
-- NEVER add rules speculatively. Repeating what the model already knows costs tokens and can lower task success (see [../README.md](../README.md) §Why these rules).
-
-## What belongs where
-
-| Content | Location |
-| --- | --- |
-| Routing, hard rules | `AGENTS.md` |
-| Definition of Done | `core/quality.md` |
-| Package-specific rules (monorepo) | nested `AGENTS.md` in that package (nearest wins) |
-| Process, gates, multi-agent | `core/*` |
-| Technology behavior | `frontend/`, `backend/`, `stack/*` |
-| Hard-won incident knowledge | `lessons/*` |
-| Reusable task recipes | `skills/*` |
-| One-off plans, specs, ADRs | project repo (`docs/`, `templates/`) |
-
-## Archive policy
-
-- See [docs-system.md](docs-system.md) — archive policy lives there, once.
-
-## Anti-patterns
-
-- Copy-pasting rules between files → drift. Link instead.
-- Adding prose explanations to rule files → use bullets and tables.
-- Growing `AGENTS.md` into an encyclopedia → it is a router.
-- Keeping dead docs around without a banner → agents will trust them.
+Review waste at the **task level** too: a framework that duplicates project behavior is usually more expensive than a small reusable skill.

@@ -24,6 +24,7 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | --- | --- | --- |
 | [scripts/check-docs.mjs](scripts/check-docs.mjs) | Validates budgets, skill frontmatter, links, MANIFEST coverage | Docs/CI changes |
 | [scripts/install-skills.mjs](scripts/install-skills.mjs) | Copies `skills/` into `.agents/skills/` and `.claude/skills/` | Adopting skills into a project |
+| [scripts/install-skills.test.mjs](scripts/install-skills.test.mjs) | Installer default and link-rewrite regression tests | Changing skill installation |
 | [examples/hooks/README.md](examples/hooks/README.md) | Deterministic gate hook examples (Claude Code) | Setting up enforcement |
 | [.github/workflows/docs-check.yml](.github/workflows/docs-check.yml) | CI job running the docs check on push/PR | CI changes |
 | [.github/PULL_REQUEST_TEMPLATE.md](.github/PULL_REQUEST_TEMPLATE.md) | PR description + checklist | Opening a PR |
@@ -146,6 +147,10 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | Path | Purpose | Read when |
 | --- | --- | --- |
 | [skills/README.md](skills/README.md) | Skill index | Choosing a skill |
+| [skills/bmad-discovery/SKILL.md](skills/bmad-discovery/SKILL.md) | Adaptive discovery and specification | Complex requirements |
+| [skills/bmad-delivery/SKILL.md](skills/bmad-delivery/SKILL.md) | Story slicing, TDD, tracking, epic closure | Multi-story work |
+| [skills/bmad-review/SKILL.md](skills/bmad-review/SKILL.md) | Multi-lens evidence review | High-risk change / PR |
+| [skills/ponytail-review/SKILL.md](skills/ponytail-review/SKILL.md) | Risk-first, lean-code review | Review / bloat |
 | [skills/plan-first/SKILL.md](skills/plan-first/SKILL.md) | Plan before code | Any non-trivial task |
 | [skills/tdd-extraction/SKILL.md](skills/tdd-extraction/SKILL.md) | Derive failing test first | Bugs, features |
 | [skills/rest-guidelines/SKILL.md](skills/rest-guidelines/SKILL.md) | REST subset, OpenAPI duty | API design |

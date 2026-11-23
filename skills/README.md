@@ -1,18 +1,20 @@
-# Skills — Index
+# Skills
 
-Task-specific skills (one `SKILL.md` per folder, Agent Skills spec). Load a
-skill only when its `description` matches the task
-([core/context-budget.md](../core/context-budget.md)).
+Load on demand from [AGENTS.md](../AGENTS.md). `SKILL.md` frontmatter defines each trigger.
 
-| Skill | Use when |
+| Skill | Use |
 | --- | --- |
-| [plan-first](plan-first/SKILL.md) | Non-trivial task: plan before coding |
-| [tdd-extraction](tdd-extraction/SKILL.md) | Bug/feature: derive the failing test first |
-| [rest-guidelines](rest-guidelines/SKILL.md) | API design/review (REST wire format) |
-| [frontend-ui](frontend-ui/SKILL.md) | UI implementation workflow |
-| [security-owasp](security-owasp/SKILL.md) | Security review |
-| [launch-compliance-audit](launch-compliance-audit/SKILL.md) | DE/EU go-live audit |
-| [c-realtime](c-realtime/SKILL.md) | C/C++ realtime / safety-critical |
-| [video-scrubbing](video-scrubbing/SKILL.md) | Scroll-bound video (explicitly requested) |
+| [bmad-discovery](bmad-discovery/SKILL.md) | Complex outcomes, brief, PRD and architecture decisions |
+| [bmad-delivery](bmad-delivery/SKILL.md) | Stories, implementation, tracking and epic closure |
+| [bmad-review](bmad-review/SKILL.md) | Evidence-backed acceptance and risk lenses |
+| [ponytail-review](ponytail-review/SKILL.md) | Bugs, scale, security, missing tests and lean-code review |
+| [plan-first](plan-first/SKILL.md) | Non-trivial focused implementation |
+| [tdd-extraction](tdd-extraction/SKILL.md) | Failing behavior test before a fix |
+| [rest-guidelines](rest-guidelines/SKILL.md) | REST wire contract |
+| [frontend-ui](frontend-ui/SKILL.md) | UI implementation |
+| [security-owasp](security-owasp/SKILL.md) | Web security review |
+| [launch-compliance-audit](launch-compliance-audit/SKILL.md) | DE/EU launch audit |
+| [c-realtime](c-realtime/SKILL.md) | Native realtime code |
+| [video-scrubbing](video-scrubbing/SKILL.md) | Explicit scroll-video work |
 
-Install into a target repo: `node scripts/install-skills.mjs <target-repo>`.
+Install with `node scripts/install-skills.mjs <target-dir>` from the collection root.

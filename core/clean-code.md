@@ -1,58 +1,34 @@
-# Core — Clean Code
+# Clean code
 
-Load for: writing or reviewing any code.
+Load when changing or reviewing implementation.
 
-## Naming
+## Smallest complete change
 
-- Names reveal intent: `invoiceLineItems`, not `data` / `list2` / `tmp`.
-- Components `PascalCase`, functions/variables `camelCase`, route paths `kebab-case`, constants `SCREAMING_SNAKE_CASE` only for true constants.
-- Booleans read as predicates: `isActive`, `hasPermission`, `canEdit`.
-- NEVER abbreviations unless domain-standard (`id`, `url`, `dto`). No single letters except loop indices.
-- One concept, one name — everywhere. Renaming a concept = rename all occurrences in the same change.
+1. Is new code necessary? Remove speculative scope.
+2. Can existing project code solve it? Reuse its conventions.
+3. Can the platform or standard library solve it? Prefer that to another dependency.
+4. Can an installed dependency do it? Do not add a dependency for a thin wrapper.
+5. Otherwise write the least new code that stays readable and covers failures.
 
-## Size & structure
+Review with [Ponytail review](../skills/ponytail-review/SKILL.md). **Never** cut validation, security, error handling, tests, accessibility or requested behavior to reduce line count.
 
-| Unit | Soft limit | Hard signal |
-| --- | --- | --- |
-| File | ~400 lines | Review for split by responsibility |
-| Function | ~40 lines | Multiple purposes → extract |
-| Params | ~4 | Parameter object |
-| Nesting | ~3 levels | Early returns / guard clauses |
+## Structure
 
-- One responsibility per file. One exported concern per module.
-- No dead code, no unused exports, no unreachable branches.
-- No commented-out code — git history is the archive.
+- One clear responsibility per module. Split by real responsibility, not arbitrary line targets.
+- Use domain names consistently; boolean names read as predicates. Keep established project naming conventions.
+- No dead or commented-out code. Git retains history.
+- Avoid single-use factories, wrappers, abstractions, registries and options without a demonstrated need.
+- Dependency direction follows the project's architecture; no cycles or backdoor reach-through.
 
-## Errors
+## Boundaries and errors
 
-- Explicit error objects/types. NEVER stack traces or internal messages to end users.
-- NEVER empty `catch`. Either handle, rethrow with context, or log deliberately.
-- NEVER swallow control-flow errors (e.g. framework redirect/not-found signals) in generic try/catch.
-- Fail fast at boundaries; validate external input once, at the edge.
-- Distinguish user errors (4xx, actionable message) from system errors (5xx, generic message + internal log).
+- Validate external input at trust boundaries; handle errors where a caller can act on them.
+- Never swallow exceptions, lose error context or disclose internal details to clients.
+- Preserve control-flow signals for frameworks that use exceptions for routing.
+- Explain **why** a non-obvious workaround exists, not what a line already says.
 
-## Comments
+## Values and types
 
-- Comments explain **why**, never **what**.
-- No commented-out code, no changelog comments (`// added 2026-09`), no author tags.
-- Document non-obvious invariants and workarounds with a link to the issue.
-
-## Dependencies & abstraction
-
-- YAGNI: no abstraction without a second concrete use case.
-- Rule of three before extracting a shared helper.
-- Dependency direction: UI → domain → data. NEVER reverse, no cycles.
-- NEVER introduce a library the task does not require. Check the repo for an existing solution first.
-- Wrap third-party primitives; never edit vendor files directly (see [../frontend/components.md](../frontend/components.md)).
-
-## Constants & configuration
-
-- No magic numbers or strings: named constants, config from a single source.
-- Environment-dependent values come from validated env access, not scattered `process.env` reads.
-- Feature flags live in one registry, documented and removable.
-
-## Language rules
-
-- TypeScript: see [../stack/typescript.md](../stack/typescript.md). C/C++: see [../stack/cpp-juce.md](../stack/cpp-juce.md).
-- ALWAYS strict mode / equivalent. NEVER disable checks to make code compile.
-- Public functions have explicit return types.
+- Name constants when a value has domain meaning; do not create indirection for self-evident literals.
+- Use validated centralized environment configuration.
+- Strict typing without suppressions; use [TypeScript](../stack/typescript.md) or [C++](../stack/cpp-juce.md) rules where relevant.
