@@ -1,61 +1,27 @@
-# Core — Workflow
+# Workflow
 
-Load for: every session.
+Load for every coding session. Use [AGENTS.md](../AGENTS.md) as the task router.
 
-## Session loop
+1. **Understand:** Inspect actual code, manifests and acceptance criteria. For ambiguous product work use [BMAD discovery](../skills/bmad-discovery/SKILL.md).
+2. **Scope:** Identify callers, tests, data, trust boundaries and non-goals. For multiple stories use [BMAD delivery](../skills/bmad-delivery/SKILL.md).
+3. **Implement:** Smallest complete change; fix shared root causes rather than individual symptoms. New testable behavior starts with a failing test ([TDD](../skills/tdd-extraction/SKILL.md)).
+4. **Verify:** Use project-defined, non-interactive lint/type/test/build checks. Inspect the actual diff and affected callers. Add focused E2E proof when necessary.
+5. **Review:** Compare outcome with acceptance criteria. For high-risk or cross-system work use [BMAD review](../skills/bmad-review/SKILL.md), for bloat concerns use [Ponytail review](../skills/ponytail-review/SKILL.md).
+6. **Ship:** Update affected docs, commit, PR, report checks and residual risks. [Session checklist](../checklists/session.md).
 
-1. **PLAN** — restate the task; name files, acceptance criteria, risks. For multi-file work, plan before coding (see [../skills/plan-first/SKILL.md](../skills/plan-first/SKILL.md)).
-2. **IMPLEMENT** — smallest change that fully solves the task. One purpose per commit ([git.md](git.md)).
-3. **TEST** — run the project's check pipeline; add/adjust tests with the change.
-4. **VALIDATE** — re-read the diff against the acceptance criteria; check blast radius ([regression.md](regression.md)).
-5. **DOCUMENT** — update docs or state explicitly "unchanged because …" ([docs-system.md](docs-system.md)).
-6. **SHIP** — commit / PR / report. Never leave the tree in a half-done state.
+## Test integrity
 
-## Check pipeline
+- Never weaken, skip or delete a valid failing test just to turn CI green.
+- A deliberate contract change may require an updated test; explain the changed contract.
+- If a test is genuinely obsolete, state why it no longer protects behavior.
+- No passing claims for checks not run; no PR described as ready with known failing checks.
 
-- ALWAYS use the project's own scripts; read them from the manifest. Typical order:
-  1. `lint` → 2. `typecheck` → 3. `test` → 4. `build`.
-- Prefer the aggregate script if one exists (e.g. `npm run ci`).
-- NEVER start test watchers in agent sessions. Run once, non-interactive.
-- NEVER report done on failing checks. No PR with failing checks.
-- If a check is unavailable locally, say so explicitly in the report. NEVER claim it passed.
+## Failure diagnosis
 
-## When a test goes red
+After a second failed fix to the same symptom, stop layering patches. Identify the false assumption, inspect the shared boundary and change the approach. Bound external retries. Do not conceal partial work.
 
-- A red test on a deliberate behavior change = reconcile intent: update the test to the **new intended behavior**.
-- NEVER weaken, `skip`, or delete a test just to go green.
-- If a test is genuinely obsolete: delete it with a one-line reason in the diff.
-- Fix root causes. Never stack workarounds on top of a failing test.
+## Parallel work
 
-## Multi-agent protocol
+Split independent concerns and use a separate worktree per writer. Record API, schema, env and unresolved dependencies in the handoff. Recheck integration after merging branches.
 
-- More than ~3 independent concerns → split into sub-tasks; one atomic commit each; full checks after each.
-- Parallel agents MUST run in isolated git worktrees. One writer per working tree. NEVER two agents on the same tree.
-- Handoff notes MUST list: exported symbols, schema changes, env changes, open TODOs.
-- Separate issues per module. Never let one agent's uncommitted work block another's checks.
-
-## Task sizing
-
-| Size | Approach |
-| --- | --- |
-| 1 file, trivial | Just do it, run focused checks |
-| 1 concern, several files | Plan inline, atomic commit, full checks |
-| > 3 concerns | Sub-tasks with individual commits, full checks after each |
-| New feature / route | Feature spec first ([../templates/feature-spec.md](../templates/feature-spec.md)), then plan, then code |
-
-## Escalation — stop and ask the human
-
-Approval gates for deploys, destructive migrations, data backfills, `rm -rf`, history rewrite, force-push, and secret rotation are canonical in [AGENTS.md](../AGENTS.md) §Hard rules and [../security/security.md](../security/security.md) §Least privilege. Additionally stop and ask for:
-
-- Deviation from a safety rule (e.g. realtime/MISRA, see [../skills/c-realtime/SKILL.md](../skills/c-realtime/SKILL.md)).
-- Legal text wording, operator data, pricing/contract terms.
-
-## Failure handling
-
-- On the second failed attempt at the same fix: stop, re-read the relevant topic file, name the wrong assumption in one line (file + what you believed), then replace it. No third patch on the same symptom.
-- NEVER silently retry loops (network, CI, builds). Bound retries, log the reason, report.
-
-## Session closeout
-
-Order is fixed: **implement → checks → docs → commit/PR/report**.
-Full checklist: [../checklists/session.md](../checklists/session.md).
+Safety approvals: see [AGENTS.md](../AGENTS.md) and [security/security.md](../security/security.md). Git policy: [git.md](git.md).

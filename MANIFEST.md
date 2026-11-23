@@ -146,6 +146,10 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | Path | Purpose | Read when |
 | --- | --- | --- |
 | [skills/README.md](skills/README.md) | Skill index | Choosing a skill |
+| [skills/bmad-discovery/SKILL.md](skills/bmad-discovery/SKILL.md) | Adaptive discovery and specification | Complex requirements |
+| [skills/bmad-delivery/SKILL.md](skills/bmad-delivery/SKILL.md) | Story slicing, TDD, tracking, epic closure | Multi-story work |
+| [skills/bmad-review/SKILL.md](skills/bmad-review/SKILL.md) | Multi-lens evidence review | High-risk change / PR |
+| [skills/ponytail-review/SKILL.md](skills/ponytail-review/SKILL.md) | Risk-first, lean-code review | Review / bloat |
 | [skills/plan-first/SKILL.md](skills/plan-first/SKILL.md) | Plan before code | Any non-trivial task |
 | [skills/tdd-extraction/SKILL.md](skills/tdd-extraction/SKILL.md) | Derive failing test first | Bugs, features |
 | [skills/rest-guidelines/SKILL.md](skills/rest-guidelines/SKILL.md) | REST subset, OpenAPI duty | API design |
