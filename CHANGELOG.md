@@ -5,6 +5,12 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
 
 ## [Unreleased]
 
+### Integrated 2026-11-23
+
+- Ported four focused on-demand skills: BMAD discovery, delivery and evidence-based review; Ponytail lean review. No upstream runtimes or hooks bundled.
+- Replaced long always-on instructions with a shorter router and condensed README, workflow, context, quality and clean-code rules, retaining canonical ownership.
+- Fixed skills installer default to copy to both supported tools. Rewrites cross-folder Markdown links to the installed docs collection, fails early without its documents, and adds regression tests.
+
 ### Added
 
 - Architecture quality programme, reference living-documentation CI gate and factual quality-journal template. Existing application repositories must adapt the local gate to their boundaries.

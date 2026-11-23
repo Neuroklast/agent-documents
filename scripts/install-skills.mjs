@@ -1,51 +1,75 @@
 #!/usr/bin/env node
-// Copy skills/*/ into a target repo so agent tools discover them.
+// Copy this collection's skills into a target repo. Keep links to shared docs working.
 // Usage: node scripts/install-skills.mjs <target-dir> [--agents] [--claude]
-// Default: installs into both .agents/skills/ and .claude/skills/.
+// The collection must also be present in <target-dir>/docs/agent-docs/.
 
-import { cpSync, existsSync, mkdirSync, readdirSync, statSync } from "node:fs";
-import { dirname, join, resolve } from "node:path";
+import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from "node:fs";
+import { dirname, isAbsolute, join, relative, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const skillsDir = join(root, "skills");
-
+const skillRoot = join(root, "skills");
 const args = process.argv.slice(2);
-const targetArg = args.find((a) => !a.startsWith("--"));
-const targets = [];
-if (args.includes("--agents") || args.length === 0) targets.push(".agents/skills");
-if (args.includes("--claude") || args.length === 0) targets.push(".claude/skills");
-
-if (!targetArg || targets.length === 0) {
+const targets = args.filter((arg) => !arg.startsWith("--"));
+const flags = args.filter((arg) => arg.startsWith("--"));
+const allowed = new Set(["--agents", "--claude"]);
+if (targets.length !== 1 || flags.some((flag) => !allowed.has(flag))) {
   console.error("Usage: node scripts/install-skills.mjs <target-dir> [--agents] [--claude]");
   process.exit(1);
 }
-
-const target = resolve(targetArg);
+const target = resolve(targets[0]);
 if (!existsSync(target) || !statSync(target).isDirectory()) {
   console.error(`Target is not a directory: ${target}`);
   process.exit(1);
 }
-if (!existsSync(skillsDir)) {
-  console.error(`No skills/ directory in ${root}`);
+const docsRoot = target === root ? root : join(target, "docs", "agent-docs");
+if (!existsSync(join(docsRoot, "AGENTS.md"))) {
+  console.error("Install the collection into <target-dir>/docs/agent-docs/ first (AGENTS.md missing).");
   process.exit(1);
 }
+const destinations = !flags.length || flags.length === 2
+  ? [".agents/skills", ".claude/skills"]
+  : [flags[0] === "--agents" ? ".agents/skills" : ".claude/skills"];
 
-const skills = readdirSync(skillsDir).filter((name) =>
-  statSync(join(skillsDir, name)).isDirectory(),
+function within(parent, candidate) {
+  const sub = relative(parent, candidate);
+  return sub === "" || (!sub.startsWith(".." + sep) && sub !== ".." && !isAbsolute(sub));
+}
+
+// Skill links into core/, templates/ etc are relative to this collection.
+// Repoint those links at the installed collection; links between skills stay relative.
+function repairLinks(sourceFile, destinationFile) {
+  const markdown = readFileSync(sourceFile, "utf8");
+  return markdown.replace(/\]\((\.\.\/[^)\s#]+)(#[^)]*)?\)/g, (full, path, hash = "") => {
+    const sourceTarget = resolve(dirname(sourceFile), path);
+    if (!within(root, sourceTarget) || within(skillRoot, sourceTarget)) return full;
+    const installedTarget = join(docsRoot, relative(root, sourceTarget));
+    const newPath = relative(dirname(destinationFile), installedTarget).split(sep).join("/");
+    return `](${newPath}${hash})`;
+  });
+}
+function walk(path, out = []) {
+  for (const entry of readdirSync(path)) {
+    const file = join(path, entry);
+    if (statSync(file).isDirectory()) walk(file, out);
+    else out.push(file);
+  }
+  return out;
+}
+
+const skills = readdirSync(skillRoot).filter((name) =>
+  existsSync(join(skillRoot, name, "SKILL.md")),
 );
-
-let installed = 0;
-for (const dest of targets) {
+for (const dest of destinations) {
   for (const skill of skills) {
-    const src = join(skillsDir, skill);
-    if (!existsSync(join(src, "SKILL.md"))) continue;
+    const src = join(skillRoot, skill);
     const out = join(target, dest, skill);
     mkdirSync(out, { recursive: true });
     cpSync(src, out, { recursive: true, force: true });
-    installed++;
+    for (const sourceFile of walk(src).filter((file) => file.endsWith(".md"))) {
+      const destFile = join(out, relative(src, sourceFile));
+      writeFileSync(destFile, repairLinks(sourceFile, destFile));
+    }
   }
   console.log(`${dest}: ${skills.length} skills`);
 }
-
-console.log(`Installed ${installed} skill copies into ${target}`);

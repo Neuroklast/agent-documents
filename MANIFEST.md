@@ -24,6 +24,7 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | --- | --- | --- |
 | [scripts/check-docs.mjs](scripts/check-docs.mjs) | Validates budgets, skill frontmatter, links, MANIFEST coverage | Docs/CI changes |
 | [scripts/install-skills.mjs](scripts/install-skills.mjs) | Copies `skills/` into `.agents/skills/` and `.claude/skills/` | Adopting skills into a project |
+| [scripts/install-skills.test.mjs](scripts/install-skills.test.mjs) | Installer default and link-rewrite regression tests | Changing skill installation |
 | [examples/hooks/README.md](examples/hooks/README.md) | Deterministic gate hook examples (Claude Code) | Setting up enforcement |
 | [.github/workflows/docs-check.yml](.github/workflows/docs-check.yml) | CI job running the docs check on push/PR | CI changes |
 | [.github/PULL_REQUEST_TEMPLATE.md](.github/PULL_REQUEST_TEMPLATE.md) | PR description + checklist | Opening a PR |
