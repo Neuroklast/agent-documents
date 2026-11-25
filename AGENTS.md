@@ -18,7 +18,7 @@ Use the existing project's architecture, conventions, tools, supported platforms
 
 ## Load contract
 
-For any non-trivial task, write a load contract (see [load-contract](skills/load-contract/SKILL.md)) before loading skill bodies or topic files. Maximum one primary + two specialists. The contract makes the context decision reviewable.
+For cross-boundary, ambiguous or high-risk work, use a short [load contract](skills/load-contract/SKILL.md). Skip a written contract for obvious small tasks. Choose one primary and up to two specialists per stage; expand only for a concrete risk or missing decision.
 
 
 ## Resolve rule conflicts
@@ -28,10 +28,9 @@ Security, correctness, authorization and verification invariants outrank suggest
 ## Task router
 
 Choose the primary workflow once; add specialist guidance only when needed. Follow links on demand and do not restart a workflow merely because a reference links back to it. Read-only tasks do not trigger coding, commits or deployment.
-
 | When | Load |
 | --- | --- |
-| Every coding session | [Workflow](core/workflow.md), [Context budget](core/context-budget.md); [Clean code](core/clean-code.md) for implementation |
+| Workflow / context decisions | [Workflow](core/workflow.md), [Context budget](core/context-budget.md); [Clean code](core/clean-code.md) when needed |
 | Small feature or fix | [Plan first](skills/plan-first/SKILL.md), [Regression](core/regression.md), [TDD](skills/tdd-extraction/SKILL.md) |
 | Product discovery / ambiguous requirements | [Requirements clarity](skills/requirements-clarity/SKILL.md), [PRD](templates/PRD.md) only if needed |
 | Multi-story / cross-system delivery | [Incremental delivery](skills/incremental-delivery/SKILL.md), [Architecture](core/architecture.md) |
@@ -52,10 +51,10 @@ Choose the primary workflow once; add specialist guidance only when needed. Foll
 | Perceived performance and meaningful motion | [ui-performance-motion](skills/ui-performance-motion/SKILL.md) |
 | AI and conversational interface design | [ai-interaction-ux](skills/ai-interaction-ux/SKILL.md) |
 | Trust, privacy and ethical interaction | [trustworthy-ux](skills/trustworthy-ux/SKILL.md) |
-| Evidence-based UI and UX review | [ux-quality-review](skills/ux-quality-review/SKILL.md) |
+| UX acceptance review (rather than generic code review) | [ux-quality-review](skills/ux-quality-review/SKILL.md) |
 | Explicit scroll-bound video | [Video scrubbing](skills/video-scrubbing/SKILL.md), [Scroll/motion](frontend/scroll-motion.md) |
 | Accessibility / motion / performance | [Accessibility](frontend/accessibility.md), [Scroll/motion](frontend/scroll-motion.md), [Performance](frontend/performance.md) as relevant |
-| API / data / permissions | [API](backend/api.md), [REST skill](skills/rest-guidelines/SKILL.md), [Data](backend/data-and-schema.md), [Auth](backend/auth.md) as relevant |
+| API / data / permissions | [API](backend/api.md), [Data](backend/data-and-schema.md), [Auth](backend/auth.md) as relevant; [REST skill](skills/rest-guidelines/SKILL.md) only for REST |
 | Cache / external integrations | [Caching](backend/caching.md), [Integrations](backend/integrations.md) as relevant |
 | Security / LLM | [Security](security/security.md), [Web API](security/web-api.md), [Model security](security/owasp-llm.md), [Security skill](skills/security-owasp/SKILL.md) as relevant |
 | Dependency / asset licensing | [Licensing](legal/licensing.md) |
@@ -69,18 +68,28 @@ Choose the primary workflow once; add specialist guidance only when needed. Foll
 | TypeScript | [TypeScript](stack/typescript.md) |
 | Supabase | [Supabase](stack/supabase.md) |
 | R2 / S3 object storage | [R2/S3](stack/cloudflare-r2.md) |
-| Incidents / learned pitfalls | [Lessons index](lessons/README.md) |
+| Unfamiliar repository / cross-boundary discovery | [repository-context](skills/repository-context/SKILL.md) |
+| Read-only review of a risky proposed plan | [change-plan-review](skills/change-plan-review/SKILL.md) |
+| Persistent data changes / migration / backfill | [data-migration](skills/data-migration/SKILL.md) |
+| Active production incident / degraded service | [incident-response](skills/incident-response/SKILL.md) |
+| Deployment / recovery | [Deployment](operations/deployment.md), [Resilience](operations/resilience.md) as applicable |
+| Production signals / incident coordination | [Observability](operations/observability.md), [Incidents](operations/incidents.md) |
+| Dependencies / release artifacts | [Supply chain](security/supply-chain.md) |
+| Agent delegation / session resumption | [Orchestration](core/agent-orchestration.md), [Handoff](core/handoff.md) |
+| Backend load / latency | [Performance](backend/performance.md) |
+| Model-backed features | [AI engineering](ai/engineering.md) |
+| Legacy / workspaces / native | [Brownfield](core/brownfield.md), [Monorepo](core/monorepo.md), [Mobile](native/mobile.md) as applicable |
+| Host setup | [Host adapters](adapters/README.md) |
+| Historical pitfalls | [Lessons index](lessons/README.md) |
 | Architecture remediation / living docs | [Quality programme](core/architecture-quality-programme.md), [CI gate](testing/living-docs-gate.md) |
-
 | Long session / drift risk | [Context thread](skills/context-thread/SKILL.md) |
-| Claiming task complete | [Verification before done](skills/verification-before-done/SKILL.md) |
+| Completion evidence missing / risky verification | [Verification before done](skills/verification-before-done/SKILL.md) |
 | PR / review comments | [PR comment concise](skills/pr-comment-concise/SKILL.md) |
-| Implementation / refactor | [Minimal change](skills/minimal-change/SKILL.md) |
+| Scope creep / excess code risk | [Minimal change](skills/minimal-change/SKILL.md) |
 | Bug diagnosis | [Systematic debugging](skills/systematic-debugging/SKILL.md) |
 
-| Non-trivial task start | [Load contract](skills/load-contract/SKILL.md) |
 
-| User-facing UI | [Frontend taste](skills/frontend-taste/SKILL.md), [Frontend UI](skills/frontend-ui/SKILL.md) |
+| Visual polish / generic appearance critique | [Frontend taste](skills/frontend-taste/SKILL.md); use visual-design instead for art direction |
 | Agent-written text (PR, comments, docs, copy) | [Humanize output](skills/humanize-output/SKILL.md) |
 
 ## Finish

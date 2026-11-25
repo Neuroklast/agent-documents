@@ -108,7 +108,7 @@ for (const file of mdFiles) {
 // --- 4. MANIFEST coverage --------------------------------------------------
 const manifestPath = join(root, "MANIFEST.md");
 for (const entry of skillEntries) {
-  for (const index of [join(root, "AGENTS.md"), join(root, "skills", "README.md"), manifestPath]) {
+  for (const index of [join(root, "AGENTS.md"), join(root, "skills", "README.md")]) {
     const references = [...readFileSync(index, "utf8").matchAll(linkRe)]
       .map(m => resolve(dirname(index), m[1].split("#")[0]));
     if (!references.includes(entry)) errors.push("unlisted skill: " + rel(entry) + " in " + rel(index));
@@ -118,6 +118,13 @@ if (!skillEntries.length) errors.push("no individual skills found");
 if (existsSync(manifestPath)) {
   const manifest = readFileSync(manifestPath, "utf8");
   const listed = new Set([...manifest.matchAll(linkRe)].map((m) => m[1].split("#")[0]));
+  if (listed.has("skills/README.md")) {
+    const index = join(root, "skills", "README.md");
+    for (const match of readFileSync(index, "utf8").matchAll(linkRe)) {
+      const target = rel(resolve(dirname(index), match[1].split("#")[0]));
+      if (target.startsWith("skills/") && target.endsWith("/SKILL.md")) listed.add(target);
+    }
+  }
   for (const file of mdFiles) {
     const r = rel(file);
     if (!listed.has(r)) errors.push(`manifest: ${r} is not listed in MANIFEST.md`);

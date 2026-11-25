@@ -31,3 +31,5 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
 
 - `SECURITY.md` (root) — vulnerability reporting + pointer to `security/`.
 
+
+- 2026-11-25: Close prioritized research gaps with four task workflows, canonical operations, supply-chain, agent handoff, performance, AI and brownfield topics; extend host verification and evaluation fixtures.

@@ -1,82 +1,384 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "permission": {
-    "edit": "ask",
-    "external_directory": "deny",
-    "webfetch": "ask",
-    "websearch": "allow",
-    "bash": {
-      "*": "ask"
+  "permissions": [
+    {
+      "action": "shell",
+      "resource": "*",
+      "effect": "ask"
+    },
+    {
+      "action": "edit",
+      "resource": "*",
+      "effect": "ask"
+    },
+    {
+      "action": "external_directory",
+      "resource": "*",
+      "effect": "deny"
+    },
+    {
+      "action": "webfetch",
+      "resource": "*",
+      "effect": "ask"
+    },
+    {
+      "action": "websearch",
+      "resource": "*",
+      "effect": "allow"
     }
-  },
-  "agent": {
+  ],
+  "agents": {
     "plan": {
       "mode": "primary",
-      "permission": {
-        "edit": "deny",
-        "bash": "deny",
-        "external_directory": "deny",
-        "webfetch": "deny",
-        "websearch": "deny",
-        "task": "deny",
-        "skill": "ask"
-      }
+      "description": "Inspect and plan; report evidence without modifying files.",
+      "system": "Inspect and plan; report evidence without modifying files. Read AXON's roles/architect.md when relevant. Respect project instructions and report unverified checks.",
+      "permissions": [
+        {
+          "action": "*",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "read",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "glob",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "grep",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "skill",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "external_directory",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "read",
+          "resource": ".env",
+          "effect": "deny"
+        },
+        {
+          "action": "read",
+          "resource": ".env.*",
+          "effect": "deny"
+        },
+        {
+          "action": "read",
+          "resource": "**/.env",
+          "effect": "deny"
+        },
+        {
+          "action": "read",
+          "resource": "**/.env.*",
+          "effect": "deny"
+        }
+      ]
     },
     "architect": {
       "mode": "subagent",
-      "prompt": "{file:./roles/architect.md}",
-      "permission": {
-        "edit": "deny",
-        "bash": "deny",
-        "external_directory": "deny",
-        "webfetch": "deny",
-        "websearch": "deny",
-        "task": "deny",
-        "skill": "ask"
-      }
+      "description": "Review architecture and contracts. Report tradeoffs and findings.",
+      "system": "Review architecture and contracts. Report tradeoffs and findings. Read AXON's roles/architect.md when relevant. Respect project instructions and report unverified checks.",
+      "permissions": [
+        {
+          "action": "*",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "read",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "glob",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "grep",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "skill",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "external_directory",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "read",
+          "resource": ".env",
+          "effect": "deny"
+        },
+        {
+          "action": "read",
+          "resource": ".env.*",
+          "effect": "deny"
+        },
+        {
+          "action": "read",
+          "resource": "**/.env",
+          "effect": "deny"
+        },
+        {
+          "action": "read",
+          "resource": "**/.env.*",
+          "effect": "deny"
+        }
+      ]
     },
     "reviewer": {
       "mode": "subagent",
-      "prompt": "{file:./roles/reviewer.md}",
-      "permission": {
-        "edit": "deny",
-        "bash": "deny",
-        "external_directory": "deny",
-        "webfetch": "deny",
-        "websearch": "deny",
-        "task": "deny",
-        "skill": "ask"
-      }
+      "description": "Review changes for correctness, security and regressions. Report findings with file references.",
+      "system": "Review changes for correctness, security and regressions. Report findings with file references. Read AXON's roles/reviewer.md when relevant. Respect project instructions and report unverified checks.",
+      "permissions": [
+        {
+          "action": "*",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "read",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "glob",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "grep",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "skill",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "external_directory",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "read",
+          "resource": ".env",
+          "effect": "deny"
+        },
+        {
+          "action": "read",
+          "resource": ".env.*",
+          "effect": "deny"
+        },
+        {
+          "action": "read",
+          "resource": "**/.env",
+          "effect": "deny"
+        },
+        {
+          "action": "read",
+          "resource": "**/.env.*",
+          "effect": "deny"
+        }
+      ]
     },
     "tester": {
       "mode": "subagent",
-      "prompt": "{file:./roles/tester.md}"
+      "description": "Design and execute tests within the authorized task scope. Do not change production code.",
+      "system": "Design and execute tests within the authorized task scope. Do not change production code. Read AXON's roles/tester.md when relevant. Respect project instructions and report unverified checks.",
+      "permissions": [
+        {
+          "action": "*",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "read",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "glob",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "grep",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "skill",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "edit",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "shell",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "external_directory",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "read",
+          "resource": ".env",
+          "effect": "deny"
+        },
+        {
+          "action": "read",
+          "resource": ".env.*",
+          "effect": "deny"
+        },
+        {
+          "action": "read",
+          "resource": "**/.env",
+          "effect": "deny"
+        },
+        {
+          "action": "read",
+          "resource": "**/.env.*",
+          "effect": "deny"
+        }
+      ]
     },
     "security-auditor": {
       "mode": "subagent",
-      "prompt": "{file:./roles/security-auditor.md}",
-      "permission": {
-        "edit": "deny",
-        "bash": "deny",
-        "external_directory": "deny",
-        "webfetch": "deny",
-        "websearch": "deny",
-        "task": "deny",
-        "skill": "ask"
-      }
+      "description": "Inspect trust boundaries and report security findings with evidence.",
+      "system": "Inspect trust boundaries and report security findings with evidence. Read AXON's roles/security-auditor.md when relevant. Respect project instructions and report unverified checks.",
+      "permissions": [
+        {
+          "action": "*",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "read",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "glob",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "grep",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "skill",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "external_directory",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "read",
+          "resource": ".env",
+          "effect": "deny"
+        },
+        {
+          "action": "read",
+          "resource": ".env.*",
+          "effect": "deny"
+        },
+        {
+          "action": "read",
+          "resource": "**/.env",
+          "effect": "deny"
+        },
+        {
+          "action": "read",
+          "resource": "**/.env.*",
+          "effect": "deny"
+        }
+      ]
     },
     "compliance-officer": {
       "mode": "subagent",
-      "prompt": "{file:./roles/compliance-officer.md}",
-      "permission": {
-        "edit": "deny",
-        "bash": "deny",
-        "external_directory": "deny",
-        "webfetch": "deny",
-        "websearch": "deny",
-        "task": "deny",
-        "skill": "ask"
-      }
+      "description": "Review applicable compliance obligations and report gaps; do not claim certification.",
+      "system": "Review applicable compliance obligations and report gaps; do not claim certification. Read AXON's roles/compliance-officer.md when relevant. Respect project instructions and report unverified checks.",
+      "permissions": [
+        {
+          "action": "*",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "read",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "glob",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "grep",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "skill",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "external_directory",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "read",
+          "resource": ".env",
+          "effect": "deny"
+        },
+        {
+          "action": "read",
+          "resource": ".env.*",
+          "effect": "deny"
+        },
+        {
+          "action": "read",
+          "resource": "**/.env",
+          "effect": "deny"
+        },
+        {
+          "action": "read",
+          "resource": "**/.env.*",
+          "effect": "deny"
+        }
+      ]
     }
   }
 }
