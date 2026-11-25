@@ -1,5 +1,7 @@
 # Decision Log
 
+- 2026-11-25: Introduce native requirements-clarity, incremental-delivery, evidence-review and complexity-review workflows; retain historical provenance. Replaces the former four skill identifiers; update consumers explicitly.
+
 Dated one-liners for rule and structure decisions of this collection, including
 "checked, unchanged" outcomes. Append-only; supersede, never rewrite.
 

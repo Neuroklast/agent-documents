@@ -18,10 +18,10 @@ Load this file first. Read **only** topic files relevant to the task. [MANIFEST.
 | --- | --- |
 | Every coding session | [Workflow](core/workflow.md), [Context budget](core/context-budget.md) |
 | Small feature or fix | [Plan first](skills/plan-first/SKILL.md), [Regression](core/regression.md), [TDD](skills/tdd-extraction/SKILL.md) |
-| Product discovery / ambiguous requirements | [BMAD discovery](skills/bmad-discovery/SKILL.md), [PRD](templates/PRD.md) only if needed |
-| Multi-story / cross-system delivery | [BMAD delivery](skills/bmad-delivery/SKILL.md), [Architecture](core/architecture.md) |
-| Code or specification review | [BMAD review](skills/bmad-review/SKILL.md), [Quality](core/quality.md) |
-| Lean / bloat / overengineering review | [Ponytail review](skills/ponytail-review/SKILL.md) |
+| Product discovery / ambiguous requirements | [Requirements clarity](skills/requirements-clarity/SKILL.md), [PRD](templates/PRD.md) only if needed |
+| Multi-story / cross-system delivery | [Incremental delivery](skills/incremental-delivery/SKILL.md), [Architecture](core/architecture.md) |
+| Code or specification review | [Evidence review](skills/evidence-review/SKILL.md), [Quality](core/quality.md) |
+| Lean / bloat / overengineering review | [Complexity review](skills/complexity-review/SKILL.md) |
 | UI / interaction | [Frontend UI skill](skills/frontend-ui/SKILL.md), [UX](frontend/ux.md); [Design](frontend/design.md), [Components](frontend/components.md) on demand |
 | Accessibility / motion / performance | [Accessibility](frontend/accessibility.md), [Scroll/motion](frontend/scroll-motion.md), [Performance](frontend/performance.md) as relevant |
 | API / data / permissions | [API](backend/api.md), [REST skill](skills/rest-guidelines/SKILL.md), [Data](backend/data-and-schema.md), [Auth](backend/auth.md) as relevant |

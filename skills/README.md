@@ -4,10 +4,10 @@ Load on demand from [AGENTS.md](../AGENTS.md). `SKILL.md` frontmatter defines ea
 
 | Skill | Use |
 | --- | --- |
-| [bmad-discovery](bmad-discovery/SKILL.md) | Complex outcomes, brief, PRD and architecture decisions |
-| [bmad-delivery](bmad-delivery/SKILL.md) | Stories, implementation, tracking and epic closure |
-| [bmad-review](bmad-review/SKILL.md) | Evidence-backed acceptance and risk lenses |
-| [ponytail-review](ponytail-review/SKILL.md) | Bugs, scale, security, missing tests and lean-code review |
+| [requirements-clarity](requirements-clarity/SKILL.md) | Complex outcomes, brief, PRD and architecture decisions |
+| [incremental-delivery](incremental-delivery/SKILL.md) | Stories, implementation, tracking and epic closure |
+| [evidence-review](evidence-review/SKILL.md) | Evidence-backed acceptance and risk lenses |
+| [complexity-review](complexity-review/SKILL.md) | Bugs, scale, security, missing tests and lean-code review |
 | [plan-first](plan-first/SKILL.md) | Non-trivial focused implementation |
 | [tdd-extraction](tdd-extraction/SKILL.md) | Failing behavior test before a fix |
 | [rest-guidelines](rest-guidelines/SKILL.md) | REST wire contract |

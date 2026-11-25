@@ -39,7 +39,7 @@ test("default installs both tool directories and resolves collection links", () 
 test("--agents does not install a Claude copy", () => fixture((dir) => {
   const result = run(dir, "--agents");
   assert.equal(result.status, 0, result.stderr);
-  assert.ok(existsSync(join(dir, ".agents", "skills", "bmad-review", "SKILL.md")));
+  assert.ok(existsSync(join(dir, ".agents", "skills", "evidence-review", "SKILL.md")));
   assert.equal(existsSync(join(dir, ".claude")), false);
 }));
 

@@ -21,7 +21,7 @@ Canonical Definition of Done and review bar.
 5. Significant performance regression.
 6. Duplication, complexity and maintainability.
 
-Review recipes: [BMAD review](../skills/bmad-review/SKILL.md) for multiple evidence lenses; [Ponytail review](../skills/ponytail-review/SKILL.md) for rigorous lean review. A review is not passed merely because CI is green. Do not invent defects to fill a quota.
+Review recipes: [Evidence review](../skills/evidence-review/SKILL.md) for multiple evidence lenses; [Complexity review](../skills/complexity-review/SKILL.md) for rigorous lean review. A review is not passed merely because CI is green. Do not invent defects to fill a quota.
 
 ## Evidence and debt
 

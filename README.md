@@ -29,13 +29,13 @@ Default installs to `.agents/skills/` and `.claude/skills/`. Check your coding t
 | Need | File |
 | --- | --- |
 | Always-on minimal routing | [AGENTS.md](AGENTS.md) |
-| Complex discovery and requirements | [BMAD discovery](skills/bmad-discovery/SKILL.md) |
-| Epics, stories, implementation and acceptance | [BMAD delivery](skills/bmad-delivery/SKILL.md) |
-| Review by independent evidence lenses | [BMAD review](skills/bmad-review/SKILL.md) |
-| Correctness, risk, load and code bloat | [Ponytail review](skills/ponytail-review/SKILL.md) |
+| Complex discovery and requirements | [Requirements clarity](skills/requirements-clarity/SKILL.md) |
+| Epics, stories, implementation and acceptance | [Incremental delivery](skills/incremental-delivery/SKILL.md) |
+| Review by independent evidence lenses | [Evidence review](skills/evidence-review/SKILL.md) |
+| Correctness, risk, load and code bloat | [Complexity review](skills/complexity-review/SKILL.md) |
 | Project procedures and technology rules | [MANIFEST.md](MANIFEST.md) and [Skills index](skills/README.md) |
 
-**Choose the smallest workflow:** trivial fix → targeted check; feature → specification + TDD; multi-story change → discovery, story slicing, implementation, review, retrospective. The BMAD-based skills run independently of BMAD's installer. Ponytail Review is an on-demand review, not a permanent verbose prompt.
+**Choose the smallest workflow:** trivial fix → targeted check; feature → specification + TDD; multi-story change → discovery, story slicing, implementation, review, retrospective. The four workflows are native to this collection and have no external runtime dependency. Complexity review is invoked only when needed.
 
 ## Context and maintenance
 
@@ -49,10 +49,9 @@ Default installs to `.agents/skills/` and `.claude/skills/`. Check your coding t
 
 ## Attribution and scope
 
-- **BMad Method**: [bmad-code-org/BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD), used as a reference for adaptive discovery, story delivery, multi-lens review and retrospectives.
-- **Ponytail**: [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail), used as a reference for risk-first, evidence-backed lean review.
-- This repository contains **new, condensed adaptations**, not copied framework source, vendor tooling, hooks, agent personas or a claim of full compatibility. The upstream projects publish their own terms and licenses.
-- External ideas do not change the collection's own licensing: no license is granted by this repository, all rights reserved. Seek maintainer permission before copying or redistribution.
+The collection implements general engineering practices: requirements clarification, incremental delivery, evidence-based review and complexity control. BMad Method and Ponytail were historical sources of inspiration; neither is bundled or presented as our product. See [provenance](PROVENANCE.md) for scope and limitations.
+
+Reading is unrestricted. No general redistribution license is granted. Obtain permission from the maintainer for copying or distribution.
 
 ## What Markdown cannot enforce
 
