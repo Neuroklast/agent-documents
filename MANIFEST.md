@@ -13,6 +13,11 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | [LEGAL-REVIEW.md](LEGAL-REVIEW.md) | Legal review evidence and unresolved release conditions | Distribution review |
 | [PROVENANCE.md](PROVENANCE.md) | Inspiration, ownership boundaries and release checks | Distribution or audit |
 | [README.md](README.md) | Human onboarding, adoption, customization, limits | Adopting the collection |
+| [RULE-OWNERS.md](RULE-OWNERS.md) | Canonical rule ownership | Maintainer audits |
+| [LICENSE](LICENSE) | Rights and permissions | Adoption and distribution |
+| [assets/logo.svg](assets/logo.svg) | Original vector project mark | README branding |
+| [QUALITY.md](QUALITY.md) | Reproducible verification and benchmark limits | Assessing evidence |
+| [COMPARISON.md](COMPARISON.md) | Dated public feature comparison | Evaluating alternatives |
 | [MANIFEST.md](MANIFEST.md) | This index | Adding, renaming, auditing files |
 | [CHANGELOG.md](CHANGELOG.md) | Release history of the collection | Updating the collection |
 | [DECISIONS.md](DECISIONS.md) | Decision log (rule/structure decisions, "unchanged" checks) | Rule lifecycle, audits |
@@ -36,25 +41,6 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | [.github/ISSUE_TEMPLATE/docs.md](.github/ISSUE_TEMPLATE/docs.md) | Documentation issue template | Optional issue tracking |
 | [.github/ISSUE_TEMPLATE/config.yml](.github/ISSUE_TEMPLATE/config.yml) | Private security reporting link | This repository only |
 | [.github/PULL_REQUEST_TEMPLATE.md](.github/PULL_REQUEST_TEMPLATE.md) | PR description + checklist | Opening a PR |
-## Rule ownership — canonical file per topic
-
-| Rule / topic | Canonical file |
-| --- | --- |
-| Test integrity, red-test handling | `core/workflow.md` |
-| Commit/PR scope, worktrees, branches | `core/git.md` |
-| Definition of Done, review criteria, coverage | `core/quality.md` |
-| Archive policy, docs maintenance | `core/docs-system.md` |
-| Secrets, least privilege, hardening | `security/security.md` |
-| Cache layers and invalidation | `backend/caching.md` |
-| Schema SSOT, RLS | `backend/data-and-schema.md` |
-| Consent, Impressum, BFSG | `legal/compliance-de.md` |
-| Overlays, scroll ownership | `frontend/scroll-motion.md` |
-| Accessibility baseline | `frontend/accessibility.md` |
-| API topic (auth, validation, endpoint DoD) | `backend/api.md` |
-| REST wire format (paths, JSON, methods, status, errors, pagination) | `skills/rest-guidelines/SKILL.md` |
-| Release ritual | `checklists/release.md` |
-| Rule lifecycle (add/delete) | `core/context-budget.md` |
-| Decision log | `DECISIONS.md` |
 ## core/ — process & engineering
 
 | Path | Purpose | Read when |
@@ -171,6 +157,18 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | [skills/launch-compliance-audit/SKILL.md](skills/launch-compliance-audit/SKILL.md) | DE/EU go-live audit | Public launch |
 | [skills/c-realtime/SKILL.md](skills/c-realtime/SKILL.md) | C/C++/embedded/realtime | Native code |
 | [skills/video-scrubbing/SKILL.md](skills/video-scrubbing/SKILL.md) | Scroll-bound video | Explicit video briefing |
+
+| [skills/verification-before-done/SKILL.md](skills/verification-before-done/SKILL.md) | Evidence gate before done | End of implementation |
+| [skills/pr-comment-concise/SKILL.md](skills/pr-comment-concise/SKILL.md) | Short PR comments | Code review |
+| [skills/minimal-change/SKILL.md](skills/minimal-change/SKILL.md) | Smallest complete change | Any implementation |
+| [skills/context-thread/SKILL.md](skills/context-thread/SKILL.md) | Session goal anchor | Long sessions |
+| [skills/systematic-debugging/SKILL.md](skills/systematic-debugging/SKILL.md) | Root-cause diagnosis | Bug reports |
+
+| [skills/load-contract/SKILL.md](skills/load-contract/SKILL.md) | Explicit load decision | Start of non-trivial task |
+
+| [skills/frontend-taste/SKILL.md](skills/frontend-taste/SKILL.md) | Anti-slop UI judgment | User-facing frontend |
+| [skills/humanize-output/SKILL.md](skills/humanize-output/SKILL.md) | Humanize agent text | PR text, comments, docs, UI copy |
+
 ## templates/
 
 | Path | Purpose | Read when |

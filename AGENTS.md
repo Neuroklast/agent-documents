@@ -16,6 +16,15 @@ Load this file first. Read **only** topic files relevant to the task. [MANIFEST.
 
 Use the existing project's architecture, conventions, tools, supported platforms and release policy. General rules protect correctness, security and verification; topic defaults are recommendations when compatible with the project. Stack adapters apply only to technologies actually present. Do not impose a personal preference, new framework, service, folder structure, CI job or deployment action without a task-specific reason and the necessary approval. If guidance conflicts, preserve the user's authorized scope and applicable security/legal constraints; explain material conflicts rather than silently changing policy.
 
+## Load contract
+
+For any non-trivial task, write a load contract (see [load-contract](skills/load-contract/SKILL.md)) before loading skill bodies or topic files. Maximum one primary + two specialists. The contract makes the context decision reviewable.
+
+
+## Resolve rule conflicts
+
+Security, correctness, authorization and verification invariants outrank suggested defaults. Apply conditional stack guidance only to verified project capabilities. Project-specific decisions belong in the target project. Historical lessons are evidence, not current rule authority; when they conflict, use the canonical topic. The [ownership index](RULE-OWNERS.md) is for maintainers.
+
 ## Task router
 
 Choose the primary workflow once; add specialist guidance only when needed. Follow links on demand and do not restart a workflow merely because a reference links back to it. Read-only tasks do not trigger coding, commits or deployment.
@@ -62,6 +71,17 @@ Choose the primary workflow once; add specialist guidance only when needed. Foll
 | R2 / S3 object storage | [R2/S3](stack/cloudflare-r2.md) |
 | Incidents / learned pitfalls | [Lessons index](lessons/README.md) |
 | Architecture remediation / living docs | [Quality programme](core/architecture-quality-programme.md), [CI gate](testing/living-docs-gate.md) |
+
+| Long session / drift risk | [Context thread](skills/context-thread/SKILL.md) |
+| Claiming task complete | [Verification before done](skills/verification-before-done/SKILL.md) |
+| PR / review comments | [PR comment concise](skills/pr-comment-concise/SKILL.md) |
+| Implementation / refactor | [Minimal change](skills/minimal-change/SKILL.md) |
+| Bug diagnosis | [Systematic debugging](skills/systematic-debugging/SKILL.md) |
+
+| Non-trivial task start | [Load contract](skills/load-contract/SKILL.md) |
+
+| User-facing UI | [Frontend taste](skills/frontend-taste/SKILL.md), [Frontend UI](skills/frontend-ui/SKILL.md) |
+| Agent-written text (PR, comments, docs, copy) | [Humanize output](skills/humanize-output/SKILL.md) |
 
 ## Finish
 

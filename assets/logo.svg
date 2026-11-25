@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="128" viewBox="0 0 480 128" role="img" aria-labelledby="title desc">
+  <title id="title">Agent Documents</title>
+  <desc id="desc">Angular red document and orbit mark, inspired by industrial visual language, on a dark field.</desc>
+  <rect width="480" height="128" rx="12" fill="#101014"/>
+  <g fill="none" stroke="#e53a40" stroke-width="4" stroke-linejoin="miter">
+    <path d="M35 22h46l22 22v62H35z"/>
+    <path d="M81 22v22h22M47 57h42M47 70h30M47 83h36"/>
+    <path d="M22 81 116 47" stroke-width="3"/>
+  </g>
+  <path d="M121 24v80" stroke="#34343b"/>
+  <g fill="#f4f4f6" font-family="system-ui, sans-serif" font-weight="700" letter-spacing="2">
+    <text x="142" y="57" font-size="25">AGENT</text>
+    <text x="142" y="86" font-size="25">DOCUMENTS</text>
+  </g>
+  <path d="M142 99h46" stroke="#e53a40" stroke-width="3"/>
+</svg>

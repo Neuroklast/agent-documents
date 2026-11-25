@@ -35,9 +35,20 @@ Load on demand from [AGENTS.md](../AGENTS.md). `SKILL.md` frontmatter defines ea
 ## UI/UX selection
 
 Use frontend-ui for ordinary implementation. Add only specialists matching the current decision; for a full redesign work in slices. Research resolves uncertainty, architecture defines ownership, interaction defines behavior and quality review verifies outcomes. Do not load every specialist.
+| [verification-before-done](verification-before-done/SKILL.md) | Evidence required before claiming done |
+| [pr-comment-concise](pr-comment-concise/SKILL.md) | Short actionable PR and review comments |
+| [minimal-change](minimal-change/SKILL.md) | Smallest complete change only |
+| [context-thread](context-thread/SKILL.md) | Keep original goal visible in long sessions |
+| [systematic-debugging](systematic-debugging/SKILL.md) | Root-cause loop before patching |
+
+| [load-contract](load-contract/SKILL.md) | Explicit loading decision before reading skill bodies |
+
+| [frontend-taste](frontend-taste/SKILL.md) | Explicit anti-slop design judgment before UI implementation |
+| [humanize-output](humanize-output/SKILL.md) | Remove AI writing patterns from agent-produced text |
 
 ## Combining skills
 
 Choose one primary workflow for the task. Other skills contribute focused checks, not another full workflow. A clear small fix may use test-first alone; uncertain requirements use requirements clarity, then plan-first or incremental delivery. Implementation can invoke specialist guidance. Evidence review checks the result; complexity and security review are focused lenses when relevant. A reference back to another skill is not an instruction to restart it or reread already loaded context. Review-only requests do not trigger implementation.
 
 Install with `node scripts/install-skills.mjs <target-dir>` from the collection root.
+
