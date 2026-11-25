@@ -15,7 +15,7 @@ Load for: interaction states, feedback, errors, confirmations.
 ## Feedback
 
 - Use the repo's toast/notification primitive. NEVER `alert()` / `confirm()`.
-- Toasts: short, action-named ("Invoice sent"), never technical ("POST 200").
+- Toasts: short, action-named ("Changes saved"), never technical ("POST 200").
 - Destructive actions: confirmation dialog naming consequences and related records.
 - Long operations: progress state, not silent waiting. Optimistic updates only when rollback is defined.
 
@@ -32,14 +32,14 @@ Load for: interaction states, feedback, errors, confirmations.
 - Deep-linkable state: filters, tabs, and selected records in the URL when users share or reload that state.
 - Browser back must not lose unsaved work silently; warn or autosave.
 - Modals/drawers: Escape closes, focus returns to the trigger ([accessibility.md](accessibility.md)).
-- One overlay at a time; opening a new one closes the previous ([scroll-motion.md](scroll-motion.md)).
+- Keep overlay state, focus and dismissal coordinated; see [scroll ownership](scroll-motion.md).
 
 ## Copy & errors
 
 - Error messages: what happened + what to do. No blame, no jargon, no internals.
 - NEVER expose internal identifiers, SQL, or stack details.
 - Empty/error copy is localized like all UI text.
-- Confirmations name the object: "Delete artist 'X'?" not "Are you sure?".
+- Confirmations name the object: "Delete record 'X'?" not "Are you sure?".
 
 ## Motion & reduced motion
 

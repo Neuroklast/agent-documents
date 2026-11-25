@@ -8,7 +8,7 @@ Load with [AGENTS.md](../AGENTS.md) at session start.
 AGENTS.md (router) -> relevant topic or skill -> linked details only if needed
 ```
 
-- Do not read the entire documentation tree by default. Use 1–3 relevant topic files; fetch deeper detail on a real question.
+- Reuse context already loaded in the current session. Do not reread the entire documentation tree by default. Use 1–3 relevant topic files; fetch deeper detail on a real question.
 - [MANIFEST.md](../MANIFEST.md) serves maintainers, not the session prompt.
 - Prefer a single canonical rule and links to repeated blocks.
 

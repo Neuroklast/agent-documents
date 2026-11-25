@@ -5,7 +5,7 @@ Load for: bugfixes, refactors, shared-file changes.
 ## Scope rules
 
 - Commit/PR scope, fix vs. feature vs. refactor: [git.md](git.md).
-- NEVER change UX/view defaults unless the task explicitly asks (calendar default view, nav order, sort order).
+- NEVER change UX/view defaults unless the task explicitly asks (for example navigation, ordering or saved defaults).
 - A version bump is a release, not a commit side effect ([../checklists/release.md](../checklists/release.md)).
 - Name a **do-not-touch list** in the PR for risky changes.
 

@@ -25,14 +25,14 @@ If a change triggers nothing: record it explicitly — `YYYY-MM-DD: checked <tri
 ## Processors & regions
 
 - Keep a processor table: name, purpose, region, DPA status, data categories.
-- Prefer EU regions; US processors need SCCs + a privacy entry.
+- Prefer EU regions where appropriate. For transfers to third countries, verify a current Chapter V GDPR basis (e.g. applicable adequacy decision including eligible certified recipients, or appropriate safeguards such as SCCs with required assessments). Document actual transfers and transparency obligations.
 - Optional processors (e.g. email) only activate after explicit admin approval where they touch customer data.
 
 ## Storage & cookies inventory
 
 - Inventory: name, type (cookie/localStorage/IndexedDB), purpose, duration/TTL, essential (y/n), consent required.
 - Cache TTLs and cookie names are privacy facts — document them in the privacy policy.
-- Essential = strictly necessary for the requested service (§ 25 TDDDG(2)); everything else needs consent.
+- Check both § 25(2) TDDDG exceptions and the separate GDPR basis for personal-data processing. Obtain consent where legally required.
 
 ## Text sources
 

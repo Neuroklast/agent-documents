@@ -28,7 +28,7 @@ Load for: planning tests, deciding what to test.
 ## Principles
 
 - Test behavior, not implementation details. NEVER assert on internal call counts unless that IS the contract.
-- Tests must be deterministic: no network, no wall-clock dependencies, no order dependence.
+- Keep unit tests deterministic; isolate clocks and external dependencies. Integration/E2E tests may use controlled real services with explicit fixtures and bounded timeouts.
 - Every new service: cover dev/mock mode and empty-data mode where the repo has those.
 - Prefer contract tests (few, named asserts) over assertion spam in loops.
 - Test integrity: [../core/workflow.md](../core/workflow.md).

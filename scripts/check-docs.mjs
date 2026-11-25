@@ -29,6 +29,7 @@ function walk(dir, out = []) {
 
 const files = walk(root);
 const mdFiles = files.filter((f) => f.endsWith(".md"));
+const skillEntries = [];
 const rel = (f) => relative(root, f).split("\\").join("/");
 const lineCount = (text) => text.split(/\r?\n/).length;
 
@@ -51,11 +52,21 @@ for (const file of mdFiles) {
 }
 
 // --- 2. Skill frontmatter --------------------------------------------------
+const entryPath = join(root, "SKILL.md");
+if (!existsSync(entryPath)) errors.push("frontmatter: root SKILL.md missing");
+else {
+  const entry = readFileSync(entryPath, "utf8");
+  const fm = entry.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n/)?.[1] ?? "";
+  if (!/^name: agent-documents$/m.test(fm)) errors.push("frontmatter: invalid collection skill name");
+  const desc = fm.match(/^description:\s*(.+)$/m)?.[1]?.trim();
+  if (!desc || desc.length > 1024) errors.push("frontmatter: invalid collection skill description");
+}
 const skillsDir = join(root, "skills");
 if (existsSync(skillsDir)) {
   for (const dir of readdirSync(skillsDir)) {
     const skillFile = join(skillsDir, dir, "SKILL.md");
     if (!existsSync(skillFile)) continue;
+    skillEntries.push(skillFile);
     const text = readFileSync(skillFile, "utf8");
     const r = rel(skillFile);
     const match = text.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n/);
@@ -87,7 +98,7 @@ for (const file of mdFiles) {
     target = target.split("#")[0];
     if (!target) continue;
     const resolved = resolve(dirname(file), decodeURIComponent(target));
-    if (!existsSync(resolved)) {
+    if (rel(resolved) === ".." || rel(resolved).startsWith("../") || !existsSync(resolved)) {
       errors.push(`link: ${r} -> ${match[1]} (not found)`);
     }
   }
@@ -95,6 +106,14 @@ for (const file of mdFiles) {
 
 // --- 4. MANIFEST coverage --------------------------------------------------
 const manifestPath = join(root, "MANIFEST.md");
+for (const entry of skillEntries) {
+  for (const index of [join(root, "AGENTS.md"), join(root, "skills", "README.md"), manifestPath]) {
+    const references = [...readFileSync(index, "utf8").matchAll(linkRe)]
+      .map(m => resolve(dirname(index), m[1].split("#")[0]));
+    if (!references.includes(entry)) errors.push("unlisted skill: " + rel(entry) + " in " + rel(index));
+  }
+}
+if (!skillEntries.length) errors.push("no individual skills found");
 if (existsSync(manifestPath)) {
   const manifest = readFileSync(manifestPath, "utf8");
   const listed = new Set([...manifest.matchAll(linkRe)].map((m) => m[1].split("#")[0]));

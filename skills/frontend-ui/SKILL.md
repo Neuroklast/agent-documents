@@ -10,17 +10,17 @@ description: UI implementation workflow for user-facing frontend work. Use when 
 1. Read [../../frontend/ui.md](../../frontend/ui.md), [ux.md](../../frontend/ux.md), [design.md](../../frontend/design.md), and — if scroll/overlays involved — [scroll-motion.md](../../frontend/scroll-motion.md).
 2. Locate the existing pattern: is there a primitive/registry entry for this? Extend it.
 3. Write the component test for the DOM contract first where feasible ([../tdd-extraction/SKILL.md](../tdd-extraction/SKILL.md)).
-4. Implement using tokens and primitives only.
+4. Implement using the project's design tokens and primitives where available.
 5. Check the four states: loading, empty, error, success.
 6. Accessibility pass: keyboard, focus, labels, contrast ([../../frontend/accessibility.md](../../frontend/accessibility.md)).
 7. Run the repo's UI contract checks (scroll, overlay, mobile-layout).
 
 ## Checklist
 
-- [ ] No raw colors/sizes — tokens only.
-- [ ] No hardcoded user-visible strings — i18n system.
+- [ ] Existing design tokens used consistently where applicable.
+- [ ] Existing localization conventions followed, if applicable.
 - [ ] Icon-only buttons have `aria-label`.
-- [ ] Touch targets ≥ 44 px (public UI).
+- [ ] Touch targets verified against [accessibility guidance](../../frontend/accessibility.md).
 - [ ] Reduced motion respected.
 - [ ] Lists paginated/windowed; no unbounded DOM.
 - [ ] Images with dimensions; LCP image prioritized.

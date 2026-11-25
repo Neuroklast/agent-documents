@@ -14,7 +14,7 @@ No codebase is demonstrably "perfect". The goal is measurable integrity and prev
 6. **Independent review:** search for the same defect class globally; validate boundary tests; review runtime and security.
 7. **Prevent recurrence:** add the narrowest automated contract, enable required CI status checks, update living docs and test real deployments.
 
-## PR gate (each repository, not a centralized mutable external action)
+## Optional documentation gate for repositories that need it
 - Maintain a machine-readable changed-path-to-document-owner map.
 - Maintain an append-only dated quality journal with: Scope, Root cause, Owner, Tests, Failure path, Docs updated and Residual risk.
 - Diff against the actual PR base. Fail closed when git history or mapping is unavailable.
@@ -38,4 +38,4 @@ No codebase is demonstrably "perfect". The goal is measurable integrity and prev
 No hidden exceptions or claims of verified execution without evidence.
 
 ## Scope boundaries
-Do not force a common runtime dependency across unrelated websites. Share process and tooling, but keep business models, RLS, database owners, deploy policy and site-specific design independent. Version and test shared packages when extraction is justified.
+Do not force a common runtime dependency across unrelated products. Share process and tooling, but keep business models, RLS, database owners, deploy policy and site-specific design independent. Version and test shared packages when extraction is justified.

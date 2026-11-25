@@ -11,7 +11,7 @@ description: German/EU launch compliance gate before production go-live. Use whe
 rg -i "TMG|TTDSG|RStV|ODR-Plattform|online dispute resolution" --glob '!node_modules'
 ```
 
-Any hit = FAIL. Correct: § 5 DDG, TDDDG, § 18 Abs. 2 MStV. EU ODR link removed (obsolete 2025-07-20).
+Inspect matches in actual public legal content; historical references, tests and this audit checklist are not violations. Correct: § 5 DDG, TDDDG, § 18 Abs. 2 MStV. EU ODR link removed (obsolete 2025-07-20).
 
 ## Gate 2 — Impressum
 
@@ -36,7 +36,7 @@ Any hit = FAIL. Correct: § 5 DDG, TDDDG, § 18 Abs. 2 MStV. EU ODR link removed
 
 - [ ] BFSG scope assessed (consumer e-commerce/services vs purely informational).
 - [ ] WCAG 2.1 AA evidence: keyboard, focus, contrast, alt text, reduced motion, 200% zoom.
-- [ ] Accessibility statement + contact channel published if BFSG applies.
+- [ ] Required accessible service information and contact details provided where applicable.
 
 ## Gate 6 — Technical
 
@@ -48,5 +48,5 @@ Any hit = FAIL. Correct: § 5 DDG, TDDDG, § 18 Abs. 2 MStV. EU ODR link removed
 
 - PASS/FAIL per gate with evidence.
 - Blockers = human decisions (operator data, MStV person, legal wording).
-- NEVER write or reword legal texts yourself.
+- Draft legal wording only as clearly labelled review material when requested; obtain qualified review and verified facts before production use.
 - NEVER declare "compliant" — declare "gates passed/failed".

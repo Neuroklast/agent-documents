@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-25: Introduce native requirements-clarity, incremental-delivery, evidence-review and complexity-review workflows; retain historical provenance. Replaces the former four skill identifiers; update consumers explicitly.
+
 All notable changes to this collection are documented here.
 Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 

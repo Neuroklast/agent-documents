@@ -13,14 +13,14 @@ Load for: adding dependencies, assets, fonts, or changing the project license.
 | Category | Examples | Rule |
 | --- | --- | --- |
 | Permissive | MIT, Apache-2.0, BSD, ISC | OK with attribution where required |
-| Weak copyleft | LGPL, MPL | OK if dynamically linked/used as library — check obligations |
-| Strong copyleft | GPL, AGPL | AVOID in closed-source products; human approval required |
+| Weak copyleft | LGPL, MPL | Check exact license and distribution model; MPL file-level and LGPL linking/relinking obligations differ |
+| Strong copyleft | GPL, AGPL | Not inherently prohibited; assess distribution/network-use obligations and compatibility with intended licensing |
 | Source-available | BSL, SSPL, custom | Check terms per version; human approval |
-| Unknown/no license | — | NEVER use |
+| Unknown/no license | — | Do not copy or distribute without established permission |
 
 - Check license + maintenance + CVE status BEFORE adding a dependency.
 - Transitive licenses count (run a license scan where available).
-- NEVER vendor code without its license header.
+- Preserve applicable copyright, license, attribution and notice files; assess dependencies at the exact distributed version.
 
 ## Assets
 

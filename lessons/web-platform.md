@@ -26,4 +26,4 @@ Load for: framework/RSC/hydration/build issues. Consolidated, anonymized.
 | 2026-09 | Caching | Missing `WHERE col IS NOT NULL` returns wrong "max" rows (NULL sorts first in some DBs). | med |
 | 2026-09 | Data | A missing column in a select can return `data: null` silently — always check the error field. | high |
 | 2026-09 | Dates | Partial dates (`2026`, `2026-03`) must normalize to a full date at the boundary. | low |
-| 2026-09 | Version | One version string across build/installer/runtime/in-app news; contract-test it. | med |
+| 2026-09 | Version | Keep actual version mirrors consistent with the release source of truth. | med |

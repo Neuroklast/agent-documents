@@ -10,7 +10,9 @@ Load when changing or reviewing implementation.
 4. Can an installed dependency do it? Do not add a dependency for a thin wrapper.
 5. Otherwise write the least new code that stays readable and covers failures.
 
-Review with [Ponytail review](../skills/ponytail-review/SKILL.md). **Never** cut validation, security, error handling, tests, accessibility or requested behavior to reduce line count.
+Before abstracting, identify the concrete consumers and which behavior must change together. A single consumer is not automatically wrong, but a speculative extension point is not sufficient justification. After implementation, trace the changed behavior to the request and challenge unnecessary dependencies, layers and configuration. Never reduce correctness to reduce line count.
+
+Review with [Complexity review](../skills/complexity-review/SKILL.md). **Never** cut validation, security, error handling, tests, accessibility or requested behavior to reduce line count.
 
 ## Structure
 

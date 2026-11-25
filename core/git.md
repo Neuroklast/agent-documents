@@ -6,7 +6,7 @@ Load for: branches, commits, PRs, worktrees, hooks.
 
 - Branch from `main` (or the repo's default). Short-lived, kebab-case: `feat/x`, `fix/y`, `docs/z`, `chore/w`.
 - NEVER commit directly to `main` when the repo uses PR flow.
-- Delete branches after merge.
+- Clean up merged branches only in accordance with the repository's policy and permissions.
 
 ## Commits
 
@@ -22,7 +22,7 @@ Load for: branches, commits, PRs, worktrees, hooks.
 
 - One purpose per PR. Link the issue. Describe: what, why, how to verify, risk.
 - Include a **do-not-touch list** when the change is risky (files/symbols intentionally untouched).
-- Small diffs merge faster and review better. Split > ~500 changed lines by concern.
+- Prefer reviewable changes organized by concern. Large diffs warrant review of scope, not an arbitrary line-count split.
 - No PR with failing checks. Docs checklist included (see [docs-system.md](docs-system.md)).
 - Full checklist: [../checklists/pr.md](../checklists/pr.md).
 

@@ -11,18 +11,18 @@ Load for: C++, audio thread, plugin, embedded work. Consolidated, anonymized.
 | 2026-09 | Audio thread | Filter coefficients update at control rate (stride), not per sample, unless proven necessary. | med |
 | 2026-09 | Audio thread | Runtime coefficient builders must not allocate; preallocate prepared coefficient storage. | high |
 | 2026-09 | Host integration | Report latency for the longest audible path; bypass must delay dry by the reported latency (PDC). | high |
-| 2026-09 | Host integration | Host blocks larger than prepared MUST be sliced before oversampling — never resize in the callback. | high |
+| 2026-09 | Host integration | Handle larger-than-expected host buffers using a preplanned bounded strategy; avoid allocating in the realtime callback. | high |
 | 2026-09 | Host integration | State restore must not overwrite machine-wide preferences; re-apply globals after replace-state. | med |
 | 2026-09 | Host integration | `parameterChanged` must not persist prefs or do file I/O; queue atomic requests, persist on the message thread. | med |
-| 2026-09 | Host integration | Reset oversampling/sanitizer/rings on sleep/wake and non-realtime transitions, with a short fade. | med |
-| 2026-09 | Plugins | The webview/browser belongs to the processor, not the editor — editor close must not destroy it. | high |
+| 2026-09 | Host integration | Define processing state transitions and test discontinuities and reset behavior. | med |
+| 2026-09 | Plugins | Define ownership of embedded browser resources and preserve processing state when an editor closes. | high |
 | 2026-09 | Plugins | Per-instance user-data folders for embedded browsers; a shared profile corrupts state. | med |
 | 2026-09 | Plugins | Intercept and forward keyboard for non-text keys to the host; never steal focus silently. | med |
 | 2026-09 | Plugins | macOS AU sandbox forbids RWX — JIT only where allowed (Windows), interpreter fallback elsewhere. | high |
 | 2026-09 | DSP | A true-peak brickwall is the peak safety; residual policy lives in ONE sanitizer (mute only there). | high |
-| 2026-09 | DSP | One timeline: dry sidechain delay must equal oversampled wet latency, or transient smear appears. | high |
+| 2026-09 | DSP | Align signal paths that must remain synchronized and verify reported processing latency. | high |
 | 2026-09 | DSP | Never fake-recover meters/EMAs after overload — fix the signal path, not the display. | med |
-| 2026-09 | DSP | Hard clip/fold/bitcrush stages need a low-pass after them (documented rule, test-enforced). | med |
+| 2026-09 | DSP | Evaluate aliasing after nonlinear stages; choose oversampling or filtering according to measured signal requirements. | med |
 | 2026-09 | Tests | Contract tests must fail first; a "contract" with no failing state proves nothing. | high |
 | 2026-09 | Tests | Test runners must return failure counts as exit codes; a green `ctest` with internal failures is worthless. | high |
 | 2026-09 | Tests | Visual dumps of geometry (not golden PNGs) for layout contracts — PNGs drift across machines. | med |

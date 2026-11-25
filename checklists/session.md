@@ -1,6 +1,6 @@
 # Checklist — Session Closeout
 
-Copy into the session report. Order is fixed: implement → checks → docs → commit/PR/report.
+Copy into the session report. Use the applicable sequence: implement, verify, review, update docs and report. Commit or open a PR only as requested or required by the project.
 Definition of Done: [../core/quality.md](../core/quality.md).
 
 ## 1. Code

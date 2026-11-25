@@ -5,19 +5,19 @@
 - MAJOR: breaking changes (API, data model, behavior contracts).
 - MINOR: backward-compatible features.
 - PATCH: backward-compatible fixes.
-- SSOT: the version in the package manifest; mirrors: in-app version/news, changelog heading, health endpoint, installer/build labels.
+- Identify the project's authoritative version and its actual mirrors, which may include a manifest, changelog, runtime metadata or installer labels.
 
 ## Ritual
 
 1. [ ] Land all changes on `main`; working tree clean.
 2. [ ] Cut changelog: move `[Unreleased]` → `[X.Y.Z] - YYYY-MM-DD`; add compare links.
 3. [ ] Bump version in the manifest (script preferred over manual edits).
-4. [ ] Update in-app release notes / version constant; contract test green.
+4. [ ] Update applicable release metadata and version mirrors; verify consistency.
 5. [ ] Run full checks on the release commit (all gates + E2E).
 6. [ ] Annotated tag `vX.Y.Z`; push tag.
 7. [ ] Optional: create the platform release (GitHub Release) with the changelog body.
-8. [ ] Verify deploy: production SHA == release commit; smoke test critical flows.
-9. [ ] Post-release: monitor errors/health for the first hours.
+8. [ ] For an authorized deployment, verify its revision and smoke-test critical flows.
+9. [ ] When operational monitoring is in scope, review available post-release evidence; record any monitoring handoff.
 
 ## Release notes content
 
@@ -28,7 +28,7 @@
 
 ## Database / infrastructure
 
-- [ ] Schema changes already applied forward-compatibly before deploy.
+- [ ] If schema changes and deployment are in scope, verify the approved migration sequence and compatibility.
 - [ ] New env vars documented and set in all environments.
 - [ ] Backups taken before destructive-capable steps (human approval).
 - [ ] Rollback path known (previous tag, previous schema is forward-compatible).
@@ -36,12 +36,12 @@
 ## Definition of done
 
 - [ ] Tag exists and points at the release commit.
-- [ ] Changelog + in-app news consistent with the tag.
-- [ ] Production verified (SHA + smoke).
+- [ ] Required release notes and metadata agree with the release identifier.
+- [ ] Deployment verified when a deployment is in scope and authorized.
 - [ ] No open P0 incidents from this release.
 
 ## NEVER
 
 - Bump versions as a side effect of unrelated commits.
-- Ship a bump without in-app news where the product shows release notes.
+- Omit release documentation required by the project's existing release policy.
 - Force-push or move a published tag.

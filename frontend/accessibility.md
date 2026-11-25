@@ -48,7 +48,7 @@ Legal relevance (BFSG/EU) in [../legal/compliance-de.md](../legal/compliance-de.
 
 ## Touch & zoom
 
-- Touch targets ≥ 44×44 px on public UI; ≥ 26 px in dense tool chrome with documented exception.
+- Use comfortably operable targets; 44×44 CSS pixels is a useful design goal. Verify applicable accessibility target-size requirements and exceptions rather than treating a fixed tool-specific value as compliance.
 - Layout usable at 200% zoom and 320 px width without loss of content/function.
 - NEVER `user-scalable=no`.
 
@@ -56,7 +56,7 @@ Legal relevance (BFSG/EU) in [../legal/compliance-de.md](../legal/compliance-de.
 
 - Overlay content is portaled to `body` where containing blocks break fixed positioning ([scroll-motion.md](scroll-motion.md)).
 - Background content `aria-hidden`/inert while a modal is open.
-- Overlay scroll regions get `data-lenis-prevent` or equivalent ([scroll-motion.md](scroll-motion.md)).
+- When a custom scroll provider is present, verify overlay scrolling and keyboard access ([scroll-motion.md](scroll-motion.md)).
 
 ## Testing evidence
 

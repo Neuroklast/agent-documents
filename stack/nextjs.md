@@ -13,7 +13,7 @@ Load for: Next.js repos. Core rules stay in `core/`, `frontend/`, `backend/`.
 
 - Public reads: cookie-free client inside `unstable_cache`; NEVER `cookies()` inside cache callbacks.
 - `React.cache()` for request-stable reads (metadata + page) — NEVER for auth selectors.
-- Invalidation: pair `revalidateTag` with `revalidatePath`; admin mutations invalidate public content.
+- Invalidate affected caches using the installed Next.js version's supported APIs; choose tags, paths or other mechanisms based on actual cache ownership.
 - `generateStaticParams` + `dynamicParams` + a `revalidate` window for entity pages.
 - Metadata via `metadata`/`generateMetadata` exports — never manual `<title>`.
 
@@ -26,7 +26,7 @@ Load for: Next.js repos. Core rules stay in `core/`, `frontend/`, `backend/`.
 
 ## Client/server boundary
 
-- NEVER query the DB from client components; go through routes/actions.
+- Keep privileged database access server-side. Client SDK access is acceptable when the chosen backend explicitly supports it with enforced permissions.
 - Session refresh must copy cookies on every redirect branch.
 - `useSearchParams`/search-param pages are forced dynamic — wrap reads in a cache when needed.
 

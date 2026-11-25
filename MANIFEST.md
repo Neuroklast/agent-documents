@@ -7,7 +7,12 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 
 | Path | Purpose | Read when |
 | --- | --- | --- |
+| [SETUP.md](SETUP.md) | Project adoption and ongoing skill maintenance | Initial setup or explicit reconfiguration |
+| [SKILL.md](SKILL.md) | Portable collection entry point | Single-skill discovery |
 | [AGENTS.md](AGENTS.md) | Router, hard rules, routing table | Always, first |
+| [ARCHIVE-REVIEW.md](ARCHIVE-REVIEW.md) | Snapshot scope, file review and unresolved rights checks | Review of distribution contents |
+| [LEGAL-REVIEW.md](LEGAL-REVIEW.md) | Legal review evidence and unresolved release conditions | Distribution review |
+| [PROVENANCE.md](PROVENANCE.md) | Inspiration, ownership boundaries and release checks | Distribution or audit |
 | [README.md](README.md) | Human onboarding, adoption, customization, limits | Adopting the collection |
 | [MANIFEST.md](MANIFEST.md) | This index | Adding, renaming, auditing files |
 | [CHANGELOG.md](CHANGELOG.md) | Release history of the collection | Updating the collection |
@@ -27,6 +32,11 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | [scripts/install-skills.test.mjs](scripts/install-skills.test.mjs) | Installer default and link-rewrite regression tests | Changing skill installation |
 | [examples/hooks/README.md](examples/hooks/README.md) | Deterministic gate hook examples (Claude Code) | Setting up enforcement |
 | [.github/workflows/docs-check.yml](.github/workflows/docs-check.yml) | CI job running the docs check on push/PR | CI changes |
+| [.github/ISSUE_TEMPLATE/bug.md](.github/ISSUE_TEMPLATE/bug.md) | Bug report template | Optional issue tracking |
+| [.github/ISSUE_TEMPLATE/feature.md](.github/ISSUE_TEMPLATE/feature.md) | Feature request template | Optional issue tracking |
+| [.github/ISSUE_TEMPLATE/task.md](.github/ISSUE_TEMPLATE/task.md) | Maintenance task template | Optional issue tracking |
+| [.github/ISSUE_TEMPLATE/docs.md](.github/ISSUE_TEMPLATE/docs.md) | Documentation issue template | Optional issue tracking |
+| [.github/ISSUE_TEMPLATE/config.yml](.github/ISSUE_TEMPLATE/config.yml) | Private security reporting link | This repository only |
 | [.github/PULL_REQUEST_TEMPLATE.md](.github/PULL_REQUEST_TEMPLATE.md) | PR description + checklist | Opening a PR |
 
 ## Rule ownership — canonical file per topic
@@ -91,7 +101,7 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | --- | --- | --- |
 | [security/security.md](security/security.md) | Secrets, least privilege, hardening, residual risk | Auth, mutations, inputs, integrations |
 | [security/web-api.md](security/web-api.md) | XSS, CSRF, SSRF, headers, uploads, rate limits | Web/API security |
-| [security/owasp-llm.md](security/owasp-llm.md) | OWASP LLM Top 10 agent rules | AI/LLM features |
+| [security/owasp-llm.md](security/owasp-llm.md) | Model-application security guidance | AI/LLM features |
 
 ## legal/
 
@@ -147,10 +157,10 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | Path | Purpose | Read when |
 | --- | --- | --- |
 | [skills/README.md](skills/README.md) | Skill index | Choosing a skill |
-| [skills/bmad-discovery/SKILL.md](skills/bmad-discovery/SKILL.md) | Adaptive discovery and specification | Complex requirements |
-| [skills/bmad-delivery/SKILL.md](skills/bmad-delivery/SKILL.md) | Story slicing, TDD, tracking, epic closure | Multi-story work |
-| [skills/bmad-review/SKILL.md](skills/bmad-review/SKILL.md) | Multi-lens evidence review | High-risk change / PR |
-| [skills/ponytail-review/SKILL.md](skills/ponytail-review/SKILL.md) | Risk-first, lean-code review | Review / bloat |
+| [skills/requirements-clarity/SKILL.md](skills/requirements-clarity/SKILL.md) | Adaptive discovery and specification | Complex requirements |
+| [skills/incremental-delivery/SKILL.md](skills/incremental-delivery/SKILL.md) | Story slicing, TDD, tracking, epic closure | Multi-story work |
+| [skills/evidence-review/SKILL.md](skills/evidence-review/SKILL.md) | Multi-lens evidence review | High-risk change / PR |
+| [skills/complexity-review/SKILL.md](skills/complexity-review/SKILL.md) | Risk-first, lean-code review | Review / bloat |
 | [skills/plan-first/SKILL.md](skills/plan-first/SKILL.md) | Plan before code | Any non-trivial task |
 | [skills/tdd-extraction/SKILL.md](skills/tdd-extraction/SKILL.md) | Derive failing test first | Bugs, features |
 | [skills/rest-guidelines/SKILL.md](skills/rest-guidelines/SKILL.md) | REST subset, OpenAPI duty | API design |
