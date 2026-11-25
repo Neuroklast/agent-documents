@@ -33,4 +33,4 @@ Choose cursor pagination for frequently changing or large collections where appr
 - Check consumers before changing fields, types or endpoint behavior.
 - Generate contract artifacts from the actual source when supported. Run the project's real contract checks.
 
-See [API guidance](../../backend/api.md) and [authorization guidance](../../backend/auth.md). Historical inspiration and rights information are recorded in [../../PROVENANCE.md](../../PROVENANCE.md).
+See [API guidance](../../backend/api.md) and [authorization guidance](../../backend/auth.md). Historical inspiration and rights information are recorded in [historical provenance record](https://github.com/Neuroklast/agent-documents/blob/eeb499ffda632b174fbed1e13c48fb5c62f21040/PROVENANCE.md).
