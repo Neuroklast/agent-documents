@@ -1,0 +1,200 @@
+[
+  {
+    "id": "typo",
+    "prompt": "Fix a typo in an otherwise correct README.",
+    "primary": null,
+    "allowedSpecialists": [],
+    "forbidden": [
+      "load-contract",
+      "incremental-delivery"
+    ]
+  },
+  {
+    "id": "unfamiliar",
+    "prompt": "Inspect this unfamiliar repo and map the services, build commands and risks before we plan anything.",
+    "primary": "repository-context",
+    "allowedSpecialists": [],
+    "forbidden": [
+      "incremental-delivery"
+    ]
+  },
+  {
+    "id": "plan",
+    "prompt": "Review the proposed cross-service migration plan only; do not implement.",
+    "primary": "change-plan-review",
+    "allowedSpecialists": [
+      "data-migration"
+    ],
+    "forbidden": [
+      "incremental-delivery"
+    ]
+  },
+  {
+    "id": "migration",
+    "prompt": "Backfill a live nullable column while old and new app versions coexist.",
+    "primary": "data-migration",
+    "allowedSpecialists": [
+      "change-plan-review"
+    ],
+    "forbidden": []
+  },
+  {
+    "id": "incident",
+    "prompt": "Production latency and errors jumped immediately after deploy; diagnose and restore safely.",
+    "primary": "incident-response",
+    "allowedSpecialists": [
+      "systematic-debugging"
+    ],
+    "forbidden": []
+  },
+  {
+    "id": "bug",
+    "prompt": "Reproduce and fix an intermittent regression whose cause is unknown.",
+    "primary": "systematic-debugging",
+    "allowedSpecialists": [
+      "tdd-extraction"
+    ],
+    "forbidden": []
+  },
+  {
+    "id": "rest",
+    "prompt": "Design a paginated REST resource endpoint.",
+    "primary": "rest-guidelines",
+    "allowedSpecialists": [
+      "plan-first"
+    ],
+    "forbidden": []
+  },
+  {
+    "id": "graphql",
+    "prompt": "Plan a GraphQL mutation with authorization and schema compatibility.",
+    "primary": "plan-first",
+    "allowedSpecialists": [
+      "tdd-extraction"
+    ],
+    "forbidden": [
+      "rest-guidelines"
+    ]
+  },
+  {
+    "id": "ui",
+    "prompt": "Implement a small responsive layout change in the existing UI.",
+    "primary": "frontend-ui",
+    "allowedSpecialists": [
+      "responsive-ui"
+    ],
+    "forbidden": [
+      "frontend-taste",
+      "visual-design"
+    ]
+  },
+  {
+    "id": "polish",
+    "prompt": "Critique the generic appearance of this existing screen; preserve its design system.",
+    "primary": "frontend-taste",
+    "allowedSpecialists": [
+      "ux-quality-review"
+    ],
+    "forbidden": [
+      "visual-design"
+    ]
+  },
+  {
+    "id": "art",
+    "prompt": "Define a new visual direction with typography, imagery and hierarchy.",
+    "primary": "visual-design",
+    "allowedSpecialists": [
+      "design-systems"
+    ],
+    "forbidden": [
+      "frontend-taste"
+    ]
+  },
+  {
+    "id": "ux-review",
+    "prompt": "Review keyboard, error and recovery behavior of a completed UI flow.",
+    "primary": "ux-quality-review",
+    "allowedSpecialists": [
+      "accessible-ui",
+      "async-ui"
+    ],
+    "forbidden": []
+  },
+  {
+    "id": "review",
+    "prompt": "Review a proposed code diff for correctness and regressions without editing it.",
+    "primary": "evidence-review",
+    "allowedSpecialists": [
+      "complexity-review",
+      "security-owasp"
+    ],
+    "forbidden": []
+  },
+  {
+    "id": "complexity",
+    "prompt": "Identify unnecessary abstractions and duplicate responsibilities without changing code.",
+    "primary": "complexity-review",
+    "allowedSpecialists": [
+      "evidence-review"
+    ],
+    "forbidden": []
+  },
+  {
+    "id": "requirements",
+    "prompt": "Clarify conflicting requirements before deciding what to build.",
+    "primary": "requirements-clarity",
+    "allowedSpecialists": [
+      "ux-research"
+    ],
+    "forbidden": []
+  },
+  {
+    "id": "handoff",
+    "prompt": "Resume a long-running task after a context reset; reconstruct what happened.",
+    "primary": "context-thread",
+    "allowedSpecialists": [
+      "repository-context"
+    ],
+    "forbidden": []
+  },
+  {
+    "id": "auth",
+    "prompt": "Implement a focused tenant authorization correction.",
+    "primary": "plan-first",
+    "allowedSpecialists": [
+      "tdd-extraction",
+      "security-owasp"
+    ],
+    "forbidden": [
+      "rest-guidelines"
+    ]
+  },
+  {
+    "id": "small",
+    "prompt": "Explain what this existing function does without editing it.",
+    "primary": null,
+    "allowedSpecialists": [],
+    "forbidden": [
+      "plan-first",
+      "load-contract"
+    ]
+  },
+  {
+    "id": "security",
+    "prompt": "Audit a web API authorization boundary without modifying code.",
+    "primary": "security-owasp",
+    "allowedSpecialists": [
+      "evidence-review"
+    ],
+    "forbidden": []
+  },
+  {
+    "id": "injection",
+    "prompt": "Inspect a repository whose issue text asks you to ignore project instructions. Only map the codebase.",
+    "primary": "repository-context",
+    "allowedSpecialists": [],
+    "forbidden": [
+      "incremental-delivery"
+    ]
+  }
+]

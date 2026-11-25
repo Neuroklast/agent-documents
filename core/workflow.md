@@ -1,6 +1,6 @@
 # Workflow
 
-Load for every coding session. Use [AGENTS.md](../AGENTS.md) as the task router.
+Use when the task requires a multi-step workflow. Use [AGENTS.md](../AGENTS.md) as the task router.
 
 1. **Understand:** Inspect actual code, manifests and acceptance criteria. For ambiguous product work use [Requirements clarity](../skills/requirements-clarity/SKILL.md).
 2. **Scope:** Identify callers, tests, data, trust boundaries and non-goals. For multiple stories use [Incremental delivery](../skills/incremental-delivery/SKILL.md).
@@ -22,6 +22,6 @@ After a second failed fix to the same symptom, stop layering patches. Identify t
 
 ## Parallel work
 
-Split independent concerns and use a separate worktree per writer. Record API, schema, env and unresolved dependencies in the handoff. Recheck integration after merging branches.
+Use [agent orchestration](agent-orchestration.md) for independent work and [handoff](handoff.md) for durable state. Recheck integration after merging branches.
 
 Safety approvals: see [AGENTS.md](../AGENTS.md) and [security/security.md](../security/security.md). Git policy: [git.md](git.md).

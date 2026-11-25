@@ -1,0 +1,92 @@
+[
+  {
+    "id": "bug",
+    "brief": "Reproduce an existing regression and correct the cause",
+    "acceptance": "Hidden behavior checks and unchanged adjacent behavior",
+    "status": "fixture-not-yet-frozen"
+  },
+  {
+    "id": "requirements",
+    "brief": "Resolve a conflicting feature request",
+    "acceptance": "Requirements trace and no unsupported scope",
+    "status": "fixture-not-yet-frozen"
+  },
+  {
+    "id": "auth",
+    "brief": "Correct tenant-scoped authorization",
+    "acceptance": "Isolation and denied-path tests",
+    "status": "fixture-not-yet-frozen"
+  },
+  {
+    "id": "migration",
+    "brief": "Migrate data with old and new consumers",
+    "acceptance": "Integrity, compatibility, retry and recovery rehearsal",
+    "status": "fixture-not-yet-frozen"
+  },
+  {
+    "id": "ui",
+    "brief": "Implement an accessible responsive flow",
+    "acceptance": "Keyboard, reflow, state recovery and visual rubric",
+    "status": "fixture-not-yet-frozen"
+  },
+  {
+    "id": "performance",
+    "brief": "Reduce measured latency",
+    "acceptance": "Matched workload and correctness",
+    "status": "fixture-not-yet-frozen"
+  },
+  {
+    "id": "dependency",
+    "brief": "Update a dependency with transitive changes",
+    "acceptance": "Lockfile, license, advisory and behavior verification",
+    "status": "fixture-not-yet-frozen"
+  },
+  {
+    "id": "ci",
+    "brief": "Repair a failing CI contract",
+    "acceptance": "Original failure reproduced and no checks weakened",
+    "status": "fixture-not-yet-frozen"
+  },
+  {
+    "id": "release",
+    "brief": "Prepare staged rollout and recovery",
+    "acceptance": "Artifact identity, stop criteria and compatible rollback",
+    "status": "fixture-not-yet-frozen"
+  },
+  {
+    "id": "incident",
+    "brief": "Diagnose simulated degraded service",
+    "acceptance": "Evidence, containment, recovery and no uncontrolled changes",
+    "status": "fixture-not-yet-frozen"
+  },
+  {
+    "id": "monorepo",
+    "brief": "Modify a shared package",
+    "acceptance": "Affected consumers and cross-package checks",
+    "status": "fixture-not-yet-frozen"
+  },
+  {
+    "id": "legacy",
+    "brief": "Modernize a legacy boundary",
+    "acceptance": "Existing behavior and reversible migration",
+    "status": "fixture-not-yet-frozen"
+  },
+  {
+    "id": "llm",
+    "brief": "Improve a model-backed tool workflow",
+    "acceptance": "Structured output, authorization and adversarial evals",
+    "status": "fixture-not-yet-frozen"
+  },
+  {
+    "id": "handoff",
+    "brief": "Continue a partially completed task",
+    "acceptance": "Accurate reconstruction and no duplicated work",
+    "status": "fixture-not-yet-frozen"
+  },
+  {
+    "id": "discovery",
+    "brief": "Map an unfamiliar repository",
+    "acceptance": "Verified paths, commands and unknowns",
+    "status": "fixture-not-yet-frozen"
+  }
+]

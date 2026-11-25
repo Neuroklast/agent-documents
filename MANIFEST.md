@@ -168,3 +168,14 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | [adapters/opencode.md](adapters/opencode.md) | OpenCode setup | Host adoption |
 | [adapters/opencode-v1.json](adapters/opencode-v1.json) | Legacy config example | OpenCode V1 only |
 | [scripts/host-adapters.test.mjs](scripts/host-adapters.test.mjs) | Static host policy tests | Host changes |
+
+## Evaluation
+
+| Path | Purpose | Read when |
+| --- | --- | --- |
+| [eval/protocol.md](eval/protocol.md) | Controlled outcome protocol | Evaluation |
+| [eval/run-format.md](eval/run-format.md) | Paired run data format | Recording runs |
+| [eval/routing-cases.json](eval/routing-cases.json) | Routing pilot gold set | Routing evaluation |
+| [eval/tasks.json](eval/tasks.json) | Candidate task matrix | Fixture design |
+| [eval/score.mjs](eval/score.mjs) | Executable scoring | Evaluation |
+| [eval/score.test.mjs](eval/score.test.mjs) | Scorer self-tests | Evaluation changes |

@@ -51,7 +51,7 @@ Choose the primary workflow once; add specialist guidance only when needed. Foll
 | Perceived performance and meaningful motion | [ui-performance-motion](skills/ui-performance-motion/SKILL.md) |
 | AI and conversational interface design | [ai-interaction-ux](skills/ai-interaction-ux/SKILL.md) |
 | Trust, privacy and ethical interaction | [trustworthy-ux](skills/trustworthy-ux/SKILL.md) |
-| Evidence-based UI and UX review | [ux-quality-review](skills/ux-quality-review/SKILL.md) |
+| UX acceptance review (rather than generic code review) | [ux-quality-review](skills/ux-quality-review/SKILL.md) |
 | Explicit scroll-bound video | [Video scrubbing](skills/video-scrubbing/SKILL.md), [Scroll/motion](frontend/scroll-motion.md) |
 | Accessibility / motion / performance | [Accessibility](frontend/accessibility.md), [Scroll/motion](frontend/scroll-motion.md), [Performance](frontend/performance.md) as relevant |
 | API / data / permissions | [API](backend/api.md), [Data](backend/data-and-schema.md), [Auth](backend/auth.md) as relevant; [REST skill](skills/rest-guidelines/SKILL.md) only for REST |
@@ -68,10 +68,10 @@ Choose the primary workflow once; add specialist guidance only when needed. Foll
 | TypeScript | [TypeScript](stack/typescript.md) |
 | Supabase | [Supabase](stack/supabase.md) |
 | R2 / S3 object storage | [R2/S3](stack/cloudflare-r2.md) |
-| Repository context | [repository-context](skills/repository-context/SKILL.md) |
-| Change plan review | [change-plan-review](skills/change-plan-review/SKILL.md) |
-| Data migration | [data-migration](skills/data-migration/SKILL.md) |
-| Incident response | [incident-response](skills/incident-response/SKILL.md) |
+| Unfamiliar repository / cross-boundary discovery | [repository-context](skills/repository-context/SKILL.md) |
+| Read-only review of a risky proposed plan | [change-plan-review](skills/change-plan-review/SKILL.md) |
+| Persistent data changes / migration / backfill | [data-migration](skills/data-migration/SKILL.md) |
+| Active production incident / degraded service | [incident-response](skills/incident-response/SKILL.md) |
 | Deployment / recovery | [Deployment](operations/deployment.md), [Resilience](operations/resilience.md) as applicable |
 | Production signals / incident coordination | [Observability](operations/observability.md), [Incidents](operations/incidents.md) |
 | Dependencies / release artifacts | [Supply chain](security/supply-chain.md) |
@@ -83,9 +83,9 @@ Choose the primary workflow once; add specialist guidance only when needed. Foll
 | Historical pitfalls | [Lessons index](lessons/README.md) |
 | Architecture remediation / living docs | [Quality programme](core/architecture-quality-programme.md), [CI gate](testing/living-docs-gate.md) |
 | Long session / drift risk | [Context thread](skills/context-thread/SKILL.md) |
-| Claiming task complete | [Verification before done](skills/verification-before-done/SKILL.md) |
+| Completion evidence missing / risky verification | [Verification before done](skills/verification-before-done/SKILL.md) |
 | PR / review comments | [PR comment concise](skills/pr-comment-concise/SKILL.md) |
-| Implementation / refactor | [Minimal change](skills/minimal-change/SKILL.md) |
+| Scope creep / excess code risk | [Minimal change](skills/minimal-change/SKILL.md) |
 | Bug diagnosis | [Systematic debugging](skills/systematic-debugging/SKILL.md) |
 
 

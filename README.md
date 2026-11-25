@@ -48,6 +48,10 @@ Choose `--agents`, `--claude`, `--copilot`, `--gemini` or `--opencode` for the t
 
 For normal sessions start with [AGENTS.md](AGENTS.md) or the portable [SKILL.md](SKILL.md). The [skill index](skills/README.md) lists specialist triggers. Review [optional hook examples](examples/hooks/README.md) before enabling them. Host discovery and sandbox policies vary.
 
+## Evidence
+
+Run `node scripts/check-docs.mjs` and `node --test` to verify the collection. See [evaluation](eval/README.md) for the executable pilot scoring tools and limitations. No measured superiority over another guidance system is claimed.
+
 ## Rights
 
 See [LICENSE](LICENSE).

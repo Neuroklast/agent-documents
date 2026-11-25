@@ -1,6 +1,7 @@
 # Skills
 
 Load on demand from [AGENTS.md](../AGENTS.md). `SKILL.md` frontmatter defines each trigger.
+
 | Skill | Use |
 | --- | --- |
 | [requirements-clarity](requirements-clarity/SKILL.md) | Complex outcomes, brief, PRD and architecture decisions |
@@ -35,10 +36,9 @@ Load on demand from [AGENTS.md](../AGENTS.md). `SKILL.md` frontmatter defines ea
 | [minimal-change](minimal-change/SKILL.md) | Smallest complete change only |
 | [context-thread](context-thread/SKILL.md) | Keep original goal visible in long sessions |
 | [systematic-debugging](systematic-debugging/SKILL.md) | Root-cause loop before patching |
-| [load-contract](load-contract/SKILL.md) | Explicit loading decision before reading skill bodies |
-| [frontend-taste](frontend-taste/SKILL.md) | Explicit anti-slop design judgment before UI implementation |
+| [load-contract](load-contract/SKILL.md) | Minimal load decision for risky or ambiguous work |
+| [frontend-taste](frontend-taste/SKILL.md) | Focused visual polish critique, not routine UI work |
 | [humanize-output](humanize-output/SKILL.md) | Remove AI writing patterns from agent-produced text |
-
 | [repository-context](repository-context/SKILL.md) | Repository context |
 | [change-plan-review](change-plan-review/SKILL.md) | Change plan review |
 | [data-migration](data-migration/SKILL.md) | Data migration |
