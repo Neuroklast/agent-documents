@@ -25,7 +25,7 @@ Review recipes: [Evidence review](../skills/evidence-review/SKILL.md) for multip
 
 ## Evidence and debt
 
-- Test risky branches (permissions, money, persistence, exports) regardless of numerical coverage. Core logic coverage around 80% is a heuristic, never a substitute for a meaningful test.
+- Test risky branches (permissions, money, persistence, exports) regardless of numerical coverage. Use the project's coverage policy if it has one; a numeric target never replaces a meaningful test.
 - Distinguish source/contract checks (wiring) from behavior checks (observable output).
 - Track real debt with severity, location, impact, reason for deferral and revisit trigger. An introduced P0 must be resolved before the feature ships.
 - For incidents, add a non-duplicated lesson to [lessons/](../lessons/README.md).

@@ -35,8 +35,8 @@ Rules for writing them:
 
 ## Gates
 
-- Merge blocked on: lint, types, unit tests, contract scripts, build.
-- Secret scan + SAST as separate required jobs.
+- Require the applicable project checks before merging, such as lint, type checking, unit tests, contract checks or builds.
+- Include suitable secret scanning and security analysis for the project's risk; use existing CI capabilities.
 - Dependency audit: critical blocking, high visible (policy per repo).
 - E2E required for PRs touching user flows; deferral only as an explicit, reasoned exception recorded in the PR.
 

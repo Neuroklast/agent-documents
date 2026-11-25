@@ -30,13 +30,13 @@ presentation (UI, routes, handlers)
 
 ## Inversion of control (UI)
 
-- Leaf components receive props; NEVER read global context in leaves.
+- Keep leaf components reusable where useful. Use explicit inputs for independent primitives; context and local data access are acceptable when the component's responsibility calls for them.
 - Contracts as typed interfaces (`SectionProps`, `AdminPanelProps`, …) so renderers stay swappable.
 - Registries (fields, sections, designs) as single dispatch tables — no scattered conditionals.
 
 ## State
 
-- Server state lives on the server; client state is UI-only.
+- In client/server applications, define the authoritative state owner and synchronization contract. Local-first, offline and native architectures may have a different owner.
 - ONE state solution per concern. NEVER add a second state library "next to" the existing one.
 - Forms: schema-validated, one source of truth for validation (shared client/server schema).
 

@@ -40,7 +40,7 @@ Every mutation re-checks authorization server-side. NEVER rely on redirects, hid
 
 ## Dual auth (Bearer + cookie)
 
-- Try Bearer first, fall back to cookie. On 401 from Bearer, fall through to cookie; hard-stop only on 403.
+- Define the accepted credential sources explicitly per endpoint. Reject invalid supplied credentials and conflicting identities according to the documented contract; do not silently downgrade authentication.
 - Normalize legacy role names at one point (single `normalizeRole`), never in scattered conditionals.
 
 ## Passwords & secrets
@@ -52,7 +52,7 @@ Every mutation re-checks authorization server-side. NEVER rely on redirects, hid
 ## Audit
 
 - Security-relevant mutations write an audit entry (actor, action, target, timestamp).
-- Audit writes are best-effort: never block the operation, never log secrets.
+- Define audit durability according to the operation's risk and legal requirements. Fail closed where audit evidence is required; never log secrets.
 
 ## Verification
 

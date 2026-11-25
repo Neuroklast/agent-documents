@@ -5,7 +5,7 @@
 - MAJOR: breaking changes (API, data model, behavior contracts).
 - MINOR: backward-compatible features.
 - PATCH: backward-compatible fixes.
-- SSOT: the version in the package manifest; mirrors: in-app version/news, changelog heading, health endpoint, installer/build labels.
+- Identify the project's authoritative version and its actual mirrors, which may include a manifest, changelog, runtime metadata or installer labels.
 
 ## Ritual
 
@@ -37,11 +37,11 @@
 
 - [ ] Tag exists and points at the release commit.
 - [ ] Changelog + in-app news consistent with the tag.
-- [ ] Production verified (SHA + smoke).
+- [ ] Deployment verified when a deployment is in scope and authorized.
 - [ ] No open P0 incidents from this release.
 
 ## NEVER
 
 - Bump versions as a side effect of unrelated commits.
-- Ship a bump without in-app news where the product shows release notes.
+- Omit release documentation required by the project's existing release policy.
 - Force-push or move a published tag.

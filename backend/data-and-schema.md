@@ -4,15 +4,15 @@ Load for: schema changes, queries, migrations, seeds.
 
 ## Single source of truth
 
-- ONE schema source per project: a schema file, a reset/init SQL, or a migration chain — never both.
-- If the repo forbids migrations (reset.sql pattern): NEVER add a migrations folder; extend the SSOT and its idempotent script.
+- Identify the authoritative schema evolution process. A migration history, declarative schema or generated snapshot can coexist when their ownership and synchronization are explicit.
+- Follow the repository's existing migration or declarative schema workflow. Do not introduce a second independent schema authority.
 - Types for the DB live next to the schema and are regenerated, not hand-written.
 - Schema changes: apply → verify → regenerate types → update seeds → update docs, in that order.
 
 ## Schema design
 
 - 3NF by default. Denormalize only with a written reason and a sync mechanism.
-- NEVER duplicate entities as strings (artist names, emails) when a relation exists.
+- NEVER duplicate entities as strings (display names, contact information) when a relation exists.
 - Junction tables for many-to-many; explicit FK actions (`cascade`/`set null`) decided per relation.
 - Audit columns (`created_at`, `updated_at`, actor where relevant) on mutable business tables.
 - Secrets/PII go into private tables or columns, never into public read surfaces.
@@ -28,7 +28,7 @@ Load for: schema changes, queries, migrations, seeds.
 ## Indexes
 
 - Index every foreign key and every column used in frequent `WHERE`/`ORDER BY`.
-- Partial unique indexes for race-prone invariants (one draft per period, one active file hash).
+- Partial unique indexes for race-prone invariants (one active record per business key).
 - Composite index order: equality columns first, range last.
 - NEVER add an index without a query that needs it.
 
