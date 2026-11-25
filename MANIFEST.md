@@ -64,7 +64,7 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 
 | Path | Purpose | Read when |
 | --- | --- | --- |
-| [backend/api.md](backend/api.md) | REST rules, problem+json, pagination, versioning, OpenAPI | Any endpoint |
+| [backend/api.md](backend/api.md) | Protocol-specific contracts and endpoint checks | API changes |
 | [backend/data-and-schema.md](backend/data-and-schema.md) | SSOT, 3NF, idempotent DDL, indexes, RLS, naming | Schema/query changes |
 | [backend/auth.md](backend/auth.md) | AuthN/AuthZ, sessions, RBAC, tenant scoping, service role | Auth/mutations |
 | [backend/caching.md](backend/caching.md) | Cache layers, tags, invalidation, scoping | Caching/ISR work |
@@ -122,47 +122,7 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | [roles/compliance-officer.md](roles/compliance-officer.md) | DE/EU launch audit, no production code | Compliance audits |
 ## skills/
 
-| Path | Purpose | Read when |
-| --- | --- | --- |
-| [skills/README.md](skills/README.md) | Skill index | Choosing a skill |
-| [skills/requirements-clarity/SKILL.md](skills/requirements-clarity/SKILL.md) | Adaptive discovery and specification | Complex requirements |
-| [skills/incremental-delivery/SKILL.md](skills/incremental-delivery/SKILL.md) | Story slicing, TDD, tracking, epic closure | Multi-story work |
-| [skills/evidence-review/SKILL.md](skills/evidence-review/SKILL.md) | Multi-lens evidence review | High-risk change / PR |
-| [skills/complexity-review/SKILL.md](skills/complexity-review/SKILL.md) | Risk-first, lean-code review | Review / bloat |
-| [skills/plan-first/SKILL.md](skills/plan-first/SKILL.md) | Plan before code | Any non-trivial task |
-| [skills/tdd-extraction/SKILL.md](skills/tdd-extraction/SKILL.md) | Derive failing test first | Bugs, features |
-| [skills/rest-guidelines/SKILL.md](skills/rest-guidelines/SKILL.md) | REST subset, OpenAPI duty | API design |
-| [skills/frontend-ui/SKILL.md](skills/frontend-ui/SKILL.md) | UI implementation workflow | UI features |
-| [skills/ux-research/SKILL.md](skills/ux-research/SKILL.md) | Research and product discovery | Uncertain user needs, research, usability testing and prototyping |
-| [skills/information-architecture/SKILL.md](skills/information-architecture/SKILL.md) | Information architecture and navigation | Content models, hierarchy, navigation, search, routes and journeys |
-| [skills/interaction-design/SKILL.md](skills/interaction-design/SKILL.md) | Interaction design and workflow patterns | Task flows, onboarding, commands, selection, gestures, feedback and recovery |
-| [skills/visual-design/SKILL.md](skills/visual-design/SKILL.md) | Visual design and art direction | Hierarchy, typography, composition, brand, imagery, density and aesthetics |
-| [skills/design-systems/SKILL.md](skills/design-systems/SKILL.md) | Design systems and component governance | Tokens, primitives, variants, libraries, themes and design-to-code mapping |
-| [skills/frontend-architecture/SKILL.md](skills/frontend-architecture/SKILL.md) | Frontend application architecture | Rendering, routing, components, state ownership, dependency direction and refactors |
-| [skills/responsive-ui/SKILL.md](skills/responsive-ui/SKILL.md) | Responsive and adaptive interfaces | Mobile, desktop, tablet, resizing, touch, grids and editor layouts |
-| [skills/accessible-ui/SKILL.md](skills/accessible-ui/SKILL.md) | Inclusive and accessible interaction | WCAG, semantics, keyboard, assistive technology and accessibility audit |
-| [skills/forms-and-content/SKILL.md](skills/forms-and-content/SKILL.md) | Forms, content design and localization | Forms, validation, onboarding, microcopy, errors, internationalization and entry |
-| [skills/async-ui/SKILL.md](skills/async-ui/SKILL.md) | Async UI and resilient state transitions | Loading, stale data, retries, realtime, streaming, offline, concurrency and optimistic mutations |
-| [skills/data-heavy-ui/SKILL.md](skills/data-heavy-ui/SKILL.md) | Data-heavy tools and visualization | Dashboards, tables, charts, search, filters, bulk actions and dense workspaces |
-| [skills/ui-performance-motion/SKILL.md](skills/ui-performance-motion/SKILL.md) | Perceived performance and meaningful motion | Latency, rendering cost, scroll, animation, layout stability and budgets |
-| [skills/ai-interaction-ux/SKILL.md](skills/ai-interaction-ux/SKILL.md) | AI and conversational interface design | Chat, assistants, streaming, suggestions, uncertainty, correction and user control |
-| [skills/trustworthy-ux/SKILL.md](skills/trustworthy-ux/SKILL.md) | Trust, privacy and ethical interaction | Consent, account settings, permissions, notifications, transparency and sensitive data |
-| [skills/ux-quality-review/SKILL.md](skills/ux-quality-review/SKILL.md) | Evidence-based UI and UX review | Read-only audits, critique, screenshot review, visual regression and release acceptance |
-| [skills/security-owasp/SKILL.md](skills/security-owasp/SKILL.md) | Security review checklist | Security work |
-| [skills/launch-compliance-audit/SKILL.md](skills/launch-compliance-audit/SKILL.md) | DE/EU go-live audit | Public launch |
-| [skills/c-realtime/SKILL.md](skills/c-realtime/SKILL.md) | C/C++/embedded/realtime | Native code |
-| [skills/video-scrubbing/SKILL.md](skills/video-scrubbing/SKILL.md) | Scroll-bound video | Explicit video briefing |
-
-| [skills/verification-before-done/SKILL.md](skills/verification-before-done/SKILL.md) | Evidence gate before done | End of implementation |
-| [skills/pr-comment-concise/SKILL.md](skills/pr-comment-concise/SKILL.md) | Short PR comments | Code review |
-| [skills/minimal-change/SKILL.md](skills/minimal-change/SKILL.md) | Smallest complete change | Any implementation |
-| [skills/context-thread/SKILL.md](skills/context-thread/SKILL.md) | Session goal anchor | Long sessions |
-| [skills/systematic-debugging/SKILL.md](skills/systematic-debugging/SKILL.md) | Root-cause diagnosis | Bug reports |
-
-| [skills/load-contract/SKILL.md](skills/load-contract/SKILL.md) | Explicit load decision | Start of non-trivial task |
-
-| [skills/frontend-taste/SKILL.md](skills/frontend-taste/SKILL.md) | Anti-slop UI judgment | User-facing frontend |
-| [skills/humanize-output/SKILL.md](skills/humanize-output/SKILL.md) | Humanize agent text | PR text, comments, docs, UI copy |
+[skills/README.md](skills/README.md) is the delegated complete skill index.
 
 ## templates/
 
@@ -182,3 +142,22 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | [stack/cloudflare-r2.md](stack/cloudflare-r2.md) | Keys, signed URLs, CORS, checksums | R2/S3 storage |
 | [stack/typescript.md](stack/typescript.md) | strict, unknown, Zod, imports | TS/JS repos |
 | [stack/cpp-juce.md](stack/cpp-juce.md) | CMake/JUCE, RT contracts, native CI | C++/plugin repos |
+
+## Extended engineering topics
+
+| Path | Purpose | Read when |
+| --- | --- | --- |
+| [operations/deployment.md](operations/deployment.md) | Deployment and rollout | When applicable |
+| [operations/observability.md](operations/observability.md) | Observability | When applicable |
+| [operations/incidents.md](operations/incidents.md) | Incident operations | When applicable |
+| [operations/resilience.md](operations/resilience.md) | Resilience and recovery | When applicable |
+| [security/supply-chain.md](security/supply-chain.md) | Dependency and build supply chain | When applicable |
+| [core/agent-orchestration.md](core/agent-orchestration.md) | Agent orchestration | When applicable |
+| [core/handoff.md](core/handoff.md) | Durable handoff and resumption | When applicable |
+| [backend/performance.md](backend/performance.md) | Backend performance and capacity | When applicable |
+| [ai/engineering.md](ai/engineering.md) | AI and LLM feature engineering | When applicable |
+| [core/brownfield.md](core/brownfield.md) | Brownfield evolution | When applicable |
+| [core/monorepo.md](core/monorepo.md) | Monorepos and workspaces | When applicable |
+| [native/mobile.md](native/mobile.md) | Mobile and native products | When applicable |
+| [adapters/README.md](adapters/README.md) | Host compatibility | Adoption |
+| [eval/README.md](eval/README.md) | Evaluation methods and runnable fixtures | Quality evaluation |

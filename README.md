@@ -29,6 +29,10 @@ Created and maintained by Neuroklast · [neuroklast.net](https://neuroklast.net)
 | Keep architectural docs current | [Living docs](core/docs-system.md), [CI gate reference](testing/living-docs-gate.md) |
 | Adopt or update selected skills | [Setup](SETUP.md), installer below |
 
+## Extended engineering coverage
+
+Use [repository context](skills/repository-context/SKILL.md) for unfamiliar projects, [plan review](skills/change-plan-review/SKILL.md) before risky changes, [data migration](skills/data-migration/SKILL.md) for stored-data changes and [incident response](skills/incident-response/SKILL.md) for active production issues. Technical topics cover operations, resilience, supply chain, LLM engineering, multi-agent handoff and performance. See [host compatibility](adapters/README.md) and [evaluation](eval/README.md) for actual verification boundaries.
+
 ## Getting started
 
 Obtain permission under the applicable [license](LICENSE). Put the collection in `docs/agent-docs/` inside the project; keep its relative links intact. Give the coding agent [SETUP.md](SETUP.md) as its task. Preserve existing project instructions, choose relevant skills, and record the source revision and verification commands.

@@ -1,6 +1,6 @@
 ---
 name: load-contract
-description: Declare exactly which skills and documents will be loaded before loading them. Use for any non-trivial task — forces an explicit, reviewable contract that prevents uncontrolled context growth.
+description: Select minimal guidance for ambiguous, cross-boundary or high-risk work. Skip a written contract for obvious small tasks.
 ---
 
 # Load contract

@@ -20,4 +20,17 @@ Maintainer reference. Use the task router during normal sessions.
 | Rule lifecycle (add/delete) | `core/context-budget.md` |
 | Decision log | `DECISIONS.md` |
 
+| Deployment and rollout | `operations/deployment.md` |
+| Observability | `operations/observability.md` |
+| Incident operations | `operations/incidents.md` |
+| Resilience and recovery | `operations/resilience.md` |
+| Dependency and build supply chain | `security/supply-chain.md` |
+| Agent orchestration | `core/agent-orchestration.md` |
+| Durable handoff and resumption | `core/handoff.md` |
+| Backend performance and capacity | `backend/performance.md` |
+| AI and LLM feature engineering | `ai/engineering.md` |
+| Brownfield evolution | `core/brownfield.md` |
+| Monorepos and workspaces | `core/monorepo.md` |
+| Mobile and native products | `native/mobile.md` |
+
 Historical lessons are context, not a second rule authority. Where guidance differs, follow current project facts and the canonical topic within the authorized scope.

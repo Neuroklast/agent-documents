@@ -1,6 +1,6 @@
 # Context budget
 
-Load with [AGENTS.md](../AGENTS.md) at session start.
+Consult when selecting guidance or reviewing context growth.
 
 ## Progressive disclosure
 
@@ -8,6 +8,7 @@ Load with [AGENTS.md](../AGENTS.md) at session start.
 AGENTS.md (router) -> relevant topic or skill -> linked details only if needed
 ```
 
+- Written load contracts are for risky, ambiguous or cross-boundary work, not routine small edits. A clear task may need no additional skill. Use one primary plus up to two specialists per stage, with explicit risk-based exceptions.
 - Reuse context already loaded in the current session. Do not reread the entire documentation tree by default. Use 1–3 relevant topic files; fetch deeper detail on a real question.
 - [MANIFEST.md](../MANIFEST.md) serves maintainers, not the session prompt.
 - Prefer a single canonical rule and links to repeated blocks.

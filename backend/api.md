@@ -1,6 +1,10 @@
 # Backend — API
 
-Load for: any API endpoint or spec. Mandatory skill: [../skills/rest-guidelines/SKILL.md](../skills/rest-guidelines/SKILL.md).
+Load for: any API endpoint or spec. For REST resource APIs only, use [../skills/rest-guidelines/SKILL.md](../skills/rest-guidelines/SKILL.md).
+
+## Contract style
+
+Determine the actual protocol first. For GraphQL, RPC, messaging or streaming APIs, follow their existing schema, compatibility, error and delivery semantics; do not impose REST status/path rules on them.
 
 ## REST wire format
 
@@ -26,7 +30,7 @@ Paths, JSON shape, methods, status codes, problem+json errors, pagination, and v
 
 ## Definition of Done (endpoint)
 
-- [ ] REST guidelines complied with.
+- [ ] Applicable API style and contract rules verified.
 - [ ] AuthZ on every mutation and every foreign-ID read.
 - [ ] Validation at the boundary.
 - [ ] Documented error shape and correct status codes; Problem Details where adopted.
