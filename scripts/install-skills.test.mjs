@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { cpSync, existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { cpSync, existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { dirname, join, resolve } from "node:path";
 import { spawnSync } from "node:child_process";
@@ -75,4 +75,27 @@ test("selective install links to local unselected companions and does not overwr
   writeFileSync(installed, "local changes");
   assert.notEqual(run(...args).status, 0);
   assert.equal(readFileSync(installed, "utf8"), "local changes");
+}));
+
+test("every installed skill in both agent layouts retains all local references", () => fixture(dir => {
+  const result = run(dir);
+  assert.equal(result.status, 0, result.stderr);
+  const source = join(dir, "docs", "agent-docs", "skills");
+  const names = readdirSync(source).filter(name => existsSync(join(source, name, "SKILL.md")));
+  assert.ok(names.length > 0);
+  for (const layout of [".agents", ".claude"]) {
+    for (const name of names) {
+      const file = join(dir, layout, "skills", name, "SKILL.md");
+      const content = readFileSync(file, "utf8");
+      for (const match of content.matchAll(/\]\(([^)\s]+)\)/g)) {
+        const link = match[1].split("#")[0];
+        if (!link || /^(https?:|mailto:)/.test(link)) continue;
+        assert.ok(existsSync(resolve(dirname(file), link)), file + " -> " + link);
+      }
+    }
+  }
+}));
+test("unknown skill selection does not create an installation", () => fixture(dir => {
+  assert.notEqual(run(dir, "--agents", "--skill=not-a-skill").status, 0);
+  assert.equal(existsSync(join(dir, ".agents")), false);
 }));

@@ -44,9 +44,9 @@ Load for: every session end, when behavior or conventions change.
 - Superseded docs get a banner and move to `docs/archive/`. NEVER silently delete decision history.
 - Archive docs are NEVER read as current truth ([context-budget.md](context-budget.md)).
 
-## Version-news contract (pattern)
+## Release metadata (optional pattern)
 
-- In-app release notes are a code artifact (e.g. `version-history.ts`) tied to the package version by a test.
+- Where a product embeds release notes, keep them aligned with its version metadata.
 - Update the project's canonical version and any actual mirrors (release notes, binaries, docs or runtime metadata). Verify consistency using its existing release checks.
 - Update in-app release notes only when the product actually maintains them as part of its release policy.
 

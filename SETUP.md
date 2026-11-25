@@ -6,12 +6,12 @@ This is an instruction for the coding agent. Run it against the current project,
 
 Read the existing agent instructions, manifests, lockfiles, source layout, tests, CI, deployment policy and documentation. Identify actual languages, frameworks, runtimes, storage, authentication, interfaces, supported platforms and jurisdiction if relevant. Do not infer requirements from example files alone. Keep unknown facts explicit.
 
-Check the [router](AGENTS.md), [skill index](skills/README.md), [workflow](core/workflow.md) and [context budget](core/context-budget.md). Choose a small core and only the specialist guidance that matches verified capabilities. Never install an irrelevant stack or legal adapter just because it exists.
+Check the [router](AGENTS.md), [skill index](skills/README.md), [workflow](core/workflow.md) and [context budget](core/context-budget.md). Choose a small core and only the specialist guidance that matches verified capabilities. Never install an irrelevant stack or legal adapter just because it exists. Keep the shared reference tree intact so local links remain valid; prune the active selection rather than deleting referenced source documents.
 
 ## 2. Integrate without replacing project knowledge
 
 - Preserve the existing project instruction entry points and user-written rules. Resolve conflicts explicitly.
-- Keep a permitted local copy of this collection at a stable path. Use local links, not remote fetches during normal sessions.
+- Keep a permitted local copy of this collection at a stable path. The bundled installer expects the copy at `docs/agent-docs/`; use the native agent method for another location. Use local links, not remote fetches during normal sessions.
 - Select the agent's supported skill directory and install only relevant skills. Use the installer described in [README.md](README.md) or the agent's native installation method.
 - Record managed skill IDs, source revision, installed paths, selection reasons and local changes in a project-local inventory. Preserve custom skills and untracked user work.
 - Put a compact pointer, verified project facts and relevant commands in the project's instruction file. Do not copy the entire collection into the prompt.

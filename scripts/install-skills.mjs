@@ -15,7 +15,7 @@ const selected = args.filter(arg => arg.startsWith('--skill=')).map(arg => arg.s
 const flags = args.filter(arg => arg.startsWith('--') && !arg.startsWith('--skill='));
 const allowed = new Set(["--agents", "--claude"]);
 if (targets.length !== 1 || flags.some((flag) => !allowed.has(flag)) || new Set(flags).size !== flags.length) {
-  console.error("Usage: node scripts/install-skills.mjs <target-dir> [--agents] [--claude]");
+  console.error("Usage: node scripts/install-skills.mjs <target-dir> [--agents] [--claude] [--skill=name ...]");
   process.exit(1);
 }
 const target = resolve(targets[0]);

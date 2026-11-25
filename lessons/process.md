@@ -11,12 +11,12 @@ Load for: workflow, docs, CI, release, regression issues. Consolidated, anonymiz
 | 2026-09 | Docs | Never require "any docs file changed" as a CI gate — it produces no-op edits; use a conditional PR checklist instead. | med |
 | 2026-09 | Docs | Docs must match code facts (TTLs, cookie names, processors); drift is worse than missing docs. | med |
 | 2026-09 | Tests | Source/contract tests can be green while behavior is broken — shared primitives need behavior tests. | high |
-| 2026-09 | Tests | A version bump cascades through contracts/backup tables/nav tests — treat it as a release, run full gates. | med |
+| 2026-09 | Tests | Treat a version bump as release work; check all actual version mirrors and release contracts. | med |
 | 2026-09 | Tests | Don't run test watchers in agent sessions; run once, non-interactive. | low |
 | 2026-09 | CI | A dev server reuse can silently serve a stale build in E2E — kill the port or rebuild. | med |
 | 2026-09 | CI | Never fix CI by disabling the check; fix the cause or change the rule deliberately. | high |
 | 2026-09 | Release | "Merged" ≠ "shipped": verify production SHA + hard refresh after deploy. | med |
-| 2026-09 | Release | In-app release notes must be updated with every version bump (contract-tested). | med |
+| 2026-09 | Release | Update release notes and version mirrors required by the project's release policy. | med |
 | 2026-09 | Auth | Approve gates and idempotency belong in the data layer, not in UI flows. | high |
 | 2026-09 | Ops | Backup restore must be tested on a copy; "restore exists" is not "restore works". | high |
 | 2026-09 | Ops | Local dev starters should refuse remote DB/hosts and non-local storage — hard-fail, not warn. | med |

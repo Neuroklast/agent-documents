@@ -21,7 +21,7 @@ Use is subject to applicable permissions and rights. Reading the public reposito
 
 With permission, place the collection in `docs/agent-docs/` in your project. Point the project's root `AGENTS.md` at the collection's router. Add only facts about your project, such as the package manager, test commands and deployment target.
 
-The optional installer copies skills into `.agents/skills/` and `.claude/skills/`:
+The optional installer reads the project-local copy at `docs/agent-docs/` and copies selected skill entry files into `.agents/skills/` and `.claude/skills/`:
 
 ```bash
 node scripts/install-skills.mjs /path/to/project

@@ -35,12 +35,16 @@ Choose the primary workflow once; add specialist guidance only when needed. Foll
 | Cache / external integrations | [Caching](backend/caching.md), [Integrations](backend/integrations.md) as relevant |
 | Security / LLM | [Security](security/security.md), [Web API](security/web-api.md), [Model security](security/owasp-llm.md), [Security skill](skills/security-owasp/SKILL.md) as relevant |
 | Dependency / asset licensing | [Licensing](legal/licensing.md) |
-| Legal / public launch | [Compliance DE](legal/compliance-de.md), [Legal maintenance](legal/legal-maintenance.md), [Launch skill](skills/launch-compliance-audit/SKILL.md) for German/EU scope |
+| Public launch / legal change | Identify jurisdiction and applicable duties; [Legal maintenance](legal/legal-maintenance.md) for relevant data-processing changes |
+| German/EU public surface | [Compliance DE](legal/compliance-de.md), [Launch skill](skills/launch-compliance-audit/SKILL.md) where applicable |
 | Tests / CI | [Testing strategy](testing/strategy.md), [Contracts CI](testing/contracts-ci.md) and relevant [unit](testing/unit.md) or [E2E](testing/e2e.md) |
 | Git / PR / release | [Git](core/git.md), [PR checklist](checklists/pr.md), [Release checklist](checklists/release.md) |
-| C++ / JUCE / realtime | [C++ stack](stack/cpp-juce.md), [Realtime skill](skills/c-realtime/SKILL.md) |
-| Next.js / TypeScript | [Next.js](stack/nextjs.md), [TypeScript](stack/typescript.md) |
-| Supabase / object storage | [Supabase](stack/supabase.md), [R2/S3](stack/cloudflare-r2.md) |
+| C/C++ realtime | [Realtime skill](skills/c-realtime/SKILL.md) |
+| JUCE plugin / native audio | [JUCE adapter](stack/cpp-juce.md) |
+| Next.js | [Next.js](stack/nextjs.md) |
+| TypeScript | [TypeScript](stack/typescript.md) |
+| Supabase | [Supabase](stack/supabase.md) |
+| R2 / S3 object storage | [R2/S3](stack/cloudflare-r2.md) |
 | Incidents / learned pitfalls | [Lessons index](lessons/README.md) |
 | Architecture remediation / living docs | [Quality programme](core/architecture-quality-programme.md), [CI gate](testing/living-docs-gate.md) |
 
