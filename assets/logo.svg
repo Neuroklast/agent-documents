@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="144" viewBox="0 0 480 144" role="img" aria-labelledby="title desc">
+  <title id="title">AXON by Neuroklast</title>
+  <desc id="desc">Angular red axon-inspired mark and industrial wordmark on a black field.</desc>
+  <rect width="480" height="144" rx="9" fill="#101014"/>
+  <g fill="none" stroke="#e63b43" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M28 114 70 25 112 114M45 78h50" stroke-width="7"/>
+    <path d="m20 92 20-10m61-30 20-10M70 25V13M70 115v13" stroke-width="3"/>
+    <path d="M28 114h10M102 114h10" stroke-width="3"/>
+  </g>
+  <path d="M132 24v96" stroke="#3b3b42"/>
+  <g fill="#f4f4f6" font-family="system-ui, sans-serif" font-weight="800">
+    <text x="150" y="85" font-size="60" letter-spacing="7">AXON</text>
+    <text x="154" y="112" font-size="12" letter-spacing="4">BY NEUROKLAST</text>
+  </g>
+  <path d="M154 122h66" stroke="#e63b43" stroke-width="2"/>
+</svg>

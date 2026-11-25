@@ -33,13 +33,13 @@ High-risk shared surfaces (typical):
 
 ## Manual regression matrix (12 points — adapt per project)
 
-1. Default view unchanged (e.g. calendar opens on month).
+1. Existing default views, selections and navigation remain unchanged unless requested.
 2. Primary list loads with data and correct counts.
-3. Save stays in the open dialog; cancel closes without side effects.
+3. Save and cancel follow the documented interaction; failed saves preserve input and recovery.
 4. Role/permission visibility unchanged for each role.
 5. Create → edit → delete roundtrip works.
 6. Dashboard aggregates match list data.
-7. Member/portal isolation: user A cannot see user B's data.
+7. Applicable cross-user and cross-tenant access is denied.
 8. Exports/PDFs render and download.
 9. Empty states and error states render.
 10. Mobile layout: chrome, scroll, dialogs.

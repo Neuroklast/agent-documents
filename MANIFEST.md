@@ -1,4 +1,4 @@
-# MANIFEST — Maintainer Index
+# AXON — Maintainer Index
 
 Every file in this collection: purpose and when to read it.
 Maintainer index — read when adding, renaming, or auditing files, **not** at session start. Task routing lives in AGENTS.md.
@@ -13,6 +13,11 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | [LEGAL-REVIEW.md](LEGAL-REVIEW.md) | Legal review evidence and unresolved release conditions | Distribution review |
 | [PROVENANCE.md](PROVENANCE.md) | Inspiration, ownership boundaries and release checks | Distribution or audit |
 | [README.md](README.md) | Human onboarding, adoption, customization, limits | Adopting the collection |
+| [RULE-OWNERS.md](RULE-OWNERS.md) | Canonical rule ownership | Maintainer audits |
+| [LICENSE](LICENSE) | Rights and permissions | Adoption and distribution |
+| [assets/logo.svg](assets/logo.svg) | Original vector project mark | README branding |
+| [QUALITY.md](QUALITY.md) | Reproducible verification and benchmark limits | Assessing evidence |
+| [COMPARISON.md](COMPARISON.md) | Dated public feature comparison | Evaluating alternatives |
 | [MANIFEST.md](MANIFEST.md) | This index | Adding, renaming, auditing files |
 | [CHANGELOG.md](CHANGELOG.md) | Release history of the collection | Updating the collection |
 | [DECISIONS.md](DECISIONS.md) | Decision log (rule/structure decisions, "unchanged" checks) | Rule lifecycle, audits |
@@ -36,25 +41,6 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | [.github/ISSUE_TEMPLATE/docs.md](.github/ISSUE_TEMPLATE/docs.md) | Documentation issue template | Optional issue tracking |
 | [.github/ISSUE_TEMPLATE/config.yml](.github/ISSUE_TEMPLATE/config.yml) | Private security reporting link | This repository only |
 | [.github/PULL_REQUEST_TEMPLATE.md](.github/PULL_REQUEST_TEMPLATE.md) | PR description + checklist | Opening a PR |
-## Rule ownership — canonical file per topic
-
-| Rule / topic | Canonical file |
-| --- | --- |
-| Test integrity, red-test handling | `core/workflow.md` |
-| Commit/PR scope, worktrees, branches | `core/git.md` |
-| Definition of Done, review criteria, coverage | `core/quality.md` |
-| Archive policy, docs maintenance | `core/docs-system.md` |
-| Secrets, least privilege, hardening | `security/security.md` |
-| Cache layers and invalidation | `backend/caching.md` |
-| Schema SSOT, RLS | `backend/data-and-schema.md` |
-| Consent, Impressum, BFSG | `legal/compliance-de.md` |
-| Overlays, scroll ownership | `frontend/scroll-motion.md` |
-| Accessibility baseline | `frontend/accessibility.md` |
-| API topic (auth, validation, endpoint DoD) | `backend/api.md` |
-| REST wire format (paths, JSON, methods, status, errors, pagination) | `skills/rest-guidelines/SKILL.md` |
-| Release ritual | `checklists/release.md` |
-| Rule lifecycle (add/delete) | `core/context-budget.md` |
-| Decision log | `DECISIONS.md` |
 ## core/ — process & engineering
 
 | Path | Purpose | Read when |

@@ -14,9 +14,7 @@
 
 | Surface | Audience | Access |
 | --- | --- | --- |
-| Public site | anonymous | public |
-| Admin | staff | authenticated + role |
-| Portal | customers/members | authenticated + ownership |
+| Surface / entry point | Intended users | Required access |
 
 ## 3. Features (per surface)
 
@@ -28,9 +26,7 @@
 
 | Role | Capabilities |
 | --- | --- |
-| admin | all |
-| editor | content, no finance |
-| user | own data only |
+| Role / actor | Explicit permitted capabilities |
 
 ## 5. Data model (high level)
 
@@ -41,9 +37,9 @@
 ## 6. Non-functional requirements
 
 - Performance budgets:
-- Accessibility: WCAG 2.1 AA on public UI.
-- Security: RLS, authZ server-side, rate limits.
-- Legal: DE/EU compliance if public (see legal docs).
+- Accessibility: design target and applicable platform/legal requirements (see [accessibility](../frontend/accessibility.md)).
+- Security: applicable trust boundaries, server authorization, isolation and abuse controls.
+- Legal: applicable jurisdictions, product duties and verified operator facts.
 - i18n locales:
 
 ## 7. Integrations

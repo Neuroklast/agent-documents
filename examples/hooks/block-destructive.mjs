@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Claude Code PreToolUse hook: deny catastrophic shell commands before they run.
+// Claude Code PreToolUse hook: recognize selected risky command forms before execution. Not a shell parser or security boundary.
 // Wire it up in .claude/settings.json — see README.md in this folder.
 
 const input = await new Promise((resolve) => {
@@ -12,7 +12,7 @@ let payload;
 try {
   payload = JSON.parse(input || "{}");
 } catch {
-  process.exit(0);
+  console.error("Malformed hook input"); process.exit(2);
 }
 
 const tool = payload.tool_name ?? payload.toolName;

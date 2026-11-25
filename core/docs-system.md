@@ -4,6 +4,8 @@ Load for: every session end, when behavior or conventions change.
 
 ## Living docs (per project repo)
 
+Names in these tables are examples, not mandatory files. Reuse existing canonical owners; create documents only for demonstrated needs.
+
 | Doc | Content | Update trigger |
 | --- | --- | --- |
 | `CHANGELOG.md` | User-visible changes under `[Unreleased]`, cut per release | Any behavior/API/security change |
@@ -31,7 +33,7 @@ Load for: every session end, when behavior or conventions change.
 - Docs update is part of the deliverable, same as code. Skipping docs because "the task was only code" is a process failure.
 - If nothing changed, state it explicitly: `Docs: unchanged because <reason>`.
 - Docs MUST match code facts (TTLs, cookie names, processor names, limits, versions). Wrong docs are worse than no docs.
-- One rule change edits one section; if a doc needs edits in more than two sections, split or rewrite it deliberately.
+- Keep one canonical rule owner; update genuinely affected references. Split by responsibility, not section count.
 - Prefer structural gates over prose bans: if a rule matters, add a CI contract script ([../testing/contracts-ci.md](../testing/contracts-ci.md)).
 
 ## Decision log

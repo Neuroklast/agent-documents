@@ -7,13 +7,17 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
 
 ## [Unreleased]
 
+- Adopt the product name AXON by Neuroklast; keep repository paths and skill IDs compatible.
+
+- Harden local tooling and managed installer lifecycle; reconcile rule ownership, add reproducible evidence, comparison and original project branding.
+
 - 2026-11-25: Add 15 on-demand UI/UX specialists; integrate routing, setup and review, update web accessibility and performance baselines and retain external reference attribution.
 
 ### Added
 - load-contract skill: mandatory explicit loading decision (primary + max two specialists) before reading skill bodies, to control context growth.
 - Anti-failure skills: verification-before-done, pr-comment-concise, minimal-change, context-thread, systematic-debugging.
 - Quality skills: frontend-taste (anti-slop UI judgment), humanize-output (remove AI writing patterns).
-- MIT LICENSE.
+- Proprietary LICENSE; see the actual license text for applicable rights.
 
 ### Integrated 2026-11-23
 

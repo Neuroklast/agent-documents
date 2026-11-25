@@ -7,3 +7,11 @@ desktop.ini
 *.zip
 *.7z
 *.rar
+
+# Local tool state and secrets (explicit examples may be tracked)
+node_modules/
+.env
+.env.*
+!.env.example
+.agents/
+.claude/

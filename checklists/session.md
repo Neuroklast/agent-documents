@@ -35,4 +35,4 @@ Walk the maintenance matrix in [../core/docs-system.md](../core/docs-system.md) 
 - [ ] Summary: what changed, where, why.
 - [ ] Checks run + results.
 - [ ] Open items/blockers named explicitly.
-- [ ] Nothing half-done left in the working tree.
+- [ ] Record partial work, unrelated existing edits and unresolved blockers; never discard them to make the tree clean.

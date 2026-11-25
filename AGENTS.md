@@ -1,4 +1,4 @@
-# Agent Documents: task router
+# AXON by Neuroklast: task router
 
 Load this file first. Read **only** topic files relevant to the task. [MANIFEST.md](MANIFEST.md) is for maintainers, not normal sessions.
 
@@ -20,6 +20,10 @@ Use the existing project's architecture, conventions, tools, supported platforms
 
 For any non-trivial task, write a load contract (see [load-contract](skills/load-contract/SKILL.md)) before loading skill bodies or topic files. Maximum one primary + two specialists. The contract makes the context decision reviewable.
 
+
+## Resolve rule conflicts
+
+Security, correctness, authorization and verification invariants outrank suggested defaults. Apply conditional stack guidance only to verified project capabilities. Project-specific decisions belong in the target project. Historical lessons are evidence, not current rule authority; when they conflict, use the canonical topic. The [ownership index](RULE-OWNERS.md) is for maintainers.
 
 ## Task router
 

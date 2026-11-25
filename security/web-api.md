@@ -18,7 +18,7 @@ Load for: web/API security work, reviews, new endpoints, uploads.
 
 ## SSRF
 
-- Fetch remote URLs only through a guard: protocol allowlist (http/https), DNS resolve + private/metadata IP block, no redirects to private ranges.
+- Use a trusted outbound proxy or guarded client with scheme/port allowlists, canonical host parsing, verified DNS/IP restrictions and redirect revalidation. Enforce policy on the actual connection (including IPv6 and DNS rebinding), not just preliminary lookup. Block prohibited private, loopback, link-local and metadata destinations; bound redirects, size and time.
 - Applies to: image import, link previews, webhooks, admin-configurable URLs.
 
 ## CORS
@@ -37,7 +37,7 @@ Load for: web/API security work, reviews, new endpoints, uploads.
 ## Uploads
 
 - Authenticate before issuing upload URLs; short TTLs.
-- Validate magic bytes server-side, not client MIME.
+- Validate actual content server-side with a format-aware parser where feasible; magic bytes alone are insufficient. Verify/quarantine direct uploads before use.
 - Size limits enforced server-side; chunked/multipart for large files.
 - Store in private buckets; serve via signed URLs or a controlled proxy.
 - NEVER execute or render uploaded content from the storage origin.
@@ -46,7 +46,7 @@ Load for: web/API security work, reviews, new endpoints, uploads.
 
 - Rate-limit login, registration, password reset, contact forms, public write endpoints.
 - Fail closed when the limiter backend is unavailable; an in-memory backstop is acceptable only for single-instance deployments.
-- Hash IPs with a salt for storage; never log plaintext IPs.
+- Minimize IP retention; justified pseudonymous identifiers need appropriate keyed construction, restricted access and retention. Pseudonymization is not anonymization.
 - Honeypot/rate-limit preferred over third-party captchas; captchas need a consent path ([../legal/legal-maintenance.md](../legal/legal-maintenance.md)).
 
 ## Logging

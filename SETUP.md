@@ -1,4 +1,4 @@
-# Set up Agent Documents in this project
+# AXON — Project setup
 
 This is an instruction for the coding agent. Run it against the current project, not against an assumed stack. Respect existing repository instructions and the scope of the user's authorization.
 
@@ -13,7 +13,7 @@ Check the [router](AGENTS.md), [skill index](skills/README.md), [workflow](core/
 - Preserve the existing project instruction entry points and user-written rules. Resolve conflicts explicitly.
 - Keep a permitted local copy of this collection at a stable path. The bundled installer expects the copy at `docs/agent-docs/`; use the native agent method for another location. Use local links, not remote fetches during normal sessions.
 - Select the agent's supported skill directory and install only relevant skills. Use the installer described in [README.md](README.md) or the agent's native installation method.
-- Record managed skill IDs, source revision, installed paths, selection reasons and local changes in a project-local inventory. Preserve custom skills and untracked user work.
+- Record selected skill IDs, source revision, selection reasons and local changes in a project-local inventory. The bundled installer maintains file hashes per destination; it does not infer project capabilities. Use --dry-run before --update or --prune (explicit desired selection); resolve local edits before proceeding. Preserve custom skills and untracked user work.
 - Put a compact pointer, verified project facts and relevant commands in the project's instruction file. Do not copy the entire collection into the prompt.
 - Link shared guidance instead of duplicating it. If issue templates are requested and the project uses GitHub, adapt the optional [bug template](.github/ISSUE_TEMPLATE/bug.md), [feature template](.github/ISSUE_TEMPLATE/feature.md), [task template](.github/ISSUE_TEMPLATE/task.md) or [docs template](.github/ISSUE_TEMPLATE/docs.md). Preserve existing templates; configure any private security reporting link for the target project instead of copying the source repository's address. Keep project-specific rules in the project, not in reusable upstream files.
 

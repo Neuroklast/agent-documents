@@ -20,7 +20,7 @@ Paths, JSON shape, methods, status codes, problem+json errors, pagination, and v
 
 ## OpenAPI
 
-- Every endpoint ships an updated OpenAPI spec in the same change: paths, schemas, status codes.
+- Update the authoritative API contract in the same change. Use OpenAPI where adopted or required; include paths, schemas and status codes.
 - Prefer generated specs from code (route definitions/schemas) over hand-edited YAML.
 - The spec MUST document actual behavior, including known gaps (e.g. error shape migration).
 
@@ -29,7 +29,7 @@ Paths, JSON shape, methods, status codes, problem+json errors, pagination, and v
 - [ ] REST guidelines complied with.
 - [ ] AuthZ on every mutation and every foreign-ID read.
 - [ ] Validation at the boundary.
-- [ ] Problem+json errors, correct status codes.
+- [ ] Documented error shape and correct status codes; Problem Details where adopted.
 - [ ] Pagination for lists, limits for public inputs.
-- [ ] OpenAPI updated and contract check green.
+- [ ] Applicable contract updated and checks pass.
 - [ ] Tests: happy path + denied path (401/403) + validation failure.

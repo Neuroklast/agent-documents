@@ -1,7 +1,6 @@
 # Security Policy
 
-This repository is a portable governance collection (markdown). It ships no
-runtime code and no deployed service. The agent-facing security contracts live
+This repository ships Markdown guidance and optional local Node.js tooling, not a deployed service. The scripts and host configuration require review before use; hooks and instructions are not security boundaries. The agent-facing security contracts live
 in [`security/`](security/security.md).
 
 ## Reporting a vulnerability
@@ -13,8 +12,7 @@ in [`security/`](security/security.md).
 
 ## Scope
 
-- A wrong or unsafe rule is treated like a bug: open an issue with the affected
-  file and a concrete correction.
+- Report exploitable defects privately; use public issues only for non-sensitive documentation corrections.
 - If a secret was committed: report privately; rotation happens before any
   history cleanup (human approval required).
 

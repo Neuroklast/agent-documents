@@ -34,7 +34,7 @@ Load for: unit/component tests (Vitest/Jest style).
 ## Async
 
 - Await state updates explicitly (`act`, `findBy*`, `waitFor`).
-- Guard post-async `setState` with an `isMountedRef` in components that fetch.
+- Test cancellation, stale-response handling and cleanup according to the state owner's contract; do not mandate mounted flags.
 - Clear timers/intervals in cleanup.
 
 ## Coverage

@@ -23,7 +23,7 @@ Load for: interaction states, feedback, errors, confirmations.
 
 - Validate on submit; re-validate on blur for fields already touched.
 - Server errors map back to the field when possible; otherwise a form-level message.
-- Disable submit while pending, but NEVER disable inputs during submit (fields get dropped from submissions in native form flows).
+- Prevent duplicate effects while pending. If disabling fields, preserve submitted values and avoid excluding required inputs from native serialization.
 - Preserve user input on failure.
 - Required markers + `aria-required`/`required` consistent ([accessibility.md](accessibility.md)).
 

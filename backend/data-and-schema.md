@@ -19,15 +19,15 @@ Load for: schema changes, queries, migrations, seeds.
 
 ## Idempotent DDL
 
-- `CREATE TABLE IF NOT EXISTS`, `ADD COLUMN IF NOT EXISTS`, `DROP ... IF EXISTS` before alters.
+- Follow the chosen migration model; existence guards do not verify compatible definitions. Test drift, ordering and permissions; never drop objects merely to make a script rerunnable.
 - Enum/type creation via guarded DO-blocks (`pg_type` check) where `CREATE TYPE IF NOT EXISTS` is unavailable.
-- Drop policies before altering columns they reference.
+- Plan dependent policy changes transactionally where supported; preserve fail-closed access during migration.
 - Script order: extensions → enums → functions → tables → constraints → RLS → seeds/backfills.
 - ALWAYS additive and forward-compatible: no `DROP`/`RENAME`/`NOT NULL` without default on live tables without explicit approval.
 
 ## Indexes
 
-- Index every foreign key and every column used in frequent `WHERE`/`ORDER BY`.
+- Assess indexes using actual query plans, selectivity and write cost.
 - Partial unique indexes for race-prone invariants (one active record per business key).
 - Composite index order: equality columns first, range last.
 - NEVER add an index without a query that needs it.
@@ -43,7 +43,7 @@ Load for: schema changes, queries, migrations, seeds.
 
 - RLS enabled on every table in exposed schemas — same change as `CREATE TABLE`.
 - Deny-by-default; policies named `"table: actor action"`.
-- Helper functions `SECURITY DEFINER` with fixed search path.
+- Use SECURITY DEFINER only for a documented privilege boundary; restrict EXECUTE grants, fix search path and test caller authorization. Prefer invoker rights otherwise.
 - Service role only server-side, for admin/cron/system paths ([auth.md](auth.md)).
 - Verify RLS with a probe/test, not by reading policy SQL alone.
 

@@ -65,7 +65,8 @@ const skillsDir = join(root, "skills");
 if (existsSync(skillsDir)) {
   for (const dir of readdirSync(skillsDir)) {
     const skillFile = join(skillsDir, dir, "SKILL.md");
-    if (!existsSync(skillFile)) continue;
+    if (!statSync(join(skillsDir, dir)).isDirectory()) continue;
+    if (!existsSync(skillFile)) { errors.push("missing skill entry: " + dir); continue; }
     skillEntries.push(skillFile);
     const text = readFileSync(skillFile, "utf8");
     const r = rel(skillFile);
@@ -119,7 +120,7 @@ if (existsSync(manifestPath)) {
   const listed = new Set([...manifest.matchAll(linkRe)].map((m) => m[1].split("#")[0]));
   for (const file of mdFiles) {
     const r = rel(file);
-    if (!listed.has(r)) warnings.push(`manifest: ${r} is not listed in MANIFEST.md`);
+    if (!listed.has(r)) errors.push(`manifest: ${r} is not listed in MANIFEST.md`);
   }
 } else {
   errors.push("manifest: MANIFEST.md is missing");

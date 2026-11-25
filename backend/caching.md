@@ -16,11 +16,11 @@ Load for: ISR, cache layers, invalidation, TTLs.
 ## Rules
 
 - Inside cache callbacks: cookie-free/anon clients ONLY. `cookies()`/session clients inside caches force dynamic rendering and leak user data.
-- NEVER cache user-scoped data without the user ID in the cache key.
-- NEVER cache binaries/bodies of large files; cache metadata and signed URLs.
+- Default to request-local or no caching for private data. Persistent private caches must isolate every relevant user, tenant, policy/permission version and query dimension, re-check authorization before delivery and invalidate on access changes.
+- Cache large bodies only for a measured, bounded need. Treat private signed URLs as credentials; do not share or cache them beyond expiry or authorization scope.
 - TTLs are documented (they are privacy facts — [../legal/legal-maintenance.md](../legal/legal-maintenance.md)).
 - Tags are constants, not string literals scattered across files.
-- Invalidation happens on the **single write path** — pair `revalidateTag` with `revalidatePath` (or equivalents) so lists and detail pages refresh together.
+- Centralize invalidation for actual affected cache owners; select tags, paths or other mechanisms according to framework/version. Verify list/detail freshness and access changes.
 - Admin mutations invalidate their public counterparts in the same request.
 
 ## Cache keys

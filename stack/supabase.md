@@ -24,7 +24,7 @@ Load for: Supabase repos. Core rules stay in `backend/`.
 ## RLS
 
 - Enabled on every exposed table in the SAME change as `CREATE TABLE`.
-- Deny-by-default; policies named `"table: actor action"`; helper functions `SECURITY DEFINER` with fixed search path.
+- Deny by default; use privileged-function guidance in [data and schema](../backend/data-and-schema.md).
 - Probe RLS in CI (loopback only for local DB checks).
 - Service role bypasses RLS — justify each use ([../backend/auth.md](../backend/auth.md)).
 
@@ -32,7 +32,7 @@ Load for: Supabase repos. Core rules stay in `backend/`.
 
 - Select a shared limiter when limits span instances. A transactional Postgres implementation is one option, not a required schema.
 - Minimize personal data used as rate-limit identifiers. Use appropriate keyed pseudonymization where needed and verify retention and access controls.
-- Fail closed + in-memory backstop; RLS deny-all on the limiter table.
+- Follow [rate-limit safety](../security/web-api.md); memory fallback is not a distributed limiter. Restrict limiter storage to authorized paths.
 
 ## Storage
 

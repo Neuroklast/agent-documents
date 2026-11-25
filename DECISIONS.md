@@ -28,3 +28,5 @@ Format: `YYYY-MM-DD: <decision or check> — <reason>`.
 ## 2026-11-25
 
 - UI/UX specialists are independently drafted, task-triggered workflows; frontend-ui remains the implementation entry and frontend topic documents remain canonical. Reason: broad coverage without always-on context or competing rule ownership.
+
+- 2026-11-25: Adopt AXON by Neuroklast as the product identity; retain agent-documents repository and skill identifiers to avoid breaking existing installations. Trademark clearance remains a separate release requirement.

@@ -35,18 +35,18 @@ Inspect matches in actual public legal content; historical references, tests and
 ## Gate 5 — Accessibility
 
 - [ ] BFSG scope assessed (consumer e-commerce/services vs purely informational).
-- [ ] WCAG 2.1 AA evidence: keyboard, focus, contrast, alt text, reduced motion, 200% zoom.
+- [ ] Verify applicable legal/contractual accessibility requirements separately from the [web design baseline](../../frontend/accessibility.md); record keyboard, focus, contrast, resize/reflow and assistive-technology evidence.
 - [ ] Required accessible service information and contact details provided where applicable.
 
 ## Gate 6 — Technical
 
 - [ ] HTTPS + HSTS, security headers, no secrets in bundle.
-- [ ] Backups configured + restore tested.
-- [ ] Rate limits active; admin MFA available; RLS probed.
+- [ ] Where applicable, backups configured and restore tested.
+- [ ] Relevant abuse controls, privileged authentication and storage authorization verified.
 
 ## Output
 
-- PASS/FAIL per gate with evidence.
+- PASS/FAIL/NOT APPLICABLE/NOT TESTED per gate with evidence; explain exclusions.
 - Blockers = human decisions (operator data, MStV person, legal wording).
 - Draft legal wording only as clearly labelled review material when requested; obtain qualified review and verified facts before production use.
 - NEVER declare "compliant" — declare "gates passed/failed".

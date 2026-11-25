@@ -1,68 +1,64 @@
-# Agent Documents
+<p align="center"><img src="assets/logo.svg" alt="AXON by Neuroklast" width="480"></p>
 
-Coding agents often load too much guidance, make unnecessary changes and lose track of what they have actually tested. Agent Documents tackles those problems with a short router and focused instructions for individual engineering tasks.
+# AXON by Neuroklast
 
-The collection grew out of the maintainer's own project workflows. Its priorities are simple: understand the existing code, solve the underlying problem, keep the implementation small and verify the result.
+**Project-aware engineering guidance for AI coding agents.**
+
+AXON is the product name. Existing repository paths and skill identifiers remain compatible.
+
+A local, modular collection of engineering instructions, specialist skills and verification tooling. It helps agents understand an existing codebase, select relevant guidance, make the smallest complete change and report actual evidence. It is not a coding model or a replacement for human review.
+
+Created and maintained by Neuroklast · [neuroklast.net](https://neuroklast.net)
+
+## What it does
+
+- Routes tasks to focused skills instead of injecting a complete handbook into every session.
+- Adapts to existing project conventions, infrastructure and release policy.
+- Connects implementation with tests, security, accessibility and living documentation.
+- Installs selected skills locally; manages updates and removal using recorded hashes.
+- Covers web and native engineering, APIs, data, design systems, UI/UX, AI interfaces and applicable legal checks.
+
+## Practical use cases
+
+| Situation | Starting point |
+| --- | --- |
+| Existing codebase with repeated AI regressions | [Setup](SETUP.md), [systematic debugging](skills/systematic-debugging/SKILL.md) |
+| Build a feature without unnecessary abstractions | [Plan first](skills/plan-first/SKILL.md), [complexity review](skills/complexity-review/SKILL.md) |
+| Redesign a product interface | [Frontend UI](skills/frontend-ui/SKILL.md), [specialists](skills/README.md) |
+| Review a PR or verify a bug fix | [Evidence review](skills/evidence-review/SKILL.md), [verification before done](skills/verification-before-done/SKILL.md) |
+| Keep architectural docs current | [Living docs](core/docs-system.md), [CI gate reference](testing/living-docs-gate.md) |
+| Adopt or update selected skills | [Setup](SETUP.md), installer below |
 
 ## Getting started
 
-For project-specific adoption, give the coding agent [SETUP.md](SETUP.md) as its task and follow the resulting review. The setup inspects the project, selects relevant skills and establishes a maintainable documentation policy.
+Obtain permission under the applicable [license](LICENSE). Put the collection in `docs/agent-docs/` inside the project; keep its relative links intact. Give the coding agent [SETUP.md](SETUP.md) as its task. Preserve existing project instructions, choose relevant skills, and record the source revision and verification commands.
 
-For agents that support skill directories, [SKILL.md](SKILL.md) is the entry point. Keep the accompanying files together so the links work. No hosted service or external framework is required to read the guidance.
-
-To inspect the collection locally:
+The optional local installer requires Node.js 20+ and no package installation. Run it from the collection root:
 
 ```bash
-git clone https://github.com/Neuroklast/agent-documents.git
-node agent-documents/scripts/check-docs.mjs
+node scripts/install-skills.mjs /path/to/project --agents --skill=frontend-ui --dry-run
+node scripts/install-skills.mjs /path/to/project --agents --skill=frontend-ui
 ```
 
-This collection is available for commercial sale by the copyright holder via Agensi. See [LICENSE](LICENSE) for the commercial license terms.
+Use `--claude` for Claude's project directory; omitting both destination flags selects both. Omitting skill flags selects all, so prefer explicit selection. `--update` upgrades only unchanged managed copies; `--prune` requires an explicit desired selection and removes only unchanged managed files. Review any conflicts; do not overwrite user changes. The installer does not auto-detect project capabilities or download updates.
 
-With permission, place the collection in `docs/agent-docs/` in your project. Point the project's root `AGENTS.md` at the collection's router. Add only facts about your project, such as the package manager, test commands and deployment target.
+For normal sessions start with [AGENTS.md](AGENTS.md) or the portable [SKILL.md](SKILL.md). The [skill index](skills/README.md) lists specialist triggers. Review [optional hook examples](examples/hooks/README.md) before enabling them. Host discovery and sandbox policies vary.
 
-The optional installer reads the project-local copy at `docs/agent-docs/` and copies selected skill entry files into `.agents/skills/` and `.claude/skills/`:
+## Quality and comparison
+
+- [Quality evidence and reproducible checks](QUALITY.md): what is tested and what remains unproven.
+- [Feature comparison](COMPARISON.md): documented scope versus existing approaches, not a performance ranking.
+- [Maintainer index](MANIFEST.md) and [canonical rule ownership](RULE-OWNERS.md): navigation, not mandatory session context.
 
 ```bash
-node scripts/install-skills.mjs /path/to/project
-# Add --agents or --claude to choose one destination.
-# Add --skill=plan-first --skill=evidence-review to select skills.
+node scripts/check-docs.mjs
+node --test scripts/*.test.mjs
 ```
 
-Check your agent's discovery rules. Review the examples in [examples/hooks/README.md](examples/hooks/README.md) before enabling hooks.
+A green run demonstrates the tested collection contracts, not guaranteed downstream code quality or lower model costs.
 
-## Where to start
+## Rights and limitations
 
-| Task | Guidance |
-| --- | --- |
-| Start a coding session | [Router](AGENTS.md) |
-| Clarify an unclear request | [Requirements clarity](skills/requirements-clarity/SKILL.md) |
-| Deliver several related changes | [Incremental delivery](skills/incremental-delivery/SKILL.md) |
-| Review a proposed change | [Evidence review](skills/evidence-review/SKILL.md) |
-| Design or build UI | [Frontend UI](skills/frontend-ui/SKILL.md), [specialists](skills/README.md) |
-| Review a user experience | [UX quality review](skills/ux-quality-review/SKILL.md) |
-| Remove unnecessary complexity | [Complexity review](skills/complexity-review/SKILL.md) |
-| Find a specific topic | [Maintainer index](MANIFEST.md), [Skill index](skills/README.md) |
-| Claim a task is done | [Verification before done](skills/verification-before-done/SKILL.md) |
-| Write a PR comment | [PR comment concise](skills/pr-comment-concise/SKILL.md) |
+See [LICENSE](LICENSE), [PROVENANCE.md](PROVENANCE.md) and [LEGAL-REVIEW.md](LEGAL-REVIEW.md). External references are acknowledgments, not endorsements. Commercial release requires separate rights and eligibility checks. Do not infer legal clearance or platform availability from this README.
 
-
-A small bug does not need a product specification. A risky architecture change needs more investigation. The router helps the agent choose the appropriate amount of guidance.
-
-## Keeping the collection useful
-
-- Keep one source for each rule. Link to it instead of repeating it.
-- Load only the guidance needed for the current task.
-- Prefer existing code and platform features to new abstractions.
-- Keep security, accessibility, error handling and meaningful tests intact.
-- Document actual behavior, not an idealized architecture.
-
-Run `node scripts/check-docs.mjs` and `node --test scripts/*.test.mjs` after changing the collection. The line budgets are ceilings, not writing targets.
-
-## Sources and rights
-
-The maintainer identifies the collection's core concepts and project practices as their own. The text and scripts have also been developed with AI assistance. External ideas and references are documented in [PROVENANCE.md](PROVENANCE.md), including BMad Method and Ponytail. No affiliation or endorsement is claimed.
-
-This project is released under a commercial license that reserves commercial distribution and sale rights to the copyright holder (Kay Schäfer / Neuroklast). Buyers on Agensi receive a limited use license. See [LICENSE](LICENSE).
-
-These instructions help guide an agent. They cannot guarantee correct code, legal compliance, security or successful test results. Use real checks and appropriate human review.
+The collection does not guarantee correct code, compliance, security or successful agent execution. Use real checks and appropriate human review.
