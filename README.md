@@ -1,12 +1,14 @@
-<p align="center"><img src="assets/logo.svg" alt="Agent Documents" width="480"></p>
+<p align="center"><img src="assets/logo.svg" alt="AXON" width="480"></p>
 
-# Agent Documents
+# AXON by NEUROKLAST
 
 **Project-aware engineering guidance for AI coding agents.**
 
+AXON is the product name. Existing repository paths and skill identifiers remain compatible.
+
 A local, modular collection of engineering instructions, specialist skills and verification tooling. It helps agents understand an existing codebase, select relevant guidance, make the smallest complete change and report actual evidence. It is not a coding model or a replacement for human review.
 
-Maintained by NEUROKLAST · [neuroklast.net](https://neuroklast.net)
+Created and maintained by NEUROKLAST · [neuroklast.net](https://neuroklast.net)
 
 ## What it does
 

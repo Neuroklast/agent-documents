@@ -1,4 +1,4 @@
-# Set up Agent Documents in this project
+# Set up AXON in this project
 
 This is an instruction for the coding agent. Run it against the current project, not against an assumed stack. Respect existing repository instructions and the scope of the user's authorization.
 

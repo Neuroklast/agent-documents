@@ -7,6 +7,8 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
 
 ## [Unreleased]
 
+- Adopt the product name AXON by NEUROKLAST; keep repository paths and skill IDs compatible.
+
 - Harden local tooling and managed installer lifecycle; reconcile rule ownership, add reproducible evidence, comparison and original project branding.
 
 - 2026-11-25: Add 15 on-demand UI/UX specialists; integrate routing, setup and review, update web accessibility and performance baselines and retain external reference attribution.
