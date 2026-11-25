@@ -8,7 +8,7 @@ Status: **not cleared for commercial release**. This is an engineering review re
 - OWASP references identify external resources only. Do not include copied standards or branded assets without a license assessment.
 - The repository does not grant a general redistribution license for its protected original content. No rights are asserted over third-party or otherwise unprotected material.
 - Copyright protection depends on human creative contribution; AI-generated text is not automatically protected. Confirm authorship, contributor permissions, employer/client rights and absence of confidential project material.
-- This review covered the rewritten skills and selected legal/security documentation, not every historical contribution or every file. Complete the inventory and retain evidence of the exact revision and contents before distribution.
+- This review covered the rewritten skills and selected legal/security documentation, not every historical contribution or every file. The subsequent snapshot screening is recorded in [ARCHIVE-REVIEW.md](ARCHIVE-REVIEW.md). It is not a full provenance investigation.
 
 ## Further review (2026-11-25)
 

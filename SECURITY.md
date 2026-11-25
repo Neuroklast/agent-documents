@@ -22,4 +22,4 @@ in [`security/`](security/security.md).
 
 - [security/security.md](security/security.md) — secrets, least privilege, hardening, residual risk.
 - [security/web-api.md](security/web-api.md) — XSS, CSRF, SSRF, headers, uploads, rate limits.
-- [security/owasp-llm.md](security/owasp-llm.md) — OWASP LLM Top 10 agent rules.
+- [security/owasp-llm.md](security/owasp-llm.md) — Independent model-application security guidance.

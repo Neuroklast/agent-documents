@@ -26,7 +26,7 @@ Load this file first. Read **only** topic files relevant to the task. [MANIFEST.
 | Accessibility / motion / performance | [Accessibility](frontend/accessibility.md), [Scroll/motion](frontend/scroll-motion.md), [Performance](frontend/performance.md) as relevant |
 | API / data / permissions | [API](backend/api.md), [REST skill](skills/rest-guidelines/SKILL.md), [Data](backend/data-and-schema.md), [Auth](backend/auth.md) as relevant |
 | Cache / external integrations | [Caching](backend/caching.md), [Integrations](backend/integrations.md) as relevant |
-| Security / LLM | [Security](security/security.md), [Web API](security/web-api.md), [OWASP LLM](security/owasp-llm.md), [Security skill](skills/security-owasp/SKILL.md) as relevant |
+| Security / LLM | [Security](security/security.md), [Web API](security/web-api.md), [Model security](security/owasp-llm.md), [Security skill](skills/security-owasp/SKILL.md) as relevant |
 | Legal / public launch | [Compliance DE](legal/compliance-de.md), [Legal maintenance](legal/legal-maintenance.md), [Launch skill](skills/launch-compliance-audit/SKILL.md) |
 | Tests / CI | [Testing strategy](testing/strategy.md), [Contracts CI](testing/contracts-ci.md) and relevant [unit](testing/unit.md) or [E2E](testing/e2e.md) |
 | Git / PR / release | [Git](core/git.md), [PR checklist](checklists/pr.md), [Release checklist](checklists/release.md) |

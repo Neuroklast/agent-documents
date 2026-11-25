@@ -9,6 +9,7 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | --- | --- | --- |
 | [SKILL.md](SKILL.md) | Portable collection entry point | Single-skill discovery |
 | [AGENTS.md](AGENTS.md) | Router, hard rules, routing table | Always, first |
+| [ARCHIVE-REVIEW.md](ARCHIVE-REVIEW.md) | Snapshot scope, file review and unresolved rights checks | Review of distribution contents |
 | [LEGAL-REVIEW.md](LEGAL-REVIEW.md) | Legal review evidence and unresolved release conditions | Distribution review |
 | [PROVENANCE.md](PROVENANCE.md) | Inspiration, ownership boundaries and release checks | Distribution or audit |
 | [README.md](README.md) | Human onboarding, adoption, customization, limits | Adopting the collection |
@@ -94,7 +95,7 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | --- | --- | --- |
 | [security/security.md](security/security.md) | Secrets, least privilege, hardening, residual risk | Auth, mutations, inputs, integrations |
 | [security/web-api.md](security/web-api.md) | XSS, CSRF, SSRF, headers, uploads, rate limits | Web/API security |
-| [security/owasp-llm.md](security/owasp-llm.md) | OWASP LLM Top 10 agent rules | AI/LLM features |
+| [security/owasp-llm.md](security/owasp-llm.md) | Model-application security guidance | AI/LLM features |
 
 ## legal/
 

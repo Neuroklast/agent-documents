@@ -3,7 +3,7 @@
 Load for: required documentation rules in GitHub PRs and branch protection.
 
 ## Reference
-The authoritative **policy** lives in [../core/architecture-quality-programme.md](../core/architecture-quality-programme.md). A repo-specific script and tests must be committed and versioned with the application. Neuroklast Band Land PR #638 and neuroCMS PR #16 are initial implementations, not centrally executed actions.
+The authoritative **policy** lives in [../core/architecture-quality-programme.md](../core/architecture-quality-programme.md). A repo-specific script and tests must be committed and versioned with the application. Keep implementation examples generic; do not disclose unrelated project names, pull requests, customer details or private repository information.
 
 ## Mandatory checks
 1. Fetch the actual PR target history (checkout with fetch-depth 0).

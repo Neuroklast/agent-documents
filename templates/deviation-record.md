@@ -1,6 +1,6 @@
 # Template — Deviation Record
 
-> For safety-critical rule deviations (e.g. MISRA C). A deviation is NEVER self-approved.
+> For safety-critical rule deviations. A deviation is NEVER self-approved.
 
 - Status: awaiting human approval
 - Date:
@@ -9,7 +9,7 @@
 
 ## Rule
 
-- Standard: (e.g. MISRA C:2025 / MISRA C++:2023)
+- Standard: (applicable project standard and revision)
 - Rule ID:
 - Rule text (short):
 
