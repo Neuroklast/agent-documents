@@ -7,6 +7,7 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 
 | Path | Purpose | Read when |
 | --- | --- | --- |
+| [SKILL.md](SKILL.md) | Portable collection entry point | Single-skill discovery |
 | [AGENTS.md](AGENTS.md) | Router, hard rules, routing table | Always, first |
 | [PROVENANCE.md](PROVENANCE.md) | Inspiration, ownership boundaries and release checks | Distribution or audit |
 | [README.md](README.md) | Human onboarding, adoption, customization, limits | Adopting the collection |

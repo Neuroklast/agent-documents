@@ -6,6 +6,8 @@ Repository: https://github.com/Neuroklast/agent-documents
 
 ## Use it
 
+For agents supporting a single skill directory, keep the collection together and use [SKILL.md](SKILL.md) as its entry point. Preserve relative paths. The existing router and individual skills remain available for project-specific installations.
+
 ```bash
 git clone https://github.com/Neuroklast/agent-documents.git
 node agent-documents/scripts/check-docs.mjs

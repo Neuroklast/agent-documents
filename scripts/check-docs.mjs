@@ -51,6 +51,15 @@ for (const file of mdFiles) {
 }
 
 // --- 2. Skill frontmatter --------------------------------------------------
+const entryPath = join(root, "SKILL.md");
+if (!existsSync(entryPath)) errors.push("frontmatter: root SKILL.md missing");
+else {
+  const entry = readFileSync(entryPath, "utf8");
+  const fm = entry.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n/)?.[1] ?? "";
+  if (!/^name: agent-documents$/m.test(fm)) errors.push("frontmatter: invalid collection skill name");
+  const desc = fm.match(/^description:\s*(.+)$/m)?.[1]?.trim();
+  if (!desc || desc.length > 1024) errors.push("frontmatter: invalid collection skill description");
+}
 const skillsDir = join(root, "skills");
 if (existsSync(skillsDir)) {
   for (const dir of readdirSync(skillsDir)) {
