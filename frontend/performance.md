@@ -5,7 +5,8 @@ Load for: performance work, heavy widgets, images, bundles.
 ## Measure first
 
 - Profile before optimizing: bundle analyzer, Lighthouse, PerformanceObserver. NEVER optimize by intuition.
-- Budgets per repo (bundle size, LCP, CLS, TBT). CI-enforced where available.
+- Budgets per repo (bundle size, LCP, INP, CLS; lab diagnostics such as TBT). CI-enforced where available.
+- Web field targets at the 75th percentile: LCP ≤ 2.5 s, INP ≤ 200 ms, CLS ≤ 0.1. Segment by device and record coverage; lab scores are not field evidence. See [Web Vitals](https://web.dev/articles/vitals).
 - Regressions: compare against the last known baseline, not absolute ideals.
 
 ## Images & media
@@ -41,7 +42,7 @@ Load for: performance work, heavy widgets, images, bundles.
 
 ## Canvas / 3D / animation
 
-- Cap device pixel ratio (e.g. 1.0–1.25) and frame rates per context (idle vs scrolling vs hidden).
+- Choose pixel ratio and frame budgets from measured quality/performance needs; preserve readable text and essential precision.
 - Dispose geometries, materials, textures before renderer dispose; one WebGL context per feature.
 - Pause render loops when offscreen/hidden.
 - Prefer CSS transforms for simple motion; canvas only when needed.

@@ -12,10 +12,29 @@ Load on demand from [AGENTS.md](../AGENTS.md). `SKILL.md` frontmatter defines ea
 | [tdd-extraction](tdd-extraction/SKILL.md) | Failing behavior test before a fix |
 | [rest-guidelines](rest-guidelines/SKILL.md) | REST wire contract |
 | [frontend-ui](frontend-ui/SKILL.md) | UI implementation |
+| [ux-research](ux-research/SKILL.md) | Research and product discovery |
+| [information-architecture](information-architecture/SKILL.md) | Information architecture and navigation |
+| [interaction-design](interaction-design/SKILL.md) | Interaction design and workflow patterns |
+| [visual-design](visual-design/SKILL.md) | Visual design and art direction |
+| [design-systems](design-systems/SKILL.md) | Design systems and component governance |
+| [frontend-architecture](frontend-architecture/SKILL.md) | Frontend application architecture |
+| [responsive-ui](responsive-ui/SKILL.md) | Responsive and adaptive interfaces |
+| [accessible-ui](accessible-ui/SKILL.md) | Inclusive and accessible interaction |
+| [forms-and-content](forms-and-content/SKILL.md) | Forms, content design and localization |
+| [async-ui](async-ui/SKILL.md) | Async UI and resilient state transitions |
+| [data-heavy-ui](data-heavy-ui/SKILL.md) | Data-heavy tools and visualization |
+| [ui-performance-motion](ui-performance-motion/SKILL.md) | Perceived performance and meaningful motion |
+| [ai-interaction-ux](ai-interaction-ux/SKILL.md) | AI and conversational interface design |
+| [trustworthy-ux](trustworthy-ux/SKILL.md) | Trust, privacy and ethical interaction |
+| [ux-quality-review](ux-quality-review/SKILL.md) | Evidence-based UI and UX review |
 | [security-owasp](security-owasp/SKILL.md) | Web security review |
 | [launch-compliance-audit](launch-compliance-audit/SKILL.md) | DE/EU launch audit |
 | [c-realtime](c-realtime/SKILL.md) | Native realtime code |
 | [video-scrubbing](video-scrubbing/SKILL.md) | Explicit scroll-video work |
+
+## UI/UX selection
+
+Use frontend-ui for ordinary implementation. Add only specialists matching the current decision; for a full redesign work in slices. Research resolves uncertainty, architecture defines ownership, interaction defines behavior and quality review verifies outcomes. Do not load every specialist.
 
 ## Combining skills
 

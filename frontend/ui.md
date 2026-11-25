@@ -13,9 +13,9 @@ Load for: any UI work (pages, chrome, lists, forms).
 ## Lists
 
 - Reuse list patterns where their interaction and accessibility contracts align.
-- Whole-row click target + chevron affordance; explicit action buttons only for destructive/rare actions.
+- Use a clear row link or action for the primary destination; avoid nested interactive targets. Expose frequent secondary actions when useful.
 - Filter + pagination/windowing are part of the list, not the page shell.
-- Empty state: centered, explains why it is empty and the next action.
+- Empty state: explains why it is empty and the next useful action; align to the task.
 - Choose row separation and grouping to suit information density. Avoid hiding information needed for a decision.
 - Wide tables: horizontal scroll wrapper with `overflow-y-clip` to avoid vertical dead zones ([scroll-motion.md](scroll-motion.md)).
 
@@ -23,7 +23,7 @@ Load for: any UI work (pages, chrome, lists, forms).
 
 - Use a consistent editing pattern appropriate to the record and workflow. Inline editing can suit simple changes.
 - Save: validate → on success close → on failure stay open with a human error message.
-- Cancel always closes without side effects.
+- Cancel discards uncommitted changes without side effects; protect unsaved work where appropriate.
 - Destructive actions require confirmation naming the consequence and related data.
 - Use consistent action labels and the project's localization conventions where applicable.
 - Icon-only buttons MUST have `aria-label` ([accessibility.md](accessibility.md)).
@@ -41,8 +41,8 @@ Load for: any UI work (pages, chrome, lists, forms).
 
 ## Responsive
 
-- Mobile-first base classes; desktop overrides via breakpoints. NEVER rewrite base classes for desktop fixes.
-- Touch targets ≥ 44×44 px on public UI ([accessibility.md](accessibility.md)).
+- Follow the project's responsive conventions; change shared base styles only where appropriate across supported widths. See [responsive UI](../skills/responsive-ui/SKILL.md).
+- Follow target-size requirements and usability goals in [accessibility.md](accessibility.md).
 - Long labels wrap or truncate deliberately; test the longest real translation.
 - Builders/multi-column editors: provide usable responsive alternatives to multi-column panels ([scroll-motion.md](scroll-motion.md)).
 
