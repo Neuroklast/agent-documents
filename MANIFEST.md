@@ -2,7 +2,6 @@
 
 Every file in this collection: purpose and when to read it.
 Maintainer index — read when adding, renaming, or auditing files, **not** at session start. Task routing lives in AGENTS.md.
-
 ## Root
 
 | Path | Purpose | Read when |
@@ -22,7 +21,6 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | [GEMINI.md](GEMINI.md) | Pointer `@AGENTS.md` for Gemini CLI | Tool reads it automatically |
 | [.github/copilot-instructions.md](.github/copilot-instructions.md) | Pointer for GitHub Copilot | Tool reads it automatically |
 | [opencode.json](opencode.json) | Tool permissions (allow/deny/ask), subagent roles | OpenCode setup |
-
 ## Tooling
 
 | Path | Purpose | Read when |
@@ -38,7 +36,6 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | [.github/ISSUE_TEMPLATE/docs.md](.github/ISSUE_TEMPLATE/docs.md) | Documentation issue template | Optional issue tracking |
 | [.github/ISSUE_TEMPLATE/config.yml](.github/ISSUE_TEMPLATE/config.yml) | Private security reporting link | This repository only |
 | [.github/PULL_REQUEST_TEMPLATE.md](.github/PULL_REQUEST_TEMPLATE.md) | PR description + checklist | Opening a PR |
-
 ## Rule ownership — canonical file per topic
 
 | Rule / topic | Canonical file |
@@ -58,7 +55,6 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | Release ritual | `checklists/release.md` |
 | Rule lifecycle (add/delete) | `core/context-budget.md` |
 | Decision log | `DECISIONS.md` |
-
 ## core/ — process & engineering
 
 | Path | Purpose | Read when |
@@ -72,7 +68,6 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | [core/architecture-quality-programme.md](core/architecture-quality-programme.md) | Phased architecture remediation and acceptance evidence | Repo-wide quality programme |
 | [core/regression.md](core/regression.md) | Blast radius, fix≠feature, regression matrix | Bugfixes, refactors |
 | [core/docs-system.md](core/docs-system.md) | Living docs, maintenance matrix, decision log | Every session end |
-
 ## frontend/
 
 | Path | Purpose | Read when |
@@ -81,10 +76,9 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | [frontend/ux.md](frontend/ux.md) | States, feedback, errors, confirmations, focus | Interaction design |
 | [frontend/design.md](frontend/design.md) | Tokens, color, typography, spacing, themes, motion policy | Design system work |
 | [frontend/components.md](frontend/components.md) | Component contracts, registries, wrapper rules | New/changed components |
-| [frontend/accessibility.md](frontend/accessibility.md) | WCAG 2.1 AA baseline, keyboard, dialogs, forms | Any public UI |
+| [frontend/accessibility.md](frontend/accessibility.md) | WCAG 2.2 AA design baseline, keyboard, dialogs, forms | Any public UI |
 | [frontend/scroll-motion.md](frontend/scroll-motion.md) | Scroll ownership, Lenis, overlays, video scrubbing | Scroll/overlay changes |
 | [frontend/performance.md](frontend/performance.md) | Budgets, images, code splitting, canvas/3D | Performance work |
-
 ## backend/
 
 | Path | Purpose | Read when |
@@ -94,7 +88,6 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | [backend/auth.md](backend/auth.md) | AuthN/AuthZ, sessions, RBAC, tenant scoping, service role | Auth/mutations |
 | [backend/caching.md](backend/caching.md) | Cache layers, tags, invalidation, scoping | Caching/ISR work |
 | [backend/integrations.md](backend/integrations.md) | Storage, email, payments, webhooks, sync jobs | Third-party services |
-
 ## security/
 
 | Path | Purpose | Read when |
@@ -102,7 +95,6 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | [security/security.md](security/security.md) | Secrets, least privilege, hardening, residual risk | Auth, mutations, inputs, integrations |
 | [security/web-api.md](security/web-api.md) | XSS, CSRF, SSRF, headers, uploads, rate limits | Web/API security |
 | [security/owasp-llm.md](security/owasp-llm.md) | Model-application security guidance | AI/LLM features |
-
 ## legal/
 
 | Path | Purpose | Read when |
@@ -110,7 +102,6 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | [legal/compliance-de.md](legal/compliance-de.md) | DDG, TDDDG, DSGVO, BFSG, MStV, launch gate | Public DE/EU surfaces |
 | [legal/legal-maintenance.md](legal/legal-maintenance.md) | Trigger table, decision log, processors, retention | Any processing change |
 | [legal/licensing.md](legal/licensing.md) | License types, dependencies, attribution | Adding dependencies/assets |
-
 ## testing/
 
 | Path | Purpose | Read when |
@@ -120,7 +111,6 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | [testing/e2e.md](testing/e2e.md) | Playwright, isolation, fixtures, auth helpers | E2E tests |
 | [testing/contracts-ci.md](testing/contracts-ci.md) | check/verify scripts, CI layout, gates | CI changes |
 | [testing/living-docs-gate.md](testing/living-docs-gate.md) | Changed-path docs enforcement and semantic review | Adding docs quality gates |
-
 ## checklists/
 
 | Path | Purpose | Read when |
@@ -129,7 +119,6 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | [checklists/pr.md](checklists/pr.md) | PR checklist | Before PR |
 | [checklists/release.md](checklists/release.md) | SemVer ritual, changelog cut, tags | Releases |
 | [checklists/launch.md](checklists/launch.md) | Go-live technical + operator steps | Production launch |
-
 ## lessons/
 
 | Path | Purpose | Read when |
@@ -140,7 +129,6 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | [lessons/data-auth.md](lessons/data-auth.md) | RLS, auth, schema, sync lessons | Data/auth regressions |
 | [lessons/realtime-native.md](lessons/realtime-native.md) | C++, audio thread, plugin lessons | Native/audio work |
 | [lessons/process.md](lessons/process.md) | Workflow, docs, CI, release lessons | Process improvements |
-
 ## roles/
 
 | Path | Purpose | Read when |
@@ -151,7 +139,6 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | [roles/tester.md](roles/tester.md) | Test design and execution | Test tasks |
 | [roles/security-auditor.md](roles/security-auditor.md) | Security reports, no production code | Security audits |
 | [roles/compliance-officer.md](roles/compliance-officer.md) | DE/EU launch audit, no production code | Compliance audits |
-
 ## skills/
 
 | Path | Purpose | Read when |
@@ -165,11 +152,25 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | [skills/tdd-extraction/SKILL.md](skills/tdd-extraction/SKILL.md) | Derive failing test first | Bugs, features |
 | [skills/rest-guidelines/SKILL.md](skills/rest-guidelines/SKILL.md) | REST subset, OpenAPI duty | API design |
 | [skills/frontend-ui/SKILL.md](skills/frontend-ui/SKILL.md) | UI implementation workflow | UI features |
+| [skills/ux-research/SKILL.md](skills/ux-research/SKILL.md) | Research and product discovery | Uncertain user needs, research, usability testing and prototyping |
+| [skills/information-architecture/SKILL.md](skills/information-architecture/SKILL.md) | Information architecture and navigation | Content models, hierarchy, navigation, search, routes and journeys |
+| [skills/interaction-design/SKILL.md](skills/interaction-design/SKILL.md) | Interaction design and workflow patterns | Task flows, onboarding, commands, selection, gestures, feedback and recovery |
+| [skills/visual-design/SKILL.md](skills/visual-design/SKILL.md) | Visual design and art direction | Hierarchy, typography, composition, brand, imagery, density and aesthetics |
+| [skills/design-systems/SKILL.md](skills/design-systems/SKILL.md) | Design systems and component governance | Tokens, primitives, variants, libraries, themes and design-to-code mapping |
+| [skills/frontend-architecture/SKILL.md](skills/frontend-architecture/SKILL.md) | Frontend application architecture | Rendering, routing, components, state ownership, dependency direction and refactors |
+| [skills/responsive-ui/SKILL.md](skills/responsive-ui/SKILL.md) | Responsive and adaptive interfaces | Mobile, desktop, tablet, resizing, touch, grids and editor layouts |
+| [skills/accessible-ui/SKILL.md](skills/accessible-ui/SKILL.md) | Inclusive and accessible interaction | WCAG, semantics, keyboard, assistive technology and accessibility audit |
+| [skills/forms-and-content/SKILL.md](skills/forms-and-content/SKILL.md) | Forms, content design and localization | Forms, validation, onboarding, microcopy, errors, internationalization and entry |
+| [skills/async-ui/SKILL.md](skills/async-ui/SKILL.md) | Async UI and resilient state transitions | Loading, stale data, retries, realtime, streaming, offline, concurrency and optimistic mutations |
+| [skills/data-heavy-ui/SKILL.md](skills/data-heavy-ui/SKILL.md) | Data-heavy tools and visualization | Dashboards, tables, charts, search, filters, bulk actions and dense workspaces |
+| [skills/ui-performance-motion/SKILL.md](skills/ui-performance-motion/SKILL.md) | Perceived performance and meaningful motion | Latency, rendering cost, scroll, animation, layout stability and budgets |
+| [skills/ai-interaction-ux/SKILL.md](skills/ai-interaction-ux/SKILL.md) | AI and conversational interface design | Chat, assistants, streaming, suggestions, uncertainty, correction and user control |
+| [skills/trustworthy-ux/SKILL.md](skills/trustworthy-ux/SKILL.md) | Trust, privacy and ethical interaction | Consent, account settings, permissions, notifications, transparency and sensitive data |
+| [skills/ux-quality-review/SKILL.md](skills/ux-quality-review/SKILL.md) | Evidence-based UI and UX review | Read-only audits, critique, screenshot review, visual regression and release acceptance |
 | [skills/security-owasp/SKILL.md](skills/security-owasp/SKILL.md) | Security review checklist | Security work |
 | [skills/launch-compliance-audit/SKILL.md](skills/launch-compliance-audit/SKILL.md) | DE/EU go-live audit | Public launch |
 | [skills/c-realtime/SKILL.md](skills/c-realtime/SKILL.md) | C/C++/embedded/realtime | Native code |
 | [skills/video-scrubbing/SKILL.md](skills/video-scrubbing/SKILL.md) | Scroll-bound video | Explicit video briefing |
-
 ## templates/
 
 | Path | Purpose | Read when |
@@ -179,7 +180,6 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | [templates/feature-spec.md](templates/feature-spec.md) | Feature spec with acceptance criteria | Feature kickoff |
 | [templates/quality-journal-entry.md](templates/quality-journal-entry.md) | Dated source-change evidence template | Every implementation PR |
 | [templates/deviation-record.md](templates/deviation-record.md) | Rule deviation with human approval | Safety-critical deviations |
-
 ## stack/ — adapters for concrete technologies
 
 | Path | Purpose | Read when |

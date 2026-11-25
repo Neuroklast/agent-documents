@@ -23,3 +23,7 @@ Earlier versions of the REST guidance described themselves as a subset of the [Z
 Earlier model-security guidance used identifiers from the [OWASP GenAI LLM Top 10](https://github.com/GenAI-Security-Project/GenAI-LLM-Top10), published under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). The current document uses its own task-based structure and links to the external taxonomy rather than reproducing it. Any remaining protected adapted material retains its applicable license. No third-party content is relicensed by this repository.
 
 The maintainer identifies the core project concepts as their own; AI assistance has been used in drafting and revisions. This records the reported development process, not a legal determination of authorship for each file.
+
+## UI/UX references (2026-11-25)
+
+The new workflows use independently drafted engineering instructions with links to public reference guidance from W3C, Nielsen Norman Group, GOV.UK, USWDS, Apple, Android, web.dev and Microsoft Research. No external skill, design kit, artwork, code, standard text or branded workflow is bundled. No affiliation or certification is implied. Review exact distribution contents and applicable rights before release.

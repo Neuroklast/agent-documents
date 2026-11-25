@@ -7,6 +7,8 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
 
 ## [Unreleased]
 
+- 2026-11-25: Add 15 on-demand UI/UX specialists; integrate routing, setup and review, update web accessibility and performance baselines and retain external reference attribution.
+
 ### Integrated 2026-11-23
 
 - Ported four focused on-demand skills: BMAD discovery, delivery and evidence-based review; Ponytail lean review. No upstream runtimes or hooks bundled.

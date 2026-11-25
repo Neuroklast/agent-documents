@@ -1,6 +1,6 @@
 # Frontend — Accessibility
 
-Load for: all public UI. Baseline: WCAG 2.1 AA (WCAG 2.2 where required).
+Load for: all public UI. Design baseline for web: WCAG 2.2 AA; verify the legally or contractually applicable version separately.
 Legal relevance (BFSG/EU) in [../legal/compliance-de.md](../legal/compliance-de.md).
 
 ## Semantics
@@ -14,7 +14,7 @@ Legal relevance (BFSG/EU) in [../legal/compliance-de.md](../legal/compliance-de.
 
 - Every interactive element reachable and operable by keyboard.
 - Visible focus indicator (≥ 2 px, high contrast). NEVER remove outlines without a visible replacement.
-- Focus order follows visual order. Skip link to main content on public pages.
+- Focus order follows intended reading and interaction order. Focus must not be entirely obscured by author-created content. Skip link to main content on public pages.
 - Modals/dialogs: focus trap, Escape closes, focus returns to the trigger.
 - Custom widgets (menus, comboboxes, trees) follow ARIA authoring patterns for key handling.
 
@@ -48,8 +48,9 @@ Legal relevance (BFSG/EU) in [../legal/compliance-de.md](../legal/compliance-de.
 
 ## Touch & zoom
 
-- Use comfortably operable targets; 44×44 CSS pixels is a useful design goal. Verify applicable accessibility target-size requirements and exceptions rather than treating a fixed tool-specific value as compliance.
-- Layout usable at 200% zoom and 320 px width without loss of content/function.
+- WCAG 2.2 AA target size is at least 24×24 CSS px or sufficient spacing/another applicable exception under criterion 2.5.8. Aim for 44×44 where practical; this is a usability goal, not the AA minimum.
+- Provide a single-pointer alternative to dragging unless an exception applies. Avoid redundant entry and inaccessible authentication barriers; permit password managers and paste.
+- Verify text resize to 200% and reflow at 320 CSS px width (vertical content) or 256 CSS px height (horizontal content) as applicable, including criterion exceptions.
 - NEVER `user-scalable=no`.
 
 ## Dialogs & overlays
@@ -60,5 +61,7 @@ Legal relevance (BFSG/EU) in [../legal/compliance-de.md](../legal/compliance-de.
 
 ## Testing evidence
 
-- Keyboard-only pass, axe/Lighthouse pass, 200% zoom pass, screen reader spot check (NVDA/VoiceOver) for new flows.
+- Keyboard-only, automated scan, text resize/reflow and representative screen reader checks. Automated results alone cannot establish conformance. Record untested combinations.
 - Record evidence in the QA checklist for public-facing changes.
+
+References: [WCAG 2.2](https://www.w3.org/TR/WCAG22/), [ARIA authoring practices](https://www.w3.org/WAI/ARIA/apg/).

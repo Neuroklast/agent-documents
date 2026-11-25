@@ -24,3 +24,7 @@ Format: `YYYY-MM-DD: <decision or check> — <reason>`.
 - Adapt BMAD's discovery, story delivery and review as four independent, short skills (including Ponytail Review). Reason: use the useful decisions without copying entire upstream runtimes or bloating every agent session.
 - Keep reviewer skills read-only and evidence-based. Reason: a review must not silently modify the artifact or invent findings.
 - Skill installation requires an accompanying local docs collection and repairs links after copying. Reason: plain skill copies previously pointed to nonexistent topic files.
+
+## 2026-11-25
+
+- UI/UX specialists are independently drafted, task-triggered workflows; frontend-ui remains the implementation entry and frontend topic documents remain canonical. Reason: broad coverage without always-on context or competing rule ownership.

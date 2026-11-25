@@ -6,7 +6,7 @@ This is an instruction for the coding agent. Run it against the current project,
 
 Read the existing agent instructions, manifests, lockfiles, source layout, tests, CI, deployment policy and documentation. Identify actual languages, frameworks, runtimes, storage, authentication, interfaces, supported platforms and jurisdiction if relevant. Do not infer requirements from example files alone. Keep unknown facts explicit.
 
-Check the [router](AGENTS.md), [skill index](skills/README.md), [workflow](core/workflow.md) and [context budget](core/context-budget.md). Choose a small core and only the specialist guidance that matches verified capabilities. Never install an irrelevant stack or legal adapter just because it exists. Keep the shared reference tree intact so local links remain valid; prune the active selection rather than deleting referenced source documents.
+Check the [router](AGENTS.md), [skill index](skills/README.md), [workflow](core/workflow.md) and [context budget](core/context-budget.md). Choose a small core and only the specialist guidance that matches verified capabilities. Never install an irrelevant stack or legal adapter just because it exists. For user-facing projects select frontend-ui and specialists justified by actual tasks (responsive-ui for adaptive screens, accessible-ui for accessibility work, async-ui for remote state). Do not install the whole UI/UX group by default; reassess as capabilities change. Keep the shared reference tree intact so local links remain valid; prune the active selection rather than deleting referenced source documents.
 
 ## 2. Integrate without replacing project knowledge
 

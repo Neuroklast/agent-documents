@@ -28,7 +28,22 @@ Choose the primary workflow once; add specialist guidance only when needed. Foll
 | Multi-story / cross-system delivery | [Incremental delivery](skills/incremental-delivery/SKILL.md), [Architecture](core/architecture.md) |
 | Code or specification review | [Evidence review](skills/evidence-review/SKILL.md), [Quality](core/quality.md) |
 | Lean / bloat / overengineering review | [Complexity review](skills/complexity-review/SKILL.md) |
-| UI / interaction | [Frontend UI skill](skills/frontend-ui/SKILL.md), [UX](frontend/ux.md); [Design](frontend/design.md), [Components](frontend/components.md) on demand |
+| UI implementation | [Frontend UI](skills/frontend-ui/SKILL.md); add only relevant specialists below |
+| Research and product discovery | [ux-research](skills/ux-research/SKILL.md) |
+| Information architecture and navigation | [information-architecture](skills/information-architecture/SKILL.md) |
+| Interaction design and workflow patterns | [interaction-design](skills/interaction-design/SKILL.md) |
+| Visual design and art direction | [visual-design](skills/visual-design/SKILL.md) |
+| Design systems and component governance | [design-systems](skills/design-systems/SKILL.md) |
+| Frontend application architecture | [frontend-architecture](skills/frontend-architecture/SKILL.md) |
+| Responsive and adaptive interfaces | [responsive-ui](skills/responsive-ui/SKILL.md) |
+| Inclusive and accessible interaction | [accessible-ui](skills/accessible-ui/SKILL.md) |
+| Forms, content design and localization | [forms-and-content](skills/forms-and-content/SKILL.md) |
+| Async UI and resilient state transitions | [async-ui](skills/async-ui/SKILL.md) |
+| Data-heavy tools and visualization | [data-heavy-ui](skills/data-heavy-ui/SKILL.md) |
+| Perceived performance and meaningful motion | [ui-performance-motion](skills/ui-performance-motion/SKILL.md) |
+| AI and conversational interface design | [ai-interaction-ux](skills/ai-interaction-ux/SKILL.md) |
+| Trust, privacy and ethical interaction | [trustworthy-ux](skills/trustworthy-ux/SKILL.md) |
+| Evidence-based UI and UX review | [ux-quality-review](skills/ux-quality-review/SKILL.md) |
 | Explicit scroll-bound video | [Video scrubbing](skills/video-scrubbing/SKILL.md), [Scroll/motion](frontend/scroll-motion.md) |
 | Accessibility / motion / performance | [Accessibility](frontend/accessibility.md), [Scroll/motion](frontend/scroll-motion.md), [Performance](frontend/performance.md) as relevant |
 | API / data / permissions | [API](backend/api.md), [REST skill](skills/rest-guidelines/SKILL.md), [Data](backend/data-and-schema.md), [Auth](backend/auth.md) as relevant |

@@ -1,36 +1,15 @@
 ---
 name: frontend-ui
-description: UI implementation workflow for user-facing frontend work. Use when building or changing components, pages, forms, dialogs, lists, or any UI state — covers tokens, primitives, the four states, and the accessibility pass.
+description: Primary implementation workflow for user-facing interfaces, components, pages, forms, dialogs and UI states. Use for building or changing UI; select specialists only as needed.
 ---
 
-# Skill — Frontend UI
+# Frontend UI
 
-## Workflow
+1. Identify the task, outcome, supported platforms and existing patterns. Inspect actual screens/code.
+2. Read [UI](../../frontend/ui.md) and [UX](../../frontend/ux.md); consult [design](../../frontend/design.md), [components](../../frontend/components.md), [accessibility](../../frontend/accessibility.md) and [scroll](../../frontend/scroll-motion.md) as relevant. Select specialists via [router](../../AGENTS.md).
+3. Define behavior and state ownership; reuse primitives and tokens. Write behavior tests first where feasible ([TDD](../tdd-extraction/SKILL.md)).
+4. Implement the smallest complete flow including applicable pending, empty, partial, error, success and recovery states. Keep authorization on the server.
+5. Verify real content, responsive layout, keyboard/focus, names, contrast, reduced motion and localization where relevant. Run project checks.
+6. For substantial changes use [UX quality review](../ux-quality-review/SKILL.md) as a verification lens. Record evidence and documentation impact.
 
-1. Read [../../frontend/ui.md](../../frontend/ui.md), [ux.md](../../frontend/ux.md), [design.md](../../frontend/design.md), and — if scroll/overlays involved — [scroll-motion.md](../../frontend/scroll-motion.md).
-2. Locate the existing pattern: is there a primitive/registry entry for this? Extend it.
-3. Write the component test for the DOM contract first where feasible ([../tdd-extraction/SKILL.md](../tdd-extraction/SKILL.md)).
-4. Implement using the project's design tokens and primitives where available.
-5. Check the four states: loading, empty, error, success.
-6. Accessibility pass: keyboard, focus, labels, contrast ([../../frontend/accessibility.md](../../frontend/accessibility.md)).
-7. Run the repo's UI contract checks (scroll, overlay, mobile-layout).
-
-## Checklist
-
-- [ ] Existing design tokens used consistently where applicable.
-- [ ] Existing localization conventions followed, if applicable.
-- [ ] Icon-only buttons have `aria-label`.
-- [ ] Touch targets verified against [accessibility guidance](../../frontend/accessibility.md).
-- [ ] Reduced motion respected.
-- [ ] Lists paginated/windowed; no unbounded DOM.
-- [ ] Images with dimensions; LCP image prioritized.
-- [ ] Dialogs: focus trap, Escape, restore; portal to body where needed.
-- [ ] Mobile pass at 320 px + 200% zoom.
-
-## NEVER
-
-- Second implementation of an existing primitive.
-- UI-only authorization (server re-checks).
-- `alert()`/`confirm()`; use the repo's dialogs/toasts.
-- Editing vendor UI primitives directly — wrap them.
-- Adding a new UI/state library without human approval.
+Do not fork existing primitives without justification, introduce an unapproved library, fabricate evidence or substitute aesthetics for correct behavior. Use platform confirmation patterns and the existing design system; on web use project dialogs/notifications rather than ad hoc alert/confirm.

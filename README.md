@@ -39,6 +39,8 @@ Check your agent's discovery rules. Review the examples in [examples/hooks/READM
 | Clarify an unclear request | [Requirements clarity](skills/requirements-clarity/SKILL.md) |
 | Deliver several related changes | [Incremental delivery](skills/incremental-delivery/SKILL.md) |
 | Review a proposed change | [Evidence review](skills/evidence-review/SKILL.md) |
+| Design or build UI | [Frontend UI](skills/frontend-ui/SKILL.md), [specialists](skills/README.md) |
+| Review a user experience | [UX quality review](skills/ux-quality-review/SKILL.md) |
 | Remove unnecessary complexity | [Complexity review](skills/complexity-review/SKILL.md) |
 | Find a specific topic | [Maintainer index](MANIFEST.md), [Skill index](skills/README.md) |
 
