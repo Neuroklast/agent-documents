@@ -6,7 +6,7 @@ Load for: object storage, email, payments, external APIs, webhooks, sync jobs.
 
 - Credentials: server-only, from validated env, never `NEXT_PUBLIC_*`/client bundles ([../security/security.md](../security/security.md)).
 - Optional integrations MUST NOT hard-crash the app when unconfigured — degrade with a clear status.
-- Every external call has a timeout and bounded retries with backoff. No infinite retry loops.
+- Every external call has a deadline. Retry classified transient failures only when replay is safe, with bounded backoff/jitter and provider guidance. Use idempotency or reconciliation for ambiguous writes.
 - Cache external responses where staleness is acceptable; never hammer third parties.
 - Log external failures with context but never with secrets/PII.
 
@@ -36,12 +36,12 @@ Load for: object storage, email, payments, external APIs, webhooks, sync jobs.
 - Idempotent processing: repeated webhook deliveries must not double-apply.
 - Open sessions expire/are closed when the payment is resolved elsewhere (admin marks paid/cancelled).
 - Prefer hosted checkout or tokenization to minimize payment-data exposure. If processing card data directly is required, verify applicable payment-security obligations.
-- Invoices: immutable after issue; corrections via credit note, not mutation ([../legal/legal-maintenance.md](../legal/legal-maintenance.md)).
+- Preserve issued financial records and audit trails; apply correction workflows appropriate to jurisdiction and document type ([../legal/legal-maintenance.md](../legal/legal-maintenance.md)).
 
 ## External APIs & sync jobs
 
 - Rate-limit awareness: respect documented provider limits; handle 429 using retry guidance and preserve work without duplicate effects.
-- Retries: transient IO only; NEVER retry 4xx (except 429 with cooldown).
+- Retry classification depends on provider and operation. Respect Retry-After; never blindly replay a non-idempotent write or permanent client error.
 - Single-flight executor with lease/owner token for sync jobs; self-chaining with budget headroom.
 - Job logs: per run, per source, status, counts, errors — queryable for health.
 - Idempotent job steps; safe to re-run.

@@ -2,19 +2,21 @@
 
 Load for: new modules, features, refactors, structural decisions.
 
-## Layers
+## Boundaries and dependencies
+
+Select architecture in proportion to actual complexity. In a layered application:
 
 ```text
-presentation (UI, routes, handlers)
-   → application (use cases, orchestration)
-      → domain (pure rules, entities, contracts)
-         → data (repositories, ORM, external clients)
+presentation → application → domain
+infrastructure → application/domain ports
+composition root → concrete implementations
 ```
 
-- Dependencies point one direction only. NEVER reverse, no cycles.
-- Domain layer: no framework imports, no ORM, no cookies/request objects.
-- Data access behind repository/service interfaces; routes and UI call the interface, not the ORM.
-- Record structural decisions as ADRs ([../templates/ADR.md](../templates/ADR.md)).
+- Domain owns pure business rules and does not depend on frameworks, storage or request objects.
+- Application orchestrates use cases; adapters implement external interfaces where justified.
+- Simple CRUD may need fewer layers. Do not introduce ports or registries solely to match a diagram.
+- Distinguish compile-time dependencies from runtime calls; avoid cycles and respect public interfaces.
+- Record consequential decisions in [ADRs](../templates/ADR.md).
 
 ## Write/read matrix (CQRS-style)
 
@@ -32,7 +34,7 @@ presentation (UI, routes, handlers)
 
 - Keep leaf components reusable where useful. Use explicit inputs for independent primitives; context and local data access are acceptable when the component's responsibility calls for them.
 - Contracts as typed interfaces (`SectionProps`, `AdminPanelProps`, …) so renderers stay swappable.
-- Registries (fields, sections, designs) as single dispatch tables — no scattered conditionals.
+- Use a registry only for real shared dispatch; otherwise local explicit code may be simpler.
 
 ## State
 

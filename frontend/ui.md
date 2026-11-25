@@ -22,7 +22,7 @@ Load for: any UI work (pages, chrome, lists, forms).
 ## Forms & detail views
 
 - Use a consistent editing pattern appropriate to the record and workflow. Inline editing can suit simple changes.
-- Save: validate → on success close → on failure stay open with a human error message.
+- Save: validate, acknowledge committed success, then follow the documented interaction; on failure preserve input and provide recovery.
 - Cancel discards uncommitted changes without side effects; protect unsaved work where appropriate.
 - Destructive actions require confirmation naming the consequence and related data.
 - Use consistent action labels and the project's localization conventions where applicable.
