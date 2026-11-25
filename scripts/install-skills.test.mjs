@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { cpSync, existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, rmSync, writeFileSync } from "node:fs";
+import { cpSync, existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, rmSync, writeFileSync, symlinkSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { dirname, join, resolve } from "node:path";
 import { spawnSync } from "node:child_process";
@@ -98,4 +98,40 @@ test("every installed skill in both agent layouts retains all local references",
 test("unknown skill selection does not create an installation", () => fixture(dir => {
   assert.notEqual(run(dir, "--agents", "--skill=not-a-skill").status, 0);
   assert.equal(existsSync(join(dir, ".agents")), false);
+}));
+
+test("dry-run writes nothing; managed updates and pruning preserve custom skills", () => fixture(dir => {
+  const args = [dir, "--agents", "--skill=plan-first"];
+  assert.equal(run(...args, "--dry-run").status, 0);
+  assert.equal(existsSync(join(dir, ".agents")), false);
+  assert.equal(run(...args).status, 0);
+  const source = join(dir, "docs", "agent-docs", "skills", "plan-first", "SKILL.md");
+  const installed = join(dir, ".agents", "skills", "plan-first", "SKILL.md");
+  writeFileSync(source, readFileSync(source, "utf8") + "\nNew guidance.\n");
+  assert.notEqual(run(...args).status, 0);
+  assert.equal(run(...args, "--update").status, 0);
+  assert.match(readFileSync(installed, "utf8"), /New guidance/);
+  const custom = join(dir, ".agents", "skills", "custom");
+  mkdirSync(custom); writeFileSync(join(custom, "SKILL.md"), "mine");
+  assert.equal(run(dir, "--agents", "--skill=frontend-ui", "--prune").status, 0);
+  assert.equal(existsSync(installed), false);
+  assert.equal(readFileSync(join(custom, "SKILL.md"), "utf8"), "mine");
+}));
+test("preflight rejects symlink destinations without touching their targets", {skip: process.platform === "win32"}, () => fixture(dir => {
+  const external = mkdtempSync(join(tmpdir(), "agent-docs-external-"));
+  try {
+    symlinkSync(external, join(dir, ".agents"), "dir");
+    assert.notEqual(run(dir, "--agents", "--skill=plan-first").status, 0);
+    assert.deepEqual(readdirSync(external), []);
+  } finally { rmSync(external, {recursive:true, force:true}); }
+}));
+test("update and prune refuse locally modified managed files", () => fixture(dir => {
+  const args = [dir, "--agents", "--skill=plan-first"];
+  assert.equal(run(...args).status, 0);
+  const file = join(dir, ".agents", "skills", "plan-first", "SKILL.md");
+  writeFileSync(file, "customized");
+  assert.notEqual(run(...args, "--update").status, 0);
+  assert.notEqual(run(dir, "--agents", "--skill=frontend-ui", "--prune").status, 0);
+  assert.equal(readFileSync(file, "utf8"), "customized");
+  assert.equal(existsSync(join(dir, ".agents", "skills", "frontend-ui")), false);
 }));

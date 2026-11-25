@@ -6,21 +6,7 @@
     "webfetch": "ask",
     "websearch": "allow",
     "bash": {
-      "*": "ask",
-      "git status*": "allow",
-      "git diff*": "allow",
-      "git log*": "allow",
-      "npm test*": "allow",
-      "npm run lint*": "allow",
-      "npm run typecheck*": "allow",
-      "npm run build*": "allow",
-      "pnpm test*": "allow",
-      "pnpm lint*": "allow",
-      "pnpm typecheck*": "allow",
-      "rm -rf*": "deny",
-      "git push*": "ask",
-      "git push --force*": "deny",
-      "git commit*": "ask"
+      "*": "ask"
     }
   },
   "agent": {
@@ -28,19 +14,25 @@
       "mode": "primary",
       "permission": {
         "edit": "deny",
-        "bash": {
-          "*": "deny",
-          "git status*": "allow",
-          "git diff*": "allow",
-          "git log*": "allow"
-        }
+        "bash": "deny",
+        "external_directory": "deny",
+        "webfetch": "deny",
+        "websearch": "deny",
+        "task": "deny",
+        "skill": "ask"
       }
     },
     "architect": {
       "mode": "subagent",
       "prompt": "{file:./roles/architect.md}",
       "permission": {
-        "edit": "deny"
+        "edit": "deny",
+        "bash": "deny",
+        "external_directory": "deny",
+        "webfetch": "deny",
+        "websearch": "deny",
+        "task": "deny",
+        "skill": "ask"
       }
     },
     "reviewer": {
@@ -48,11 +40,12 @@
       "prompt": "{file:./roles/reviewer.md}",
       "permission": {
         "edit": "deny",
-        "bash": {
-          "*": "deny",
-          "git status*": "allow",
-          "git diff*": "allow"
-        }
+        "bash": "deny",
+        "external_directory": "deny",
+        "webfetch": "deny",
+        "websearch": "deny",
+        "task": "deny",
+        "skill": "ask"
       }
     },
     "tester": {
@@ -63,14 +56,26 @@
       "mode": "subagent",
       "prompt": "{file:./roles/security-auditor.md}",
       "permission": {
-        "edit": "deny"
+        "edit": "deny",
+        "bash": "deny",
+        "external_directory": "deny",
+        "webfetch": "deny",
+        "websearch": "deny",
+        "task": "deny",
+        "skill": "ask"
       }
     },
     "compliance-officer": {
       "mode": "subagent",
       "prompt": "{file:./roles/compliance-officer.md}",
       "permission": {
-        "edit": "deny"
+        "edit": "deny",
+        "bash": "deny",
+        "external_directory": "deny",
+        "webfetch": "deny",
+        "websearch": "deny",
+        "task": "deny",
+        "skill": "ask"
       }
     }
   }

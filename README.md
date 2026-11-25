@@ -27,9 +27,11 @@ The optional installer reads the project-local copy at `docs/agent-docs/` and co
 node scripts/install-skills.mjs /path/to/project
 # Add --agents or --claude to choose one destination.
 # Add --skill=plan-first --skill=evidence-review to select skills.
+# --dry-run previews, --update upgrades unchanged managed copies.
+# --prune requires an explicit desired selection; removes only unchanged managed files.
 ```
 
-Check your agent's discovery rules. Review the examples in [examples/hooks/README.md](examples/hooks/README.md) before enabling hooks.
+The installer tracks managed file hashes in each destination. Existing modified files are never overwritten automatically. Unmanaged files remain untouched; review legacy installs before updating. Keep the local collection current yourself. Check your agent's discovery rules. Review the examples in [examples/hooks/README.md](examples/hooks/README.md) before enabling hooks.
 
 ## Where to start
 
