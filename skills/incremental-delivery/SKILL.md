@@ -4,7 +4,7 @@ description: Convert an agreed product outcome into small verifiable changes wit
 ---
 # Incremental delivery
 
-Work inside the existing tracker, repository and CI. The unit of progress is a verified outcome, not a generated document or a volume of code.
+Work inside the existing repository and use its tracker and CI if available. If acceptance is unclear, start with [requirements clarity](../requirements-clarity/SKILL.md). The unit of progress is a verified outcome, not a generated document or a volume of code.
 
 ## Shape increments
 - Divide the work by observable behavior; every increment has a goal, acceptance examples, dependencies and a proof method.
@@ -13,10 +13,10 @@ Work inside the existing tracker, repository and CI. The unit of progress is a v
 
 ## Execute
 1. Inspect affected interfaces, callers, data, permissions and existing checks. Record the starting revision.
-2. Reproduce failing behavior or write a behavior test before changing code where feasible; record why if not.
+2. Reproduce failing behavior or write a behavior test before changing code where feasible using [test-first guidance](../tdd-extraction/SKILL.md); record why if not.
 3. Implement the smallest complete change, keeping contracts, tests and affected documentation aligned.
-4. Run actual targeted and relevant integration checks. Examine the diff for regressions and unintended scope.
+4. Run actual targeted and relevant integration checks. Examine the diff for regressions and unintended scope using [evidence review](../evidence-review/SKILL.md) when risk warrants it.
 5. Record what passed, what failed, what was not checked and remaining risks. Do not mark an increment complete without acceptance evidence.
 
 ## Close the outcome
-Validate all requested behaviors together, including cross-module contracts, authorization, failure recovery and rollback if applicable. Link unrelated debt separately. Fix regressions introduced by the current change before declaring completion. Summarize remaining work and the exact acceptance evidence. Respect existing review and merge permissions.
+Validate all requested behaviors together, including cross-module contracts, authorization, failure recovery and rollback if applicable. Link unrelated debt separately. Fix regressions introduced by the current change before declaring completion. Summarize remaining work and the exact acceptance evidence. Respect existing review and merge permissions. Use [quality criteria](../../core/quality.md) for closeout.

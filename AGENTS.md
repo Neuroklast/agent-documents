@@ -18,6 +18,8 @@ Use the existing project's architecture, conventions, tools, supported platforms
 
 ## Task router
 
+Choose the primary workflow once; add specialist guidance only when needed. Follow links on demand and do not restart a workflow merely because a reference links back to it. Read-only tasks do not trigger coding, commits or deployment.
+
 | When | Load |
 | --- | --- |
 | Every coding session | [Workflow](core/workflow.md), [Context budget](core/context-budget.md); [Clean code](core/clean-code.md) for implementation |

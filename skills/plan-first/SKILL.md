@@ -7,7 +7,7 @@ description: Plan before coding for any non-trivial task. Use when a task spans 
 
 ## Steps
 
-1. **Restate** the task in one sentence. If you cannot, ask.
+1. **Restate** the task in one sentence. For unresolved material requirements, use [requirements clarity](../requirements-clarity/SKILL.md).
 2. **Find** the relevant topic files via the routing table ([../../AGENTS.md](../../AGENTS.md)).
 3. **Inspect**: read the affected files and the manifests. No guessing.
 4. **Write the plan**:
@@ -17,7 +17,7 @@ description: Plan before coding for any non-trivial task. Use when a task spans 
    - Risks + blast radius ([../../core/regression.md](../../core/regression.md)).
    - Do-not-touch list.
 5. **Check smallest diff**: can this be done with fewer files/changes? If yes, revise.
-6. **Execute** only after the plan is coherent; update it when reality diverges.
+6. **Execute** only after the plan is coherent; use [test-first guidance](../tdd-extraction/SKILL.md) for testable behavior and update the plan when reality diverges.
 
 ## Plan quality bar
 

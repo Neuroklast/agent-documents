@@ -6,6 +6,8 @@ The collection grew out of the maintainer's own project workflows. Its prioritie
 
 ## Getting started
 
+For project-specific adoption, give the coding agent [SETUP.md](SETUP.md) as its task and follow the resulting review. The setup inspects the project, selects relevant skills and establishes a maintainable documentation policy.
+
 For agents that support skill directories, [SKILL.md](SKILL.md) is the entry point. Keep the accompanying files together so the links work. No hosted service or external framework is required to read the guidance.
 
 To inspect the collection locally:
@@ -24,6 +26,7 @@ The optional installer copies skills into `.agents/skills/` and `.claude/skills/
 ```bash
 node scripts/install-skills.mjs /path/to/project
 # Add --agents or --claude to choose one destination.
+# Add --skill=plan-first --skill=evidence-review to select skills.
 ```
 
 Check your agent's discovery rules. Review the examples in [examples/hooks/README.md](examples/hooks/README.md) before enabling hooks.

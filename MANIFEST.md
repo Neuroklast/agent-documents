@@ -7,6 +7,7 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 
 | Path | Purpose | Read when |
 | --- | --- | --- |
+| [SETUP.md](SETUP.md) | Project adoption and ongoing skill maintenance | Initial setup or explicit reconfiguration |
 | [SKILL.md](SKILL.md) | Portable collection entry point | Single-skill discovery |
 | [AGENTS.md](AGENTS.md) | Router, hard rules, routing table | Always, first |
 | [ARCHIVE-REVIEW.md](ARCHIVE-REVIEW.md) | Snapshot scope, file review and unresolved rights checks | Review of distribution contents |

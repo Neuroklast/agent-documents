@@ -4,7 +4,7 @@ description: Identify unnecessary implementation complexity, duplicated responsi
 ---
 # Complexity review
 
-The objective is less engineering burden for the same correct product behavior, not a smaller line count. Review only unless implementation is requested separately.
+The objective is less engineering burden for the same correct product behavior, not a smaller line count. Review only unless implementation is requested separately. Use [clean-code principles](../../core/clean-code.md) and [regression guidance](../../core/regression.md) when judging alternatives.
 
 ## Establish necessity
 - Map the requested behavior to the actual execution paths, state ownership and external dependencies.
