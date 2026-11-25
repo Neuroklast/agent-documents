@@ -16,7 +16,7 @@ Load for: Supabase repos. Core rules stay in `backend/`.
 
 ## Schema
 
-- ONE idempotent SQL SSOT (`schema.sql`/`reset.sql`/`init_all.sql`) — no parallel migration chains where the repo forbids them.
+- Follow the project's existing Supabase migration or declarative schema workflow; see [data and schema](../backend/data-and-schema.md).
 - Order: extensions → enums (guarded DO-blocks) → functions → tables → constraints → RLS → seeds.
 - Additive/forward-compatible only; verify old clients can still read ([../testing/contracts-ci.md](../testing/contracts-ci.md)).
 - Types generated from the schema; never hand-maintained duplicates.
@@ -30,13 +30,13 @@ Load for: Supabase repos. Core rules stay in `backend/`.
 
 ## Rate limiting
 
-- Postgres-backed limiter (`rate_limits` table + `consume_rate_limit()` function) for distributed limits.
-- Hash IPs with a salt (`RATE_LIMIT_SALT`); throw when the salt is missing.
+- Select a shared limiter when limits span instances. A transactional Postgres implementation is one option, not a required schema.
+- Minimize personal data used as rate-limit identifiers. Use appropriate keyed pseudonymization where needed and verify retention and access controls.
 - Fail closed + in-memory backstop; RLS deny-all on the limiter table.
 
 ## Storage
 
-- NEVER Supabase Storage for new work where the repo standardizes on object storage (R2/S3) — follow the repo's SSOT.
+- Use the storage service selected by the project. Do not introduce a competing storage backend without a demonstrated need.
 - Signed URLs short-lived; paths stored, URLs derived ([../stack/cloudflare-r2.md](cloudflare-r2.md)).
 
 ## Auth (Supabase Auth)

@@ -7,7 +7,7 @@ Load for: creating or changing components.
 - Every reusable component has typed props. NEVER `any` in public props.
 - Props interfaces are named (`ButtonProps`, `SectionProps<T>`); export them for consumers.
 - Defaults are explicit and documented; no hidden required behavior.
-- Components receive data and callbacks — NEVER fetch from within leaf components.
+- Keep reusable presentational primitives independent of data-fetching and business logic. Feature components may own their data according to the architecture.
 - Variant/size via discriminated unions, not boolean explosion (`variant="danger" | "ghost"`, not `isDanger isGhost`).
 
 ## Composition rules
@@ -16,17 +16,17 @@ Load for: creating or changing components.
 - NEVER edit vendor primitives (e.g. `components/ui/*` from a UI kit) directly. Wrap them in the project's own component layer.
 - Slots > boolean props > configuration objects, in that order of preference.
 - Compound components for structured widgets (`Tabs`, `Tabs.List`, `Tabs.Panel`) with context limited to the compound root.
-- Leaf components MUST NOT read global contexts ([../core/architecture.md](../core/architecture.md)).
+- Choose explicit inputs or a scoped context according to the component's responsibility ([architecture](../core/architecture.md)).
 
 ## Registries
 
-- Field, section, and design registries are single dispatch tables. Adding a type = one registry entry + its component.
-- Registries MUST be updated when the persistence layer or schema changes (same PR).
+- If a registry already owns dispatch, extend it instead of adding another mapping.
+- Update registries affected by a contract change together with the contract.
 - No parallel implementations: if a registry exists, do not hand-roll conditionals beside it.
 
 ## File & naming conventions
 
-- `PascalCase.tsx` components, `useCamelCase.ts` hooks, co-located tests (`Button.test.tsx`).
+- Follow the existing framework's naming and test placement conventions.
 - One component per file; small internal helpers may live beside it until reused.
 - File soft limit ~400 lines; exceeding it is a review signal, not an automatic split ([../core/clean-code.md](../core/clean-code.md)). Split by responsibility, not by line count.
 

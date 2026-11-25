@@ -5,7 +5,7 @@ Load for: object storage work. Core rules stay in `backend/integrations.md`.
 ## Keys
 
 - Content-addressed where dedup matters: `sha256(bytes)` → `${prefix}/${hash}.${ext}`.
-- Otherwise structured prefixes per domain: `artists/{id}/`, `invoices/{id}.pdf`, `imports/`.
+- Otherwise structured prefixes per domain: `documents/{id}/`, `exports/`.
 - NEVER timestamps as cache keys; never user-supplied keys.
 - Store the object PATH in the database; derive URLs at render time.
 
@@ -14,7 +14,7 @@ Load for: object storage work. Core rules stay in `backend/integrations.md`.
 - Presigned PUT only after authentication; TTL 5–15 min.
 - Bucket is resolved server-side — the client never chooses a bucket.
 - Bucket CORS must allow the method + headers used (`PUT`, `Content-Type`, expose `ETag`).
-- Large files: S3 multipart via the SDK (NOT TUS, NOT provider-specific upload libs unless standardized).
+- Choose a resumable or multipart upload protocol compatible with the storage service and the project's existing upload contract.
 - Replace flows: delete the old object only after the new write succeeded. "Clear selection" never deletes.
 
 ## SDK pitfalls
@@ -34,8 +34,8 @@ Load for: object storage work. Core rules stay in `backend/integrations.md`.
 ## Integrity & reconciliation
 
 - Reconcile by content hash, not filename.
-- Deploy-boot reconcile (once per SHA) + onError self-heal for missing media; manual "match files" action in admin.
-- Keep an admin health surface for storage status; ops setup instructions live in deployment docs, not in product UI.
+- Reconcile missing or mismatched objects through an explicit, idempotent process. Avoid automatic deployment or request-time repair unless designed and tested for the product.
+- Expose storage health through existing operational tooling as needed.
 
 ## Security
 

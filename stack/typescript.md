@@ -14,7 +14,7 @@ Load for: `.ts`/`.tsx`/`.js`/`.jsx`. Repo formatter/linter rules win over this f
 - Explicit return types on public functions and package exports.
 - Named exports for app code; default exports only where the framework requires them.
 - NEVER deep-import package internals (`src/internal/*`) or unexported paths.
-- NEVER TypeScript `enum` for simple variants — string-literal unions or `as const`.
+- Prefer the project's existing representation for variants. String-literal unions are useful when runtime enum behavior is not needed.
 - `JSON.parse` and external payloads start as `unknown`.
 - No `console.log` in production paths.
 - Prefer `satisfies` over casts; prefer type guards over `as`.

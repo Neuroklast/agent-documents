@@ -21,7 +21,7 @@ Load for: tokens, color, typography, spacing, themes, motion policy.
 ## Typography
 
 - One type scale with semantic names (`text-hero`, `text-heading`, `text-body`, `text-body-sm`), clamp-based for responsive sizes.
-- Reading text ≥ 12–14 px; chrome/footer micro type is forbidden.
+- Choose readable text sizes and spacing for the intended audience and platform. Verify zoom and reflow rather than imposing a universal pixel value.
 - Fonts: self-hosted or licensed sources only; no runtime CDN fonts without consent review ([../legal/legal-maintenance.md](../legal/legal-maintenance.md)).
 - Headings use the heading token family; body/mono separated via tokens.
 
@@ -40,13 +40,13 @@ Load for: tokens, color, typography, spacing, themes, motion policy.
 
 ## Motion policy
 
-- Three levels: `full` | `reduced` | `off`. `reduced` keeps only essential feedback animations; `off` disables all.
-- OS `prefers-reduced-motion` maps to at least `reduced`; an explicit user setting may override the OS, but `off` always wins.
+- Use the project's motion preferences, with a reduced-motion option where appropriate. Essential feedback must remain understandable without animation.
+- Honor the operating system's reduced-motion setting and explicit user preferences. Do not re-enable decorative motion implicitly.
 - Motion must be interruptible; no animation blocks input.
 - One motion system per repo; do not stack two animation runtimes on the same element.
 
 ## Brand assets
 
 - Logo variants (light/dark, compact) live as assets with documented usage.
-- Logo sizing uses dedicated variables (desktop/mobile), `height: auto`, never upscaled beyond source resolution.
+- Preserve logo proportions and follow asset usage requirements; size through the existing design system.
 - Third-party/partner logos: normalize via a documented pipeline (silhouette/contrast), never CSS filters that break on some marks ([../lessons/ui-ux.md](../lessons/ui-ux.md)).

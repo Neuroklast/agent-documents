@@ -11,9 +11,9 @@ Load for: performance work, heavy widgets, images, bundles.
 ## Images & media
 
 - ALWAYS width/height (or aspect ratio) to prevent layout shift.
-- `priority`/eager only for the LCP image; everything else lazy.
+- Prioritize resources on the critical rendering path; lazy-load below-the-fold media where it improves performance.
 - Serve modern formats (WebP/AVIF) via the framework's image pipeline or an image proxy.
-- NEVER raw remote storage URLs in `<img>`/`<Image>` — route through the repo's URL helper (referrer/CORS/quota issues).
+- Use the project's media delivery conventions. Verify access, caching, image optimization and cross-origin behavior where applicable.
 - Hero videos: compressed, muted, poster frame, lazy; NEVER uncompressed background video.
 - Accurate `sizes`/`srcset`; never upscale beyond source resolution.
 

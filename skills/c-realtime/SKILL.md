@@ -15,12 +15,12 @@ If the task is not safety-critical/realtime: close this skill and use normal cod
 - ALWAYS prepare sizes and buffers in the prepare/init phase.
 - Control-rate updates for coefficients; per-sample only with proof.
 - Cross-thread state: atomics, SPSC rings, POD events. No raw shared pointers.
-- Lock-miss/overload policy: last wet frame or silence — NEVER raw input.
+- Define a bounded overload/failure behavior that preserves the product's safety and signal contract. Do not assume silence, bypass or a stale sample is universally safe.
 - Retire/replace objects on the message thread, not the audio thread.
 
 ## C constraints for high-reliability code
 
-- MUST NOT `malloc`/`calloc`/`realloc`/`free` outside one startup phase (embedded).
+- For constrained embedded systems, define allocation phases from timing and memory requirements; avoid runtime allocation where bounded latency is required.
 - Use explicit braces for control-flow bodies.
 - Handle unexpected switch values explicitly and document intentional fallthrough or early exits.
 - NEVER unchecked `strcpy`/`sprintf`/`gets` — bounded variants.
@@ -32,13 +32,13 @@ If the task is not safety-critical/realtime: close this skill and use normal cod
 
 - Per-instance state vs machine-wide prefs strictly separated; restore must not overwrite global prefs.
 - Validate persisted state (offsets/lengths/enums) strictly on load.
-- Reset DSP/oversampling/rings on sleep/wake/non-realtime transitions with a short fade.
-- Report latency of the longest audible path; bypass compensates dry by reported latency.
+- For audio, define state transitions and reset behavior; prevent discontinuities where required by the signal contract.
+- For audio plugins, report actual processing latency and verify alignment of dry/wet/bypass paths where the host contract requires it.
 
 ## Tests
 
 - Contract test first: one named contract, smallest failing reproduction.
-- Test runners return failure counts as exit codes.
+- Test runners return a nonzero exit status when tests fail.
 - Geometry/layout contracts use numeric dumps, not golden PNGs.
 - Source-contract tests for realtime anti-patterns (allocation probes, forbidden calls).
 
