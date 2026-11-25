@@ -8,7 +8,7 @@ description: Keep the original goal and constraints visible across a long sessio
 Long sessions lose the original request. This skill forces an explicit anchor that is re-checked before major decisions.
 
 ## At session start
-For non-trivial work, start with a [load contract](../load-contract/SKILL.md) that names the primary skill and specialists.
+For ambiguous or high-risk work, use a [load contract](../load-contract/SKILL.md) that names the primary skill and specialists.
 
 
 Write a short anchor (keep it in the conversation or a scratch note):
@@ -38,4 +38,4 @@ If the answer is no, stop and either adjust the plan or ask the user.
 - Do not expand the goal mid-session without explicit user approval.
 - If new information changes the constraints, update the anchor and state the change.
 - The anchor is not a planning document; it is a one-paragraph reminder.
-- For trivial one-step fixes the anchor can be a single sentence.
+- For trivial one-step fixes skip the anchor. When switching agents or sessions, preserve durable evidence using [handoff](../../core/handoff.md).

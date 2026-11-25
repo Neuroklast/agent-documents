@@ -135,3 +135,24 @@ test("update and prune refuse locally modified managed files", () => fixture(dir
   assert.equal(readFileSync(file, "utf8"), "customized");
   assert.equal(existsSync(join(dir, ".agents", "skills", "frontend-ui")), false);
 }));
+
+test("explicit host layouts install only requested destinations and resolve references", () => fixture(dir => {
+  const hosts = [["--copilot",".github"],["--opencode",".opencode"],["--gemini",".gemini"]];
+  for (const [flag, layout] of hosts) {
+    const result = run(dir, flag, "--skill=repository-context");
+    assert.equal(result.status, 0, result.stderr);
+    const file = join(dir, layout, "skills", "repository-context", "SKILL.md");
+    for (const match of readFileSync(file, "utf8").matchAll(/\]\(([^)\s]+)\)/g)) {
+      const target = match[1].split("#")[0];
+      if (target && !/^(https?:|mailto:)/.test(target)) assert.ok(existsSync(resolve(dirname(file), target)), target);
+    }
+  }
+  assert.equal(existsSync(join(dir, ".agents")), false);
+  assert.equal(existsSync(join(dir, ".claude")), false);
+}));
+test("explicit combined layouts do not add default destinations", () => fixture(dir => {
+  const result = run(dir, "--copilot", "--opencode", "--skill=data-migration");
+  assert.equal(result.status, 0, result.stderr);
+  for (const layout of [".github", ".opencode"]) assert.ok(existsSync(join(dir, layout, "skills", "data-migration", "SKILL.md")));
+  assert.equal(existsSync(join(dir, ".agents")), false);
+}));

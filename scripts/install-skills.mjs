@@ -12,9 +12,10 @@ const args = process.argv.slice(2);
 const targets = args.filter(arg => !arg.startsWith("--"));
 const selected = args.filter(arg => arg.startsWith("--skill=")).map(arg => arg.slice(8));
 const flags = args.filter(arg => arg.startsWith("--") && !arg.startsWith("--skill="));
-const allowed = new Set(["--agents", "--claude", "--dry-run", "--update", "--prune"]);
+const layouts = {"--agents":".agents/skills","--claude":".claude/skills","--copilot":".github/skills","--opencode":".opencode/skills","--gemini":".gemini/skills"};
+const allowed = new Set([...Object.keys(layouts), "--dry-run", "--update", "--prune"]);
 const has = flag => flags.includes(flag);
-const usage = "Usage: node scripts/install-skills.mjs <target-dir> [--agents] [--claude] [--skill=name ...] [--dry-run] [--update] [--prune]";
+const usage = "Usage: node scripts/install-skills.mjs <target-dir> [--agents] [--claude] [--copilot] [--opencode] [--gemini] [--skill=name ...] [--dry-run] [--update] [--prune]";
 function fail(message) { throw new Error(message); }
 function within(parent, candidate) {
   const sub = relative(parent, candidate);
@@ -75,7 +76,8 @@ function main() {
   const available = readdirSync(skillRoot).filter(name => namePattern.test(name) && inspect(target, join(skillRoot, name, "SKILL.md"), "file")).sort();
   if (selected.some(name => !available.includes(name))) fail("Unknown skill selection");
   const skills = selected.length ? [...new Set(selected)].sort() : available;
-  const destinations = !has("--agents") && !has("--claude") || has("--agents") && has("--claude") ? [".agents/skills", ".claude/skills"] : [has("--agents") ? ".agents/skills" : ".claude/skills"];
+  const requestedLayouts = Object.keys(layouts).filter(has);
+  const destinations = (requestedLayouts.length ? requestedLayouts : ["--agents", "--claude"]).map(flag => layouts[flag]);
   const plans = [];
   const add = (path, next) => {
     const previous = inspect(target, path, "file") ? readFileSync(path) : null;

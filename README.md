@@ -44,7 +44,7 @@ node scripts/install-skills.mjs /path/to/project --agents --skill=frontend-ui --
 node scripts/install-skills.mjs /path/to/project --agents --skill=frontend-ui
 ```
 
-Use `--claude` for Claude's project directory; omitting both destination flags selects both. Omitting skill flags selects all, so prefer explicit selection. `--update` upgrades only unchanged managed copies; `--prune` requires an explicit desired selection and removes only unchanged managed files. Review any conflicts; do not overwrite user changes. The installer does not auto-detect project capabilities or download updates.
+Choose `--agents`, `--claude`, `--copilot`, `--gemini` or `--opencode` for the target host. Omitting all destination flags selects the original two layouts. Multiple explicit flags select only those layouts. Omitting skill flags selects all, so prefer explicit selection. `--update` upgrades only unchanged managed copies; `--prune` requires an explicit desired selection and removes only unchanged managed files. Review any conflicts; do not overwrite user changes. The installer does not auto-detect project capabilities or download updates.
 
 For normal sessions start with [AGENTS.md](AGENTS.md) or the portable [SKILL.md](SKILL.md). The [skill index](skills/README.md) lists specialist triggers. Review [optional hook examples](examples/hooks/README.md) before enabling them. Host discovery and sandbox policies vary.
 

@@ -161,3 +161,10 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | [native/mobile.md](native/mobile.md) | Mobile and native products | When applicable |
 | [adapters/README.md](adapters/README.md) | Host compatibility | Adoption |
 | [eval/README.md](eval/README.md) | Evaluation methods and runnable fixtures | Quality evaluation |
+| [adapters/codex.md](adapters/codex.md) | Codex setup | Host adoption |
+| [adapters/claude-code.md](adapters/claude-code.md) | Claude Code setup | Host adoption |
+| [adapters/gemini-cli.md](adapters/gemini-cli.md) | Gemini CLI setup | Host adoption |
+| [adapters/copilot.md](adapters/copilot.md) | GitHub Copilot setup | Host adoption |
+| [adapters/opencode.md](adapters/opencode.md) | OpenCode setup | Host adoption |
+| [adapters/opencode-v1.json](adapters/opencode-v1.json) | Legacy config example | OpenCode V1 only |
+| [scripts/host-adapters.test.mjs](scripts/host-adapters.test.mjs) | Static host policy tests | Host changes |
