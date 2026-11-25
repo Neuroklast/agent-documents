@@ -1,4 +1,4 @@
-# MANIFEST — Maintainer Index
+# AXON — Maintainer Index
 
 Every file in this collection: purpose and when to read it.
 Maintainer index — read when adding, renaming, or auditing files, **not** at session start. Task routing lives in AGENTS.md.

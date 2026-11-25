@@ -1,6 +1,6 @@
-<p align="center"><img src="assets/logo.svg" alt="AXON" width="480"></p>
+<p align="center"><img src="assets/logo.svg" alt="AXON by Neuroklast" width="480"></p>
 
-# AXON by NEUROKLAST
+# AXON by Neuroklast
 
 **Project-aware engineering guidance for AI coding agents.**
 
@@ -8,7 +8,7 @@ AXON is the product name. Existing repository paths and skill identifiers remain
 
 A local, modular collection of engineering instructions, specialist skills and verification tooling. It helps agents understand an existing codebase, select relevant guidance, make the smallest complete change and report actual evidence. It is not a coding model or a replacement for human review.
 
-Created and maintained by NEUROKLAST · [neuroklast.net](https://neuroklast.net)
+Created and maintained by Neuroklast · [neuroklast.net](https://neuroklast.net)
 
 ## What it does
 

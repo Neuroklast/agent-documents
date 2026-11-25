@@ -1,8 +1,8 @@
-# Public feature comparison
+# AXON — Public feature comparison
 
 Review date: 2026-11-25. Sampled public listings and documentation, not purchased skills, private internals or exhaustive marketplace coverage. Features not described publicly are unknown, not absent. No measured superiority is claimed.
 
-| Alternative | Publicly documented focus | Different focus of AXON by NEUROKLAST |
+| Alternative | Publicly documented focus | Different focus of AXON by Neuroklast |
 | --- | --- | --- |
 | [Superpowers](https://github.com/obra/superpowers) | Composable engineering workflows, testing, debugging, verification | Project-local reference ownership, selective managed copies, UI/UX and native/legal topics |
 | [BMad Method](https://www.bmadcode.com/method) | Agile lifecycle, specialist agents, extensible workflows | Smaller task-selected guidance for existing codebases without a required workflow runtime |
