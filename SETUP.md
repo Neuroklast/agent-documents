@@ -15,7 +15,7 @@ Check the [router](AGENTS.md), [skill index](skills/README.md), [workflow](core/
 - Select the agent's supported skill directory and install only relevant skills. Use the installer described in [README.md](README.md) or the agent's native installation method.
 - Record managed skill IDs, source revision, installed paths, selection reasons and local changes in a project-local inventory. Preserve custom skills and untracked user work.
 - Put a compact pointer, verified project facts and relevant commands in the project's instruction file. Do not copy the entire collection into the prompt.
-- Link shared guidance instead of duplicating it. Keep project-specific rules in the project, not in reusable upstream files.
+- Link shared guidance instead of duplicating it. If issue templates are requested and the project uses GitHub, adapt the optional [bug template](.github/ISSUE_TEMPLATE/bug.md), [feature template](.github/ISSUE_TEMPLATE/feature.md), [task template](.github/ISSUE_TEMPLATE/task.md) or [docs template](.github/ISSUE_TEMPLATE/docs.md). Preserve existing templates; configure any private security reporting link for the target project instead of copying the source repository's address. Keep project-specific rules in the project, not in reusable upstream files.
 
 ## 3. Establish living documentation
 

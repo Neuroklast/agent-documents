@@ -16,7 +16,7 @@ description: Plan before coding for any non-trivial task. Use when a task spans 
    - Acceptance criteria (observable results).
    - Risks + blast radius ([../../core/regression.md](../../core/regression.md)).
    - Do-not-touch list.
-5. **Check smallest diff**: can this be done with fewer files/changes? If yes, revise.
+5. **Check scope and reuse**: apply [clean-code principles](../../core/clean-code.md). Can existing code or a standard library solve the problem without a new abstraction? Revise if a simpler complete change is available.
 6. **Execute** only after the plan is coherent; use [test-first guidance](../tdd-extraction/SKILL.md) for testable behavior and update the plan when reality diverges.
 
 ## Plan quality bar
