@@ -17,7 +17,7 @@ git clone https://github.com/Neuroklast/agent-documents.git
 node agent-documents/scripts/check-docs.mjs
 ```
 
-Use is subject to applicable permissions and rights. Reading the public repository does not grant a general license to redistribute its protected original content.
+This collection is available for commercial sale by the copyright holder via Agensi. See [LICENSE](LICENSE) for the commercial license terms.
 
 With permission, place the collection in `docs/agent-docs/` in your project. Point the project's root `AGENTS.md` at the collection's router. Add only facts about your project, such as the package manager, test commands and deployment target.
 
@@ -43,6 +43,9 @@ Check your agent's discovery rules. Review the examples in [examples/hooks/READM
 | Review a user experience | [UX quality review](skills/ux-quality-review/SKILL.md) |
 | Remove unnecessary complexity | [Complexity review](skills/complexity-review/SKILL.md) |
 | Find a specific topic | [Maintainer index](MANIFEST.md), [Skill index](skills/README.md) |
+| Claim a task is done | [Verification before done](skills/verification-before-done/SKILL.md) |
+| Write a PR comment | [PR comment concise](skills/pr-comment-concise/SKILL.md) |
+
 
 A small bug does not need a product specification. A risky architecture change needs more investigation. The router helps the agent choose the appropriate amount of guidance.
 
@@ -60,6 +63,6 @@ Run `node scripts/check-docs.mjs` and `node --test scripts/*.test.mjs` after cha
 
 The maintainer identifies the collection's core concepts and project practices as their own. The text and scripts have also been developed with AI assistance. External ideas and references are documented in [PROVENANCE.md](PROVENANCE.md), including BMad Method and Ponytail. No affiliation or endorsement is claimed.
 
-Rights are reserved only to the extent they exist and are held by the relevant rights holder. Third-party rights and legal permissions remain unaffected. See [LEGAL-REVIEW.md](LEGAL-REVIEW.md) for outstanding questions.
+This project is released under a commercial license that reserves commercial distribution and sale rights to the copyright holder (Kay Schäfer / Neuroklast). Buyers on Agensi receive a limited use license. See [LICENSE](LICENSE).
 
 These instructions help guide an agent. They cannot guarantee correct code, legal compliance, security or successful test results. Use real checks and appropriate human review.

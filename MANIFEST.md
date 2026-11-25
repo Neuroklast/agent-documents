@@ -171,6 +171,18 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | [skills/launch-compliance-audit/SKILL.md](skills/launch-compliance-audit/SKILL.md) | DE/EU go-live audit | Public launch |
 | [skills/c-realtime/SKILL.md](skills/c-realtime/SKILL.md) | C/C++/embedded/realtime | Native code |
 | [skills/video-scrubbing/SKILL.md](skills/video-scrubbing/SKILL.md) | Scroll-bound video | Explicit video briefing |
+
+| [skills/verification-before-done/SKILL.md](skills/verification-before-done/SKILL.md) | Evidence gate before done | End of implementation |
+| [skills/pr-comment-concise/SKILL.md](skills/pr-comment-concise/SKILL.md) | Short PR comments | Code review |
+| [skills/minimal-change/SKILL.md](skills/minimal-change/SKILL.md) | Smallest complete change | Any implementation |
+| [skills/context-thread/SKILL.md](skills/context-thread/SKILL.md) | Session goal anchor | Long sessions |
+| [skills/systematic-debugging/SKILL.md](skills/systematic-debugging/SKILL.md) | Root-cause diagnosis | Bug reports |
+
+| [skills/load-contract/SKILL.md](skills/load-contract/SKILL.md) | Explicit load decision | Start of non-trivial task |
+
+| [skills/frontend-taste/SKILL.md](skills/frontend-taste/SKILL.md) | Anti-slop UI judgment | User-facing frontend |
+| [skills/humanize-output/SKILL.md](skills/humanize-output/SKILL.md) | Humanize agent text | PR text, comments, docs, UI copy |
+
 ## templates/
 
 | Path | Purpose | Read when |
