@@ -13,7 +13,7 @@ git clone https://github.com/Neuroklast/agent-documents.git
 node agent-documents/scripts/check-docs.mjs
 ```
 
-Reading is unrestricted. **Copying, redistributing or submoduling this collection requires maintainer permission** (see License below).
+Reading is unrestricted. **Copying, redistributing or submoduling this collection requires maintainer permission** (see Attribution and scope below).
 
 After permission, copy the collection into `docs/agent-docs/`, then put a short root `AGENTS.md` in your project that points to `docs/agent-docs/AGENTS.md`. Add only verified project facts: stack, package manager, test commands and deployment target. Remove irrelevant adapters and update the router. Do not copy every rule into the root.
 
@@ -53,7 +53,7 @@ Default installs to `.agents/skills/` and `.claude/skills/`. Check your coding t
 
 The collection implements general engineering practices: requirements clarification, incremental delivery, evidence-based review and complexity control. BMad Method and Ponytail were historical sources of inspiration; neither is bundled or presented as our product. See [provenance](PROVENANCE.md) for scope and limitations.
 
-Reading is unrestricted. No general redistribution license is granted. Obtain permission from the maintainer for copying or distribution.
+Reading is unrestricted. No general redistribution license is granted for material in which the maintainer holds rights. Third-party rights and mandatory legal permissions remain unaffected. Obtain permission before copying or distributing protected material beyond applicable permissions. See [legal review status](LEGAL-REVIEW.md); no legal certification or guaranteed engineering result is claimed.
 
 ## What Markdown cannot enforce
 

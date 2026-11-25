@@ -1,14 +1,14 @@
 ---
 name: security-owasp
-description: OWASP-based security review workflow and checklist. Use when reviewing security, adding auth surfaces, handling user input, uploads, or third-party integrations — verifies with deny tests and records residual risks.
+description: Independent security review workflow and checklist. Use when reviewing security, adding auth surfaces, handling user input, uploads, or third-party integrations — verifies with deny tests and records residual risks.
 ---
 
-# Skill — Security (OWASP)
+# Skill — Security review
 
 ## Workflow
 
 1. Read [../../security/security.md](../../security/security.md) and [web-api.md](../../security/web-api.md).
-2. Map the change to the OWASP Top 10 (web) and — for AI features — [owasp-llm.md](../../security/owasp-llm.md).
+2. Assess relevant risk categories; consult the current [external security reference](https://owasp.org/www-project-top-ten/) and, for AI features, [LLM security guidance](../../security/owasp-llm.md). No certification or affiliation is implied.
 3. For each surface, ask: who can call this, with what input, seeing what output?
 4. Verify with deny tests (401/403) and negative input cases.
 5. Record residual risks.

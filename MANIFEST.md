@@ -9,6 +9,7 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | --- | --- | --- |
 | [SKILL.md](SKILL.md) | Portable collection entry point | Single-skill discovery |
 | [AGENTS.md](AGENTS.md) | Router, hard rules, routing table | Always, first |
+| [LEGAL-REVIEW.md](LEGAL-REVIEW.md) | Legal review evidence and unresolved release conditions | Distribution review |
 | [PROVENANCE.md](PROVENANCE.md) | Inspiration, ownership boundaries and release checks | Distribution or audit |
 | [README.md](README.md) | Human onboarding, adoption, customization, limits | Adopting the collection |
 | [MANIFEST.md](MANIFEST.md) | This index | Adding, renaming, auditing files |
