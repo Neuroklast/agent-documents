@@ -36,7 +36,7 @@
 
 - [ ] Auth/permissions touched → deny tests included.
 - [ ] PII/data processing touched → legal trigger table walked.
-- [ ] Schema touched → idempotent + additive + RLS in same PR.
+- [ ] Schema touched → appropriate migration/compatibility and applicable storage authorization checks.
 - [ ] External services touched → timeouts, retries, secrets server-side.
 - [ ] UI defaults/navigation touched → regression matrix run.
 
@@ -44,5 +44,5 @@
 
 - [ ] All checks green; required reviews present.
 - [ ] No force-push after review without re-request.
-- [ ] Delete branch after merge.
-- [ ] Verify production deploy (SHA matches merge commit, smoke check).
+- [ ] Clean up branch only under repository policy and permissions.
+- [ ] If an authorized deployment is in scope, verify its revision and smoke checks.

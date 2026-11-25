@@ -1,6 +1,6 @@
 # Checklist — Launch (Go-Live)
 
-Two tracks: **technical** and **operator/legal**. Both must be complete.
+Apply the technical and operator/legal checks relevant to the actual product and jurisdiction; mark exclusions with reasons.
 
 ## Technical
 
@@ -14,7 +14,7 @@ Two tracks: **technical** and **operator/legal**. Both must be complete.
 - [ ] Cron/jobs scheduled and monitored; health endpoint reachable (lite mode public, full mode protected).
 - [ ] Error monitoring/logging active; no PII in logs; retention bounded.
 - [ ] Redirects/404/500 pages sane; no debug output in production.
-- [ ] Performance budgets pass on production build (LCP/CLS/bundle).
+- [ ] Applicable performance budgets verified (web: LCP/INP/CLS and relevant lab/bundle measures).
 - [ ] Rollback path documented and tested (previous tag + forward-compatible schema).
 
 ## Operator / legal (human duties)
@@ -25,7 +25,7 @@ Two tracks: **technical** and **operator/legal**. Both must be complete.
 ## Verification evidence
 
 - [ ] Consent proof: network log shows no third-party requests before consent.
-- [ ] Accessibility: keyboard pass + axe/Lighthouse + 200% zoom recorded.
+- [ ] Applicable accessibility checks, including keyboard, assistive technology, resize/reflow and automated evidence ([baseline](../frontend/accessibility.md)).
 - [ ] Mobile: legal pages reachable, no clipped content.
 - [ ] Load/rate-limit smoke: abuse-prone endpoints reject over-limit.
 

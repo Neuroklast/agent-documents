@@ -1,6 +1,8 @@
 # Lessons — Index & Format
 
-Load for: adding a lesson, promoting recurring lessons into topic files.
+Load when adding a lesson or investigating a recurrence.
+
+**Historical context, not current policy.** These rows reflect specific past situations. Current canonical topics, project facts and authorization take precedence. In particular, historical credential fallback, caching, audio overload, overlay and motion advice must be checked against current rules.
 
 ## Files
 
@@ -29,7 +31,7 @@ Rules:
 ## Promotion path
 
 1. New lesson → row in the matching file.
-2. Lesson repeats (2+ occurrences) → promote into the matching topic file as a MUST/NEVER rule.
+2. Recurring lesson → assess root cause and generalizability; promote only a justified invariant or scoped default.
 3. Lesson becomes a structural gate → add/update a contract script ([../testing/contracts-ci.md](../testing/contracts-ci.md)).
 
 Promotion does not delete the row (history stays append-only). After promotion, the topic file is the canonical rule; the lesson row remains as its origin.

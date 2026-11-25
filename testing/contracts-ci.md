@@ -42,9 +42,9 @@ Rules for writing them:
 
 ## OpenAPI contract
 
-- Spec generated from code where possible; hand-edited YAML forbidden.
+- Generate from source where supported; an authoritative hand-maintained contract is valid if verified against implementation.
 - `verify:api-contracts` (or equivalent) fails when routes and spec diverge.
-- Every endpoint change updates the spec in the same PR ([../backend/api.md](../backend/api.md)).
+- Every endpoint change updates the applicable authoritative contract in the same PR ([../backend/api.md](../backend/api.md)).
 
 ## Failure artifacts
 
