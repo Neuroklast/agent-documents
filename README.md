@@ -44,21 +44,8 @@ Use `--claude` for Claude's project directory; omitting both destination flags s
 
 For normal sessions start with [AGENTS.md](AGENTS.md) or the portable [SKILL.md](SKILL.md). The [skill index](skills/README.md) lists specialist triggers. Review [optional hook examples](examples/hooks/README.md) before enabling them. Host discovery and sandbox policies vary.
 
-## Quality and comparison
+## Rights
 
-- [Quality evidence and reproducible checks](QUALITY.md): what is tested and what remains unproven.
-- [Feature comparison](COMPARISON.md): documented scope versus existing approaches, not a performance ranking.
-- [Maintainer index](MANIFEST.md) and [canonical rule ownership](RULE-OWNERS.md): navigation, not mandatory session context.
+See [LICENSE](LICENSE).
 
-```bash
-node scripts/check-docs.mjs
-node --test scripts/*.test.mjs
-```
-
-A green run demonstrates the tested collection contracts, not guaranteed downstream code quality or lower model costs.
-
-## Rights and limitations
-
-See [LICENSE](LICENSE), [PROVENANCE.md](PROVENANCE.md) and [LEGAL-REVIEW.md](LEGAL-REVIEW.md). External references are acknowledgments, not endorsements. Commercial release requires separate rights and eligibility checks. Do not infer legal clearance or platform availability from this README.
-
-The collection does not guarantee correct code, compliance, security or successful agent execution. Use real checks and appropriate human review.
+The collection is provided as-is. Use project checks and appropriate human review.

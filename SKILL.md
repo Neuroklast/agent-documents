@@ -14,4 +14,4 @@ Start with the requested outcome and the actual project. Use the router to find 
 
 The router links to local files supplied with this collection. Keep their relative paths intact. The collection requires no external service, paid API, runtime hook or secret to supply its instructions. The separate installation script is optional and intended for explicit local installation.
 
-For setup and limitations see [README.md](README.md). For source boundaries see [PROVENANCE.md](PROVENANCE.md).
+For setup and limitations see [README.md](README.md).

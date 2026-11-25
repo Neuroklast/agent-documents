@@ -9,15 +9,10 @@ Maintainer index — read when adding, renaming, or auditing files, **not** at s
 | [SETUP.md](SETUP.md) | Project adoption and ongoing skill maintenance | Initial setup or explicit reconfiguration |
 | [SKILL.md](SKILL.md) | Portable collection entry point | Single-skill discovery |
 | [AGENTS.md](AGENTS.md) | Router, hard rules, routing table | Always, first |
-| [ARCHIVE-REVIEW.md](ARCHIVE-REVIEW.md) | Snapshot scope, file review and unresolved rights checks | Review of distribution contents |
-| [LEGAL-REVIEW.md](LEGAL-REVIEW.md) | Legal review evidence and unresolved release conditions | Distribution review |
-| [PROVENANCE.md](PROVENANCE.md) | Inspiration, ownership boundaries and release checks | Distribution or audit |
 | [README.md](README.md) | Human onboarding, adoption, customization, limits | Adopting the collection |
 | [RULE-OWNERS.md](RULE-OWNERS.md) | Canonical rule ownership | Maintainer audits |
 | [LICENSE](LICENSE) | Rights and permissions | Adoption and distribution |
 | [assets/logo.svg](assets/logo.svg) | Original vector project mark | README branding |
-| [QUALITY.md](QUALITY.md) | Reproducible verification and benchmark limits | Assessing evidence |
-| [COMPARISON.md](COMPARISON.md) | Dated public feature comparison | Evaluating alternatives |
 | [MANIFEST.md](MANIFEST.md) | This index | Adding, renaming, auditing files |
 | [CHANGELOG.md](CHANGELOG.md) | Release history of the collection | Updating the collection |
 | [DECISIONS.md](DECISIONS.md) | Decision log (rule/structure decisions, "unchanged" checks) | Rule lifecycle, audits |
