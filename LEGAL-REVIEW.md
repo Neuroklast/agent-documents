@@ -10,6 +10,14 @@ Status: **not cleared for commercial release**. This is an engineering review re
 - Copyright protection depends on human creative contribution; AI-generated text is not automatically protected. Confirm authorship, contributor permissions, employer/client rights and absence of confidential project material.
 - This review covered the rewritten skills and selected legal/security documentation, not every historical contribution or every file. Complete the inventory and retain evidence of the exact revision and contents before distribution.
 
+## Further review (2026-11-25)
+
+- REST guidance explicitly referenced Zalando's CC BY 4.0 material. Replaced the former subset with independently structured project guidance and retained attribution.
+- Model security guidance previously used an external numbered taxonomy. Replaced it with a task-based security review and retained the OWASP CC BY-SA reference.
+- Removed named MISRA rule numbers and avoided claims of compliance with a proprietary standard.
+- Edited main documentation for plain technical English. Style editing does not establish human authorship or extinguish third-party rights.
+- The maintainer reports that most core ideas are their own. This does not independently establish rights in each contribution or eliminate employer/client rights. See German Copyright Act sections 2, 4, 43, 69a and 69b.
+
 ## Unresolved conditions
 
 - Confirm the right to distribute every included file and retain any required notices.

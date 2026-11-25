@@ -3,7 +3,7 @@ name: plan-first
 description: Plan before coding for any non-trivial task. Use when a task spans multiple files, adds a feature, refactors, or has unclear requirements — names files, steps, acceptance criteria, and risks before implementation.
 ---
 
-# Skill — Plan First
+# Plan before coding
 
 ## Steps
 
@@ -31,8 +31,8 @@ description: Plan before coding for any non-trivial task. Use when a task spans 
 - Trivial single-file change with an obvious fix.
 - Pure read/report tasks.
 
-## NEVER
+## Avoid
 
-- Start coding while requirements are ambiguous — ask first.
+- Do not guess about material requirements. Resolve them from the repository or ask when necessary.
 - Plan with invented APIs, versions, or file paths — verify them.
 - Expand scope beyond the task ("while I'm here").

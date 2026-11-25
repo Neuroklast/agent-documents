@@ -1,83 +1,36 @@
 ---
 name: rest-guidelines
-description: REST API design rules (Zalando-style subset) for any endpoint. Use when designing, changing, or reviewing APIs — resource naming, JSON shapes, methods, status codes, problem+json errors, pagination, versioning, and OpenAPI duty.
+description: Design and review HTTP API contracts for predictable resource access, compatibility, error responses, pagination and verification.
 ---
+# HTTP API contracts
 
-# Skill — REST Guidelines
+Read the existing API before proposing conventions. Keep established public contracts compatible unless a breaking change has been agreed. These are project defaults, not a claim of conformance to an external style guide.
 
-Self-contained subset of the Zalando RESTful API Guidelines. Canonical for the REST wire format (paths, JSON, methods, status codes, errors, pagination, versioning). The API topic owner (auth, validation, endpoint DoD) is [../../backend/api.md](../../backend/api.md).
+## Shape the contract
 
-## Resource naming
+- Name resources consistently. Prefer plural lowercase paths such as `/invoice-line-items` for new APIs unless the project uses another convention.
+- Use the existing JSON field naming convention. In a new contract, snake_case is one reasonable choice. Return empty collections as arrays.
+- Choose stable identifiers and enforce authorization independently of whether IDs are guessable.
+- Represent instants with a documented timezone and calendar dates separately.
+- Keep enum values and response fields compatible with existing clients.
 
-- kebab-case paths, plural nouns: `/invoice-line-items`.
-- No verbs in paths. Actions that are genuinely processes: noun them (`/imports`, `/exports`).
-- No trailing slashes. Path segments lowercase.
-- IDs: UUIDs/opaque strings. NEVER sequential integers in public APIs.
+## Define operations
 
-## JSON
+Use GET for reads, POST for creation or actions, PUT for replacement, PATCH for partial updates and DELETE for removal. Return meaningful HTTP status codes. For asynchronous work, provide a way to observe progress or failure. For retried writes with financial or other important effects, define an idempotency contract and test duplicate requests.
 
-- Property names snake_case: `created_at`, `line_items`.
-- Arrays are plural (`items`). Empty array, not `null`, for empty lists.
-- Timestamps RFC 3339 UTC (`2026-09-16T12:00:00Z`); dates `YYYY-MM-DD`.
-- Enums: lowercase snake strings, stable forever.
-- NEVER `null` for missing list/collection fields.
+## Define failures
 
-## Methods
+Distinguish authentication, authorization, invalid input, conflict, missing resources and service failure. Avoid leaking internals or secrets. Use [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457.html) when adopting Problem Details, with project-specific field errors if needed. Document rate limits and retry behavior.
 
-| Method | Semantics | Success |
-| --- | --- | --- |
-| GET | safe, cacheable where applicable | 200 |
-| POST | create | 201 + `Location` |
-| PUT | full replace | 200/204 |
-| PATCH | partial merge | 200/204 |
-| DELETE | idempotent | 204 |
+## Bound collections
 
-- Long-running operations: 202 + status resource.
-- Idempotency key (header) for payment and retryable create endpoints.
+Choose cursor pagination for frequently changing or large collections where appropriate. Set a server-side maximum page size. Use stable ordering and test missing, repeated and invalid cursors. Avoid expensive totals unless required.
 
-## Status codes
+## Verify
 
-- 400 malformed, 401 unauthenticated, 403 unauthorized, 404 unknown, 409 conflict, 422 semantically invalid, 429 rate limited, 500 server error, 503 dependency down.
-- 429 MUST carry retry information (`Retry-After`).
-- NEVER 200 with an error body.
+- Document request and response shapes, status codes and permissions in the project's API contract.
+- Test successful requests, unauthorized access, invalid inputs, pagination and retry behavior.
+- Check consumers before changing fields, types or endpoint behavior.
+- Generate contract artifacts from the actual source when supported. Run the project's real contract checks.
 
-## Errors — problem+json
-
-```json
-{
-  "type": "https://example.com/problems/validation",
-  "title": "Validation failed",
-  "status": 422,
-  "detail": "line_items[0].quantity must be >= 1",
-  "instance": "/api/v1/invoices"
-}
-```
-
-- Content-Type: `application/problem+json`.
-- NEVER stack traces, SQL, or internal identifiers.
-- Validation errors SHOULD include field-level detail.
-
-## Pagination
-
-- Cursor-based by default; opaque cursor (`next_cursor`), never page numbers in public contracts.
-- Default page size ~50, max ~200; enforce server-side.
-- Response shape: `items`, `next_cursor` (nullable), optional `total` only when cheap.
-
-## Versioning
-
-- URL versioning `/api/v1/*`.
-- Additive-only within a version: new optional fields/endpoints OK; renames/removals/type changes → new version.
-- Deprecation announced in docs + headers before removal.
-
-## Auth
-
-- Every non-public endpoint authenticates + authorizes ([../../backend/auth.md](../../backend/auth.md)).
-- Tenant/ownership derived from the session, never from client-supplied IDs alone.
-- Public endpoints: rate-limited, column-whitelisted.
-
-## OpenAPI — definition of done
-
-- [ ] Paths, request/response schemas, status codes reflected in the OpenAPI spec.
-- [ ] Spec generated from code where possible; NEVER hand-edit generated YAML.
-- [ ] Contract check (`verify:api-contracts`) green.
-- [ ] An endpoint without spec coverage is not done.
+See [API guidance](../../backend/api.md) and [authorization guidance](../../backend/auth.md). Historical inspiration and rights information are recorded in [../../PROVENANCE.md](../../PROVENANCE.md).

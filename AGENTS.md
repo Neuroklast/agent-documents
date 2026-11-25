@@ -1,8 +1,8 @@
-# Agent Docs — Router
+# Agent Documents: task router
 
 Load this file first. Read **only** topic files relevant to the task. [MANIFEST.md](MANIFEST.md) is for maintainers, not normal sessions.
 
-## Non-negotiable
+## Rules for every task
 
 - Read project manifests and lockfiles before choosing install, build or test commands.
 - Make the smallest **complete** change. No speculative features, unrelated refactors or reformatting.
@@ -38,7 +38,7 @@ Load this file first. Read **only** topic files relevant to the task. [MANIFEST.
 
 ## Finish
 
-Implement → run real checks → review diff → update affected docs → commit/PR/report.
+Implement the change, run the relevant checks, review the diff and update affected documentation. Report the actual results before calling the task complete.
 Definition of Done: [core/quality.md](core/quality.md). Closeout: [checklists/session.md](checklists/session.md).
 Parallel contributors: separate worktrees and one writer per tree ([core/workflow.md](core/workflow.md)).
 Role boundaries: [roles/](roles/README.md). Review-only roles never modify production code.

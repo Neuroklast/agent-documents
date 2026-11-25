@@ -1,60 +1,60 @@
 # Agent Documents
 
-Portable, task-routed guidelines and skills for AI coding agents. The goal is **better engineering with less prompt context**.
+Coding agents often load too much guidance, make unnecessary changes and lose track of what they have actually tested. Agent Documents tackles those problems with a short router and focused instructions for individual engineering tasks.
 
-Repository: https://github.com/Neuroklast/agent-documents
+The collection grew out of the maintainer's own project workflows. Its priorities are simple: understand the existing code, solve the underlying problem, keep the implementation small and verify the result.
 
-## Use it
+## Getting started
 
-For agents supporting a single skill directory, keep the collection together and use [SKILL.md](SKILL.md) as its entry point. Preserve relative paths. The existing router and individual skills remain available for project-specific installations.
+For agents that support skill directories, [SKILL.md](SKILL.md) is the entry point. Keep the accompanying files together so the links work. No hosted service or external framework is required to read the guidance.
+
+To inspect the collection locally:
 
 ```bash
 git clone https://github.com/Neuroklast/agent-documents.git
 node agent-documents/scripts/check-docs.mjs
 ```
 
-Reading is unrestricted. **Copying, redistributing or submoduling this collection requires maintainer permission** (see Attribution and scope below).
+Use is subject to applicable permissions and rights. Reading the public repository does not grant a general license to redistribute its protected original content.
 
-After permission, copy the collection into `docs/agent-docs/`, then put a short root `AGENTS.md` in your project that points to `docs/agent-docs/AGENTS.md`. Add only verified project facts: stack, package manager, test commands and deployment target. Remove irrelevant adapters and update the router. Do not copy every rule into the root.
+With permission, place the collection in `docs/agent-docs/` in your project. Point the project's root `AGENTS.md` at the collection's router. Add only facts about your project, such as the package manager, test commands and deployment target.
 
-Install portable skills into a target project:
+The optional installer copies skills into `.agents/skills/` and `.claude/skills/`:
 
 ```bash
 node scripts/install-skills.mjs /path/to/project
-# Optional: --agents or --claude to select one destination
+# Add --agents or --claude to choose one destination.
 ```
 
-Default installs to `.agents/skills/` and `.claude/skills/`. Check your coding tool's discovery rules. Optional enforcement examples live in `examples/hooks/`; do not enable hooks blindly.
+Check your agent's discovery rules. Review the examples in [examples/hooks/README.md](examples/hooks/README.md) before enabling hooks.
 
 ## Where to start
 
-| Need | File |
+| Task | Guidance |
 | --- | --- |
-| Always-on minimal routing | [AGENTS.md](AGENTS.md) |
-| Complex discovery and requirements | [Requirements clarity](skills/requirements-clarity/SKILL.md) |
-| Epics, stories, implementation and acceptance | [Incremental delivery](skills/incremental-delivery/SKILL.md) |
-| Review by independent evidence lenses | [Evidence review](skills/evidence-review/SKILL.md) |
-| Correctness, risk, load and code bloat | [Complexity review](skills/complexity-review/SKILL.md) |
-| Project procedures and technology rules | [MANIFEST.md](MANIFEST.md) and [Skills index](skills/README.md) |
+| Start a coding session | [Router](AGENTS.md) |
+| Clarify an unclear request | [Requirements clarity](skills/requirements-clarity/SKILL.md) |
+| Deliver several related changes | [Incremental delivery](skills/incremental-delivery/SKILL.md) |
+| Review a proposed change | [Evidence review](skills/evidence-review/SKILL.md) |
+| Remove unnecessary complexity | [Complexity review](skills/complexity-review/SKILL.md) |
+| Find a specific topic | [Maintainer index](MANIFEST.md), [Skill index](skills/README.md) |
 
-**Choose the smallest workflow:** trivial fix → targeted check; feature → specification + TDD; multi-story change → discovery, story slicing, implementation, review, retrospective. The four workflows are native to this collection and have no external runtime dependency. Complexity review is invoked only when needed.
+A small bug does not need a product specification. A risky architecture change needs more investigation. The router helps the agent choose the appropriate amount of guidance.
 
-## Context and maintenance
+## Keeping the collection useful
 
-- `AGENTS.md` routes tasks. Topic files are the source of truth. Skills are loaded on demand.
-- A rule belongs in one file. Link rather than duplicate it.
-- Use existing code, platform features and dependencies before new abstractions. Preserve correctness, validation, accessibility, security and tests.
-- Docs describe verified reality, not aspirational architecture. Update only impacted files.
-- Validation: `node scripts/check-docs.mjs` (budgets, frontmatter, links, manifest) and `node --test scripts/*.test.mjs` (installer behavior).
-- The router is capped at 120 lines, topics at 150, skills at 100; shorter is better when still unambiguous.
-- `MANIFEST.md` is a **maintainer index**, not automatic session context.
+- Keep one source for each rule. Link to it instead of repeating it.
+- Load only the guidance needed for the current task.
+- Prefer existing code and platform features to new abstractions.
+- Keep security, accessibility, error handling and meaningful tests intact.
+- Document actual behavior, not an idealized architecture.
 
-## Attribution and scope
+Run `node scripts/check-docs.mjs` and `node --test scripts/*.test.mjs` after changing the collection. The line budgets are ceilings, not writing targets.
 
-The collection implements general engineering practices: requirements clarification, incremental delivery, evidence-based review and complexity control. BMad Method and Ponytail were historical sources of inspiration; neither is bundled or presented as our product. See [provenance](PROVENANCE.md) for scope and limitations.
+## Sources and rights
 
-Reading is unrestricted. No general redistribution license is granted for material in which the maintainer holds rights. Third-party rights and mandatory legal permissions remain unaffected. Obtain permission before copying or distributing protected material beyond applicable permissions. See [legal review status](LEGAL-REVIEW.md); no legal certification or guaranteed engineering result is claimed.
+The maintainer identifies the collection's core concepts and project practices as their own. The text and scripts have also been developed with AI assistance. External ideas and references are documented in [PROVENANCE.md](PROVENANCE.md), including BMad Method and Ponytail. No affiliation or endorsement is claimed.
 
-## What Markdown cannot enforce
+Rights are reserved only to the extent they exist and are held by the relevant rights holder. Third-party rights and legal permissions remain unaffected. See [LEGAL-REVIEW.md](LEGAL-REVIEW.md) for outstanding questions.
 
-Instruction files cannot replace actual CI, access controls, threat modeling, secret scanning, tests or required human approval. Keep checks executable and disclose what has not been verified.
+These instructions help guide an agent. They cannot guarantee correct code, legal compliance, security or successful test results. Use real checks and appropriate human review.

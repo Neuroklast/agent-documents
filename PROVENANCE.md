@@ -15,3 +15,11 @@ Migration: replace the former four skill identifiers with requirements-clarity, 
 OWASP is a trademark of the OWASP Foundation. References identify external security resources only; no affiliation, endorsement or certification is claimed. Do not bundle external standards, logos or source text without checking their specific licenses. See the [OWASP brand policy](https://owasp.org/policy/branding-guidelines).
 
 Human-authored contributions, AI-assisted text and third-party contributions must be distinguished when documenting rights. Do not assume that every generated passage qualifies for copyright or that repository control establishes all necessary rights. See [legal review status](LEGAL-REVIEW.md).
+
+## API and security guidance
+
+Earlier versions of the REST guidance described themselves as a subset of the [Zalando RESTful API Guidelines](https://github.com/zalando/restful-api-guidelines), published by Zalando under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The current skill has been rewritten as project guidance with its own organization, examples and wording. This attribution records the prior influence; any remaining protected adapted material retains its applicable license.
+
+Earlier model-security guidance used identifiers from the [OWASP GenAI LLM Top 10](https://github.com/GenAI-Security-Project/GenAI-LLM-Top10), published under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). The current document uses its own task-based structure and links to the external taxonomy rather than reproducing it. Any remaining protected adapted material retains its applicable license. No third-party content is relicensed by this repository.
+
+The maintainer identifies the core project concepts as their own; AI assistance has been used in drafting and revisions. This records the reported development process, not a legal determination of authorship for each file.

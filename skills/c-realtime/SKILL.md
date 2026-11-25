@@ -1,6 +1,6 @@
 ---
 name: c-realtime
-description: Realtime and safety-critical C/C++ rules for audio DSP, embedded, firmware, and plugin code. Use when a task touches .c/.h/.cpp realtime callbacks, DSP, MISRA C invariants, plugin state, or native build/CI. Not for host tools, build helpers, or scripts in a web repo.
+description: Realtime and safety-critical C/C++ rules for audio DSP, embedded, firmware, and plugin code. Use when a task touches .c/.h/.cpp realtime callbacks, DSP, project-specific safety constraints, plugin state, or native build/CI. Not for host tools, build helpers, or scripts in a web repo.
 ---
 
 # Skill — C / C++ / Realtime
@@ -18,15 +18,15 @@ If the task is not safety-critical/realtime: close this skill and use normal cod
 - Lock-miss/overload policy: last wet frame or silence — NEVER raw input.
 - Retire/replace objects on the message thread, not the audio thread.
 
-## Safety-critical C invariants
+## C constraints for high-reliability code
 
 - MUST NOT `malloc`/`calloc`/`realloc`/`free` outside one startup phase (embedded).
-- ALWAYS braces on `if`/`else`/`while`/`for`/`switch` (MISRA C 15.6).
-- ALWAYS `switch` with `default` (16.4) unless a deviation record exists; every non-empty case ends with `break` (16.3).
+- Use explicit braces for control-flow bodies.
+- Handle unexpected switch values explicitly and document intentional fallthrough or early exits.
 - NEVER unchecked `strcpy`/`sprintf`/`gets` — bounded variants.
 - NEVER unchecked integer overflow in sizes/indices.
 - NEVER recursion in hard-realtime paths.
-- Rule violation → STOP and write a deviation record ([../../templates/deviation-record.md](../../templates/deviation-record.md)). NEVER self-approve.
+- For a required project safety rule, stop and write a deviation record ([../../templates/deviation-record.md](../../templates/deviation-record.md)). Never self-approve. For regulated or safety-critical products, follow the actual applicable standard and qualified review process; this skill is not a substitute for it.
 
 ## State & lifecycle
 

@@ -4,7 +4,7 @@ description: Route software engineering tasks to focused instructions for requir
 ---
 # Agent Documents
 
-Use this collection as task-specific engineering guidance. The user's request, project-specific constraints and verified repository facts determine the work. Do not load the whole collection into context.
+Start with the requested outcome and the actual project. Use the router to find the relevant guidance instead of reading every file.
 
 1. Read [AGENTS.md](AGENTS.md) for the task router and baseline rules.
 2. Inspect the actual project before selecting commands or assumptions.

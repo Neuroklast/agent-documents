@@ -7,7 +7,7 @@ Load for every coding session. Use [AGENTS.md](../AGENTS.md) as the task router.
 3. **Implement:** Smallest complete change; fix shared root causes rather than individual symptoms. New testable behavior starts with a failing test ([TDD](../skills/tdd-extraction/SKILL.md)).
 4. **Verify:** Use project-defined, non-interactive lint/type/test/build checks. Inspect the actual diff and affected callers. Add focused E2E proof when necessary.
 5. **Review:** Compare outcome with acceptance criteria. For high-risk or cross-system work use [Evidence review](../skills/evidence-review/SKILL.md), for bloat concerns use [Complexity review](../skills/complexity-review/SKILL.md).
-6. **Ship:** Update affected docs, commit, PR, report checks and residual risks. [Session checklist](../checklists/session.md).
+6. **Finish:** Update affected docs and report checks and remaining risks. Commit or open a PR when requested or required by the project workflow. [Session checklist](../checklists/session.md).
 
 ## Test integrity
 
